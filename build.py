@@ -19,16 +19,16 @@ for cat, ts in cats:
         if f:
             md.append(f"- [{t}]({url(f['bvid'])})" + (f"（{note}）" if note else ""))
             desc = f["desc"].strip() or "（无简介）"
-            cards.append(f'''<a class="card" href="{url(f['bvid'])}" target="_blank" rel="noopener" data-k="{e(t + f['title'] + f['author'])}">
+            cards.append(f'''<div class="card" data-id="{e(t)}" data-k="{e(t + f['title'] + f['author'])}"><a href="{url(f['bvid'])}" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="{e(f['pic'])}@480w_270h_1c.webp" alt="">
 <div class="body"><h3>{e(t)}</h3>{f'<span class="note">{e(note)}</span>' if note else ''}
 <p class="vt">{e(f['title'])}</p><p class="meta">UP：{e(f['author'])} · {f['play']:,} 播放</p>
-<p class="desc">{e(desc)}</p></div></a>''')
+<p class="desc">{e(desc)}</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div>''')
         else:
             md.append(f"- {t}（B 站未找到，[搜索]({search(t)})）")
-            cards.append(f'''<a class="card miss" href="{search(t)}" target="_blank" rel="noopener" data-k="{e(t)}">
-<div class="ph">未找到</div><div class="body"><h3>{e(t)}</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a>''')
-    sec.append(f'<section><h2>{e(cat)} <small>{len(ts)}</small></h2><div class="grid">{"".join(cards)}</div></section>')
+            cards.append(f'''<div class="card miss" data-id="{e(t)}" data-k="{e(t)}"><a href="{search(t)}" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>{e(t)}</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div>''')
+    sec.append(f'<section><h2>{e(cat)} <small>{len(ts)}</small></h2><div class="grid">{"".join(cards)}</div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section>')
 open("README.md", "w").write("\n".join(md) + "\n")
 nav = "".join(f'<a href="#c{i}">{e(c)}</a>' for i, (c, _) in enumerate(cats))
 body = "".join(s.replace("<section>", f'<section id="c{i}">', 1) for i, s in enumerate(sec))
@@ -42,17 +42,32 @@ h1{{margin:0 0 8px;font-size:20px}}input{{width:100%;max-width:360px;padding:7px
 nav{{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:13px}}nav a{{color:var(--mute);text-decoration:none}}nav a:hover{{color:var(--acc)}}
 main{{max-width:1280px;margin:0 auto;padding:8px 16px 48px}}h2{{font-size:17px;margin:28px 0 12px;scroll-margin-top:130px}}h2 small{{color:var(--mute);font-weight:400}}
 .grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}}
-.card{{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;color:inherit;text-decoration:none}}
+.card{{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;color:inherit;text-decoration:none}}
 .card:hover{{border-color:var(--acc)}}.card img,.ph{{width:100%;aspect-ratio:16/9;object-fit:cover;background:var(--line);display:block}}
 .ph{{display:grid;place-items:center;color:var(--mute)}}.body{{padding:10px 12px 12px}}h3{{margin:0;font-size:16px}}
 .note{{display:inline-block;margin-top:4px;font-size:12px;color:var(--acc);border:1px solid var(--acc);border-radius:4px;padding:0 5px}}
 .vt{{margin:6px 0 2px;font-size:13px}}.meta{{margin:0;font-size:12px;color:var(--mute)}}
 .desc{{margin:6px 0 0;font-size:12.5px;color:var(--mute);white-space:pre-line;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}}
-.card:hover .desc{{-webkit-line-clamp:unset}}.hide{{display:none}}
-</style></head><body><header><h1>AI 剧清单</h1><input id="q" type="search" placeholder="搜剧名、标题或 UP 主" aria-label="搜索"><nav>{nav}</nav></header>
+.card:hover .desc{{-webkit-line-clamp:unset}}.hide{{display:none!important}}
+.card>a{{color:inherit;text-decoration:none;flex:1}}
+.seen{{position:absolute;top:8px;right:8px;display:flex;gap:4px;align-items:center;padding:3px 8px;border-radius:6px;background:rgba(0,0,0,.6);color:#fff;font-size:12.5px;cursor:pointer}}
+.seen input{{margin:0;accent-color:var(--acc)}}.done .card{{opacity:.6}}
+.done{{margin-top:14px}}.done summary{{cursor:pointer;color:var(--mute);font-size:14px;padding:6px 0}}.done .grid{{margin-top:8px}}
+#stat{{margin-left:10px;font-size:13px;color:var(--mute);font-weight:400}}
+</style></head><body><header><h1>AI 剧清单<span id="stat"></span></h1><input id="q" type="search" placeholder="搜剧名、标题或 UP 主" aria-label="搜索"><nav>{nav}</nav></header>
 <main>{body}</main><script>
 const q=document.getElementById("q");q.oninput=()=>{{const s=q.value.trim().toLowerCase();
 document.querySelectorAll(".card").forEach(c=>c.classList.toggle("hide",!!s&&!c.dataset.k.toLowerCase().includes(s)));
-document.querySelectorAll("section").forEach(x=>x.classList.toggle("hide",!x.querySelector(".card:not(.hide)")))}}
+document.querySelectorAll("section").forEach(x=>x.classList.toggle("hide",!x.querySelector(".card:not(.hide)")))}};
+// 看过状态只存在本机浏览器
+const KEY="seen-v1";let seen=new Set();try{{seen=new Set(JSON.parse(localStorage.getItem(KEY)||"[]"))}}catch(_){{}}
+const total=document.querySelectorAll(".card").length,order=new Map([...document.querySelectorAll(".card")].map((c,i)=>[c,i]));
+function place(c){{const sec=c.closest("section"),on=seen.has(c.dataset.id),g=on?sec.querySelector(".done .grid"):sec.querySelector(".grid");
+c.querySelector("input").checked=on;const after=[...g.children].find(x=>order.get(x)>order.get(c));g.insertBefore(c,after||null)}}
+function count(){{document.querySelectorAll("section").forEach(sec=>{{const n=sec.querySelectorAll(".done .card").length;
+sec.querySelector(".done b").textContent=n;sec.querySelector(".done").classList.toggle("hide",!n)}});
+document.getElementById("stat").textContent=seen.size?`已看 ${{seen.size}} / ${{total}}`:""}}
+document.querySelectorAll(".card").forEach(c=>{{place(c);c.querySelector("input").onchange=e=>{{
+e.target.checked?seen.add(c.dataset.id):seen.delete(c.dataset.id);try{{localStorage.setItem(KEY,JSON.stringify([...seen]))}}catch(_){{}}place(c);count()}}}});count();
 </script></body></html>''')
 print(len(fin), "matched")
