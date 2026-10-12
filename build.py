@@ -16,7 +16,7 @@ md, sec = ["# 最近看的 AI 剧\n", f"共 {sum(len(t) for _, t in cats)} 部�
 for cat, ts in cats:
     md.append(f"\n## {cat}\n")
     cards = []
-    for t in sorted(ts, key=lambda t: t not in fin):  # 没找到原片的排在本分类末尾
+    for t in sorted(ts, key=lambda t: (t not in fin, -fin[t]['play'] if t in fin else 0)):  # 按播放量降序，没找到原片的排末尾
         f, note = fin.get(t), NOTE.get(t, "")
         if f:
             md.append(f"- [{t}]({url(f['bvid'])})" + (f"（{note}）" if note else ""))
@@ -92,7 +92,7 @@ h3{{margin:0;font-size:17px;font-weight:700;letter-spacing:.01em}}
 .hide{{display:none!important}}
 footer{{text-align:center;color:var(--soft);font-size:12px;padding:0 16px 40px}}
 </style></head><body>
-<header class="hero"><h1>AI <i>剧</i>清单</h1><p class="sub">{total} 部 · {len(cats)} 类 · 点卡片看 B 站第一集</p><div id="stat"></div></header>
+<header class="hero"><h1>AI <i>剧</i>清单</h1><p class="sub">{total} 部 · {len(cats)} 类 · 按 B 站播放量排序 · 点卡片看第一集</p><div id="stat"></div></header>
 <div class="bar"><input id="q" type="search" placeholder="搜剧名、标题或 UP 主" aria-label="搜索"><nav>{nav}</nav></div>
 <main><section id="fav" class="hide"><h2><span>我的追剧</span><small>0</small></h2><div class="grid"></div></section>{body}</main><footer>「追剧」和「看过」只保存在你自己的浏览器里</footer><script>
 const q=document.getElementById("q");q.oninput=()=>{{const s=q.value.trim().toLowerCase();
