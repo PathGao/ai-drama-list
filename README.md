@@ -37,7 +37,6 @@
 - [临江战纪](https://www.bilibili.com/video/BV1MThe6sEX7)
 - [烂仔英雄](https://www.bilibili.com/video/BV1aZe66sE6F)
 - [花郎](https://www.bilibili.com/video/BV12LYq6YE4W)
-- [污染者](https://www.bilibili.com/video/BV1EEK86PEWL)（第一季合集）
 - [能力有限](https://www.bilibili.com/video/BV1tTbk6zEtC)
 - [遗能术士](https://www.bilibili.com/video/BV1orN16zEie)
 - [越界](https://www.bilibili.com/video/BV1GRtg6WEgg)
@@ -113,6 +112,7 @@
 
 - [山海兽医](https://www.bilibili.com/video/BV1Cz316YEo3)
 - [山海](https://www.bilibili.com/video/BV1mEth6BEYS)（第一季 1-8 合集）
+- [污染者](https://www.bilibili.com/video/BV1EEK86PEWL)（第一季合集）
 - [复苏纪](https://www.bilibili.com/video/BV17Qbn6FEJ3)
 - [东方猎人录](https://www.bilibili.com/video/BV1vtc2zCEEa)
 - [山海驯兽师](https://www.bilibili.com/video/BV1z3tE6REZm)
