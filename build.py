@@ -41,9 +41,7 @@ for i, (cat, subs) in enumerate(cats):
             md.append(f"- [{t}]({url(f['bvid'])})" + (f"（{NOTE[t]}）" if t in NOTE else "") if f else f"- {t}（B 站未找到，[搜索]({search(t)})）")
         blocks.append(f'<div class="sub" id="c{i}-{j}"><h3>{e(sub)}<small>{len(ts)}</small></h3><div class="grid">{"".join(card(t) for t in order(ts))}</div></div>')
         links.append(f'<a class="l2" href="#c{i}-{j}">{e(sub)}<small>{len(ts)}</small></a>')
-    secs.append(f'<section id="c{i}"><h2><span>{e(cat)}</span><small>{n}</small></h2>{"".join(blocks)}'
-                f'<details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details>'
-                f'<details class="nope hide"><summary>不爱看 <b>0</b> 部</summary><div class="grid"></div></details></section>')
+    secs.append(f'<section id="c{i}"><h2><span>{e(cat)}</span><small>{n}</small></h2>{"".join(blocks)}</section>')
     toc.append(f'<div class="grp"><a class="l1" href="#c{i}">{e(cat)}<small>{n}</small></a><div class="kids">{"".join(links)}</div></div>')
 open("README.md", "w").write("\n".join(md) + "\n")
 
@@ -70,7 +68,6 @@ input[type=search]:focus{border-color:var(--acc);box-shadow:0 0 0 3px var(--acc2
 .toc .on{border-left-color:var(--acc);color:var(--acc)!important;background:linear-gradient(90deg,var(--acc2),transparent)}
 .toc .on small{color:var(--acc)}
 .kids{display:none}.grp.open .kids{display:block}
-.toc .fav-l{color:var(--gold)!important}
 main{min-width:0;padding-bottom:64px}
 section{margin-top:8px}
 h2{display:flex;align-items:center;gap:10px;font-size:21px;margin:28px 0 4px}
@@ -106,12 +103,16 @@ h4{margin:0;font-size:17px;font-weight:700;letter-spacing:.01em}
 .acts{position:absolute;top:10px;left:10px;right:10px;z-index:2;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}
 .act{display:flex;gap:5px;align-items:center;padding:4px 10px;border-radius:999px;background:rgba(20,20,22,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;font-size:12.5px;cursor:pointer;white-space:nowrap;user-select:none;transition:background .15s}
 .act:hover{background:rgba(20,20,22,.75)}.act input{margin:0;accent-color:var(--acc)}.fav input{accent-color:var(--gold)}.nope input{accent-color:#8a8a92}
-.done .seen{background:var(--acc)}#fav .fav{background:var(--gold)}#fav h2 span{border-color:var(--gold)}
-.done .inner,details.nope .inner{box-shadow:none}.done .cover img{filter:grayscale(.7);opacity:.75}.done .body{opacity:.65}
-details.nope .act.nope{background:#6b6b72}details.nope .cover img{filter:grayscale(1);opacity:.5}details.nope .body{opacity:.5}
-.done,details.nope{margin-top:20px}.done summary,details.nope summary{display:inline-block;cursor:pointer;color:var(--mute);font-size:13px;padding:5px 14px;border:1px dashed var(--line);border-radius:999px;list-style:none}
-details summary::-webkit-details-marker{display:none}details summary::before{content:"▸ "}details[open] summary::before{content:"▾ "}details summary:hover{color:var(--acc);border-color:var(--acc)}details .grid{margin-top:12px}
-.hide,.filtered,.sub.empty{display:none!important}
+.mine{margin-top:44px;padding-top:8px;border-top:1px dashed var(--line)}.mine+.mine{border-top:0;margin-top:20px}
+#my-fav h2 span{border-color:var(--gold)}#my-fav .act.fav{background:var(--gold)}
+#my-seen .act.seen{background:var(--acc)}#my-seen .cover img{filter:grayscale(.6);opacity:.8}
+#my-nope h2 span{border-color:#8a8a92}#my-nope .act.nope{background:#6b6b72}#my-nope .cover img{filter:grayscale(1);opacity:.5}#my-nope .body{opacity:.55}
+.mine .inner{box-shadow:none}
+.toc .mt{margin:14px 0 4px 14px;font-size:12px;color:var(--soft);letter-spacing:.08em}
+.toc .my{padding:5px 10px 5px 14px;font-size:13.5px;font-weight:600}
+.toc .my.zero{opacity:.45}
+.toc .my-fav{color:var(--gold)}.toc .my-seen{color:var(--acc)}.toc .my-nope{color:#8a8a92}
+.hide,.filtered,.sub.empty,section.empty{display:none!important}
 footer{text-align:center;color:var(--soft);font-size:12px;padding:0 16px 40px}
 /* 窄屏：目录变成顶部吸顶横条，只列大类 */
 @media (max-width:1000px){
@@ -122,28 +123,29 @@ footer{text-align:center;color:var(--soft);font-size:12px;padding:0 16px 40px}
  .grp{display:contents}.kids{display:none!important}
  .toc .l1{flex-shrink:0;margin:0;gap:6px;padding:4px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:13px;font-weight:500;white-space:nowrap}
  .toc .l1.on{background:var(--acc);border-color:var(--acc);color:#fff!important}.toc .l1.on small{color:#fff}
+ .toc .mt{display:none}.toc .my{flex-shrink:0;margin:0;gap:6px;padding:4px 12px;border:1px dashed var(--line);border-radius:999px;font-size:13px;white-space:nowrap}.toc .my.zero{display:none}
 }
 @media (hover:none){.card::before,.inner::after{display:none}.inner{position:static;height:auto}.vt,.desc{-webkit-line-clamp:unset}}
 """
 
 JS = r"""
-// 追剧、看过、不爱看只存在本机浏览器。去向优先级：不爱看 > 看过 > 追剧；追剧和不爱看互斥
+// 追剧、看过、不爱看只存在本机浏览器。卡片去向优先级：不爱看 > 看过 > 追剧；追剧和不爱看互斥
 const load=k=>{try{return new Set(JSON.parse(localStorage.getItem(k)||"[]"))}catch(_){return new Set}};
 const st={seen:load("seen-v1"),fav:load("fav-v1"),nope:load("nope-v1")},KEYS={seen:"seen-v1",fav:"fav-v1",nope:"nope-v1"},
  TXT={seen:["看过","取消看过"],fav:["追剧","取消追剧"],nope:["不爱看","取消不爱看"]},CLASH={fav:"nope",nope:"fav"};
 const cards=[...document.querySelectorAll(".card")],total=cards.length,order=new Map(cards.map((c,i)=>[c,i])),home=new Map(cards.map(c=>[c,c.parentElement]));
-const favSec=document.getElementById("fav"),favLink=document.getElementById("fav-l");
+const box={fav:document.getElementById("my-fav"),seen:document.getElementById("my-seen"),nope:document.getElementById("my-nope")};
 function place(c){const id=c.dataset.id,h=home.get(c);
- const sec=h.closest("section"),g=st.nope.has(id)?sec.querySelector("details.nope .grid"):st.seen.has(id)?sec.querySelector(".done .grid"):st.fav.has(id)?favSec.querySelector(".grid"):h;
+ const k=["nope","seen","fav"].find(k=>st[k].has(id)),g=k?box[k].querySelector(".grid"):h;
  for(const k in st){const on=st[k].has(id);c.querySelector(`.act.${k} input`).checked=on;c.querySelector(`.act.${k} span`).textContent=TXT[k][+on]}
  const after=[...g.children].find(x=>order.get(x)>order.get(c));g.insertBefore(c,after||null)}
 function count(){
- document.querySelectorAll("section:not(#fav) details").forEach(d=>{const n=d.querySelectorAll(".card").length;
-  d.querySelector("b").textContent=n;d.classList.toggle("hide",!n)});
- document.querySelectorAll(".sub").forEach(s=>s.classList.toggle("empty",!s.querySelector(".card")));
- const f=favSec.querySelectorAll(".card").length;favSec.querySelector("small").textContent=f;favSec.classList.toggle("hide",!f);
- favLink.classList.toggle("hide",!f);favLink.querySelector("small").textContent=f;
- document.getElementById("stat").textContent=[st.seen.size&&`已看 ${st.seen.size} / ${total}`,f&&`追剧 ${f}`].filter(Boolean).join(" · ")}
+ document.querySelectorAll(".sub,main section").forEach(s=>s.classList.toggle("empty",!s.querySelector(".card")));
+ for(const k in box){const n=box[k].querySelectorAll(".card").length;box[k].querySelector("h2 small").textContent=n;
+  const a=document.querySelector(`.toc .my-${k}`);a.querySelector("small").textContent=n;a.classList.toggle("zero",!n)}
+ // 追剧、看过、不爱看都算看过
+ const all=new Set([...st.fav,...st.seen,...st.nope]).size;
+ document.getElementById("stat").textContent=all?`已看 ${all} / ${total}`:""}
 cards.forEach(c=>{place(c);for(const k in st)c.querySelector(`.act.${k} input`).onchange=e=>{
  const id=c.dataset.id,save=k=>{try{localStorage.setItem(KEYS[k],JSON.stringify([...st[k]]))}catch(_){}};
  if(e.target.checked){st[k].add(id);const o=CLASH[k];if(o&&st[o].delete(id))save(o)}else st[k].delete(id);save(k);place(c);count();cur=null;spy()}});
@@ -173,8 +175,8 @@ page = f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>AI 剧清单</title><style>{CSS}</style></head><body><div id="prog"></div>
 <header class="hero"><h1>AI <i>剧</i>清单</h1><p class="sub-t">{total} 部 · {len(cats)} 大类 {sum(len(s) for _, s in cats)} 小类 · 按 B 站播放量排序 · 点卡片看第一集</p><div id="stat"></div></header>
 <div class="layout"><aside><input id="q" type="search" placeholder="搜剧名、标题或 UP 主" aria-label="搜索">
-<nav class="toc"><div class="grp"><a class="l1 fav-l hide" id="fav-l" href="#fav">★ 我的追剧<small>0</small></a></div>{"".join(toc)}</nav></aside>
-<main><section id="fav" class="hide"><h2><span>我的追剧</span><small>0</small></h2><div class="grid"></div></section>{"".join(secs)}</main></div>
+<nav class="toc">{"".join(toc)}<div class="mt">我的标记</div><a class="my my-fav zero" href="#my-fav">★ 追剧<small>0</small></a><a class="my my-seen zero" href="#my-seen">✓ 看过<small>0</small></a><a class="my my-nope zero" href="#my-nope">✕ 不爱看<small>0</small></a></nav></aside>
+<main>{"".join(secs)}<section id="my-fav" class="mine"><h2><span>★ 追剧</span><small>0</small></h2><div class="grid"></div></section><section id="my-seen" class="mine"><h2><span>✓ 看过</span><small>0</small></h2><div class="grid"></div></section><section id="my-nope" class="mine"><h2><span>✕ 不爱看</span><small>0</small></h2><div class="grid"></div></section></main></div>
 <footer>「追剧」「看过」「不爱看」只保存在你自己的浏览器里</footer><script>{JS}</script></body></html>'''
 open("index.html", "w").write(page)
 print(len(fin), "matched")
