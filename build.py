@@ -16,7 +16,7 @@ md, sec = ["# 最近看的 AI 剧\n", f"共 {sum(len(t) for _, t in cats)} 部�
 for cat, ts in cats:
     md.append(f"\n## {cat}\n")
     cards = []
-    for t in ts:
+    for t in sorted(ts, key=lambda t: t not in fin):  # 没找到原片的排在本分类末尾
         f, note = fin.get(t), NOTE.get(t, "")
         if f:
             md.append(f"- [{t}]({url(f['bvid'])})" + (f"（{note}）" if note else ""))
