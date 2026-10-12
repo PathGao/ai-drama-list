@@ -135,7 +135,7 @@ const cards=[...document.querySelectorAll(".card")],total=cards.length,order=new
 const favSec=document.getElementById("fav"),favLink=document.getElementById("fav-l");
 function place(c){const id=c.dataset.id,h=home.get(c);
  const sec=h.closest("section"),g=st.nope.has(id)?sec.querySelector("details.nope .grid"):st.seen.has(id)?sec.querySelector(".done .grid"):st.fav.has(id)?favSec.querySelector(".grid"):h;
- for(const k in st){const on=st[k].has(id);c.querySelector(`.${k} input`).checked=on;c.querySelector(`.${k} span`).textContent=TXT[k][+on]}
+ for(const k in st){const on=st[k].has(id);c.querySelector(`.act.${k} input`).checked=on;c.querySelector(`.act.${k} span`).textContent=TXT[k][+on]}
  const after=[...g.children].find(x=>order.get(x)>order.get(c));g.insertBefore(c,after||null)}
 function count(){
  document.querySelectorAll("section:not(#fav) details").forEach(d=>{const n=d.querySelectorAll(".card").length;
@@ -144,7 +144,7 @@ function count(){
  const f=favSec.querySelectorAll(".card").length;favSec.querySelector("small").textContent=f;favSec.classList.toggle("hide",!f);
  favLink.classList.toggle("hide",!f);favLink.querySelector("small").textContent=f;
  document.getElementById("stat").textContent=[st.seen.size&&`已看 ${st.seen.size} / ${total}`,f&&`追剧 ${f}`].filter(Boolean).join(" · ")}
-cards.forEach(c=>{place(c);for(const k in st)c.querySelector(`.${k} input`).onchange=e=>{
+cards.forEach(c=>{place(c);for(const k in st)c.querySelector(`.act.${k} input`).onchange=e=>{
  const id=c.dataset.id,save=k=>{try{localStorage.setItem(KEYS[k],JSON.stringify([...st[k]]))}catch(_){}};
  if(e.target.checked){st[k].add(id);const o=CLASH[k];if(o&&st[o].delete(id))save(o)}else st[k].delete(id);save(k);place(c);count();cur=null;spy()}});
 // 搜索
