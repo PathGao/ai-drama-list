@@ -21,15 +21,15 @@ for cat, ts in cats:
         if f:
             md.append(f"- [{t}]({url(f['bvid'])})" + (f"（{note}）" if note else ""))
             desc = f["desc"].strip() or "（无简介）"
-            cards.append(f'''<div class="card" data-id="{e(t)}" data-k="{e(t + f['title'] + f['author'])}"><a href="{url(f['bvid'])}" target="_blank" rel="noopener">
+            cards.append(f'''<div class="card" data-id="{e(t)}" data-k="{e(t + f['title'] + f['author'])}"><div class="inner"><a href="{url(f['bvid'])}" target="_blank" rel="noopener">
 <div class="cover"><img loading="lazy" decoding="async" width="480" height="270" referrerpolicy="no-referrer" src="{e(f['pic'])}@480w_270h_1c.webp" alt="">{f'<span class="note">{e(note)}</span>' if note else ''}</div>
 <div class="body"><h3>{e(t)}</h3><p class="vt">{e(f['title'])}</p>
 <p class="meta"><span>{e(f['author'])}</span><span>{plays(f['play'])} 播放</span></p>
-<p class="desc">{e(desc)}</p></div></a>{SEEN}</div>''')
+<p class="desc">{e(desc)}</p></div></a>{SEEN}</div></div>''')
         else:
             md.append(f"- {t}（B 站未找到，[搜索]({search(t)})）")
-            cards.append(f'''<div class="card miss" data-id="{e(t)}" data-k="{e(t)}"><a href="{search(t)}" target="_blank" rel="noopener">
-<div class="cover ph"><span>B 站未找到原片</span></div><div class="body"><h3>{e(t)}</h3><p class="desc">点开去 B 站搜索。</p></div></a>{SEEN}</div>''')
+            cards.append(f'''<div class="card miss" data-id="{e(t)}" data-k="{e(t)}"><div class="inner"><a href="{search(t)}" target="_blank" rel="noopener">
+<div class="cover ph"><span>B 站未找到原片</span></div><div class="body"><h3>{e(t)}</h3><p class="desc">点开去 B 站搜索。</p></div></a>{SEEN}</div></div>''')
     sec.append(f'<section><h2><span>{e(cat)}</span><small>{len(ts)}</small></h2><div class="grid">{"".join(cards)}</div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section>')
 open("README.md", "w").write("\n".join(md) + "\n")
 total = sum(len(t) for _, t in cats)
@@ -41,11 +41,11 @@ open("index.html", "w").write(f'''<!doctype html><html lang="zh-CN"><head><meta 
 @media (prefers-color-scheme:dark){{:root{{--bg:#111113;--card:#1b1b1e;--fg:#ededf0;--mute:#a3a3ab;--soft:#76767e;--line:#2a2a2f;--acc2:#3a1f28;--shadow:0 1px 2px rgba(0,0,0,.3)}}}}
 *{{box-sizing:border-box}}html{{scroll-behavior:smooth;scroll-padding-top:112px}}
 body{{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;-webkit-font-smoothing:antialiased}}
-.hero{{text-align:center;padding:40px 16px 18px}}
-h1{{margin:0;font-size:30px;letter-spacing:.04em;font-weight:800}}h1 i{{font-style:normal;color:var(--acc)}}
+.hero{{text-align:center;padding:48px 16px 22px;background:radial-gradient(600px 220px at 50% 0,var(--acc2),transparent 70%)}}
+h1{{margin:0;font-size:34px;letter-spacing:.06em;font-weight:800}}h1 i{{font-style:normal;color:var(--acc)}}
 .sub{{margin:6px 0 0;color:var(--mute);font-size:14px}}
 #stat{{display:inline-block;margin-top:10px;padding:3px 12px;border-radius:999px;background:var(--acc2);color:var(--acc);font-size:13px;font-weight:600}}#stat:empty{{display:none}}
-.bar{{position:sticky;top:0;z-index:3;padding:10px 16px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);text-align:center}}
+.bar{{position:sticky;top:0;z-index:10;padding:10px 16px;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);text-align:center}}
 input[type=search]{{width:100%;max-width:420px;padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--fg);font-size:14px;outline:none;transition:border-color .15s,box-shadow .15s}}
 input[type=search]:focus{{border-color:var(--acc);box-shadow:0 0 0 3px var(--acc2)}}
 nav{{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:10px}}
@@ -56,24 +56,36 @@ main{{max-width:1320px;margin:0 auto;padding:4px 16px 64px}}
 h2{{display:flex;align-items:center;gap:10px;font-size:19px;margin:36px 0 14px}}
 h2 span{{padding-left:12px;border-left:4px solid var(--acc);line-height:1.2}}
 h2 small{{font-size:12px;font-weight:600;color:var(--mute);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:1px 9px}}
-.grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}}
-.card{{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow);transition:border-color .15s,box-shadow .15s}}
-.card:hover{{border-color:var(--acc);box-shadow:0 0 0 3px var(--acc2),var(--shadow)}}
-.card>a{{color:inherit;text-decoration:none;flex:1;display:flex;flex-direction:column}}
-.cover{{position:relative;aspect-ratio:16/9;background:var(--line);overflow:hidden}}
-.cover img{{width:100%;height:100%;object-fit:cover;display:block}}
-.cover::after{{content:"";position:absolute;inset:auto 0 0;height:40%;background:linear-gradient(transparent,rgba(0,0,0,.45));pointer-events:none}}
-.ph{{display:grid;place-items:center;color:var(--soft);font-size:13px;background:repeating-linear-gradient(135deg,var(--line) 0 10px,transparent 10px 20px)}}.ph::after{{display:none}}
+.grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}}
+/* 卡片占位固定高：封面 16:9 + 正文 186px；内容层绝对定位，悬停时向下展开盖住下一行，不推动布局 */
+.card{{position:relative;--bodyh:186px}}
+.card::before{{content:"";display:block;padding-bottom:calc(56.25% + var(--bodyh))}}
+.inner{{position:absolute;inset:0 0 auto;height:100%;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s,border-color .2s}}
+.card:hover .inner,.card:focus-within .inner{{height:auto;min-height:100%;z-index:5;border-color:var(--acc);box-shadow:0 0 0 3px var(--acc2),0 18px 40px rgba(0,0,0,.18)}}
+.inner::after{{content:"";position:absolute;inset:auto 0 0;height:22px;background:linear-gradient(transparent,var(--card));pointer-events:none}}
+.card:hover .inner::after,.card:focus-within .inner::after{{display:none}}
+.inner>a{{color:inherit;text-decoration:none;flex:1;display:flex;flex-direction:column;outline:none}}
+.cover{{position:relative;aspect-ratio:16/9;background:var(--line);overflow:hidden;flex-shrink:0}}
+.cover img{{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.2,.7,.2,1)}}
+.card:hover .cover img{{transform:scale(1.05)}}
+.cover::after{{content:"";position:absolute;inset:auto 0 0;height:45%;background:linear-gradient(transparent,rgba(0,0,0,.5));pointer-events:none}}
+.cover::before{{content:"";position:absolute;left:50%;top:50%;z-index:1;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:rgba(251,114,153,.92) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M8 5v14l11-7z'/%3E%3C/svg%3E") 55% 50%/22px no-repeat;opacity:0;transform:scale(.8);transition:opacity .2s,transform .2s;box-shadow:0 6px 18px rgba(251,114,153,.45)}}
+.card:hover .cover::before{{opacity:1;transform:scale(1)}}
+.ph{{display:grid;place-items:center;color:var(--soft);font-size:13px;background:repeating-linear-gradient(135deg,var(--line) 0 10px,transparent 10px 20px)}}.ph::after,.ph::before{{display:none}}
 .ph span{{background:var(--card);padding:4px 12px;border-radius:999px}}
 .note{{position:absolute;left:10px;bottom:9px;z-index:1;font-size:12px;font-weight:600;color:#fff;background:var(--acc);border-radius:6px;padding:1px 7px}}
 .body{{padding:12px 14px 14px;display:flex;flex-direction:column;flex:1}}
-h3{{margin:0;font-size:17px;font-weight:700}}
-.vt{{margin:4px 0 0;font-size:13px;color:var(--fg);opacity:.85}}
+h3{{margin:0;font-size:17px;font-weight:700;letter-spacing:.01em}}
+.vt{{margin:4px 0 0;font-size:13px;line-height:1.5;opacity:.85}}
 .meta{{display:flex;justify-content:space-between;gap:8px;margin:6px 0 0;font-size:12px;color:var(--soft)}}.meta span:first-child{{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}.meta span:last-child{{flex-shrink:0}}
 .desc{{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);font-size:12.5px;line-height:1.65;color:var(--mute);white-space:pre-line;overflow-wrap:anywhere}}
+.vt,.desc{{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}}.vt{{-webkit-line-clamp:2}}.desc{{-webkit-line-clamp:3}}
+.card:hover .vt,.card:hover .desc,.card:focus-within .vt,.card:focus-within .desc{{-webkit-line-clamp:unset}}
+/* 触屏没有悬停：单列时直接显示全文 */
+@media (hover:none){{.card::before,.inner::after{{display:none}}.inner{{position:static;height:auto}}.vt,.desc{{-webkit-line-clamp:unset}}}}
 .seen{{position:absolute;top:10px;right:10px;z-index:2;display:flex;gap:5px;align-items:center;padding:4px 10px;border-radius:999px;background:rgba(20,20,22,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;font-size:12.5px;cursor:pointer;white-space:nowrap;user-select:none;transition:background .15s}}
 .seen:hover{{background:rgba(20,20,22,.75)}}.seen input{{margin:0;accent-color:var(--acc)}}
-.done .seen{{background:var(--acc)}}.done .card{{box-shadow:none}}.done .cover img{{filter:grayscale(.7);opacity:.75}}.done .body{{opacity:.65}}
+.done .seen{{background:var(--acc)}}.done .inner{{box-shadow:none}}.done .cover img{{filter:grayscale(.7);opacity:.75}}.done .body{{opacity:.65}}
 .done{{margin-top:16px}}.done summary{{display:inline-block;cursor:pointer;color:var(--mute);font-size:13px;padding:5px 14px;border:1px dashed var(--line);border-radius:999px;list-style:none}}
 .done summary::-webkit-details-marker{{display:none}}.done summary::before{{content:"▸ "}}.done[open] summary::before{{content:"▾ "}}.done summary:hover{{color:var(--acc);border-color:var(--acc)}}.done .grid{{margin-top:12px}}
 .hide{{display:none!important}}
