@@ -8,7 +8,7 @@ op.open("https://www.bilibili.com/").read()
 clean = lambda s: re.sub(r"<[^>]+>", "", s).replace("&quot;", '"').replace("&amp;", "&")
 try: raw = json.load(open("raw.json"))
 except FileNotFoundError: raw = {}
-titles = [l.strip() for l in open(__import__("sys").argv[1])] if len(__import__("sys").argv)>1 else [t for _, ts in json.load(open("list.json")) for t in ts]
+titles = [l.strip() for l in open(__import__("sys").argv[1])] if len(__import__("sys").argv)>1 else [t for _, subs in json.load(open("list.json")) for _, ts in subs for t in ts]
 for t in titles:
     for q in ((t,) if len(sys.argv)>1 else (t + " AI", t)):
         if q in raw: continue
