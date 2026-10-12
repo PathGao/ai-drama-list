@@ -54,7 +54,7 @@ body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.55 -apple-system,
 .hero{text-align:center;padding:48px 16px 26px;background:radial-gradient(600px 220px at 50% 0,var(--acc2),transparent 70%)}
 h1{margin:0;font-size:34px;letter-spacing:.06em;font-weight:800}h1 i{font-style:normal;color:var(--acc)}
 .sub-t{margin:6px 0 0;color:var(--mute);font-size:14px}
-#stat{display:inline-block;margin-top:10px;padding:3px 12px;border-radius:999px;background:var(--acc2);color:var(--acc);font-size:13px;font-weight:600}#stat:empty{display:none}
+#stat{margin:12px 10px 0 14px;padding:8px 12px;border-radius:10px;background:linear-gradient(90deg,var(--acc2) var(--p,0%),var(--card) var(--p,0%));border:1px solid var(--line);color:var(--acc);font-size:13px;font-weight:600}#stat:empty{display:none}
 .layout{display:grid;grid-template-columns:232px minmax(0,1fr);gap:28px;max-width:1480px;margin:0 auto;padding:0 20px}
 aside{position:sticky;top:16px;align-self:start;max-height:calc(100vh - 32px);display:flex;flex-direction:column;gap:12px}
 input[type=search]{width:100%;padding:9px 16px;border:1px solid var(--line);border-radius:999px;background:var(--card);color:var(--fg);font-size:14px;outline:none;transition:border-color .15s,box-shadow .15s}
@@ -123,7 +123,7 @@ footer{text-align:center;color:var(--soft);font-size:12px;padding:0 16px 40px}
  .grp{display:contents}.kids{display:none!important}
  .toc .l1{flex-shrink:0;margin:0;gap:6px;padding:4px 12px;border:1px solid var(--line);border-radius:999px;background:var(--card);font-size:13px;font-weight:500;white-space:nowrap}
  .toc .l1.on{background:var(--acc);border-color:var(--acc);color:#fff!important}.toc .l1.on small{color:#fff}
- .toc .mt{display:none}.toc .my{flex-shrink:0;margin:0;gap:6px;padding:4px 12px;border:1px dashed var(--line);border-radius:999px;font-size:13px;white-space:nowrap}.toc .my.zero{display:none}
+ .toc .mt{display:none}#stat{flex-shrink:0;margin:0;padding:4px 12px;border-radius:999px;white-space:nowrap}.toc .my{flex-shrink:0;margin:0;gap:6px;padding:4px 12px;border:1px dashed var(--line);border-radius:999px;font-size:13px;white-space:nowrap}.toc .my.zero{display:none}
 }
 @media (hover:none){.card::before,.inner::after{display:none}.inner{position:static;height:auto}.vt,.desc{-webkit-line-clamp:unset}}
 """
@@ -145,7 +145,7 @@ function count(){
   const a=document.querySelector(`.toc .my-${k}`);a.querySelector("small").textContent=n;a.classList.toggle("zero",!n)}
  // 追剧、看过、不爱看都算看过
  const all=new Set([...st.fav,...st.seen,...st.nope]).size;
- document.getElementById("stat").textContent=all?`已看 ${all} / ${total}`:""}
+ const sEl=document.getElementById("stat");sEl.textContent=all?`已看 ${all} / ${total}`:"";sEl.style.setProperty("--p",all/total*100+"%")}
 cards.forEach(c=>{place(c);for(const k in st)c.querySelector(`.act.${k} input`).onchange=e=>{
  const id=c.dataset.id,save=k=>{try{localStorage.setItem(KEYS[k],JSON.stringify([...st[k]]))}catch(_){}};
  if(e.target.checked){st[k].add(id);const o=CLASH[k];if(o&&st[o].delete(id))save(o)}else st[k].delete(id);save(k);place(c);count();cur=null;spy()}});
@@ -173,9 +173,9 @@ count();spy();
 
 page = f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1"><title>AI 剧清单</title><style>{CSS}</style></head><body><div id="prog"></div>
-<header class="hero"><h1>AI <i>剧</i>清单</h1><p class="sub-t">{total} 部 · {len(cats)} 大类 {sum(len(s) for _, s in cats)} 小类 · 按 B 站播放量排序 · 点卡片看第一集</p><div id="stat"></div></header>
+<header class="hero"><h1>AI <i>剧</i>清单</h1><p class="sub-t">{total} 部 · {len(cats)} 大类 {sum(len(s) for _, s in cats)} 小类 · 按 B 站播放量排序 · 点卡片看第一集</p></header>
 <div class="layout"><aside><input id="q" type="search" placeholder="搜剧名、标题或 UP 主" aria-label="搜索">
-<nav class="toc">{"".join(toc)}<div class="mt">我的标记</div><a class="my my-fav zero" href="#my-fav">★ 追剧<small>0</small></a><a class="my my-seen zero" href="#my-seen">✓ 看过<small>0</small></a><a class="my my-nope zero" href="#my-nope">✕ 不爱看<small>0</small></a></nav></aside>
+<nav class="toc">{"".join(toc)}<div class="mt">我的标记</div><a class="my my-fav zero" href="#my-fav">★ 追剧<small>0</small></a><a class="my my-seen zero" href="#my-seen">✓ 看过<small>0</small></a><a class="my my-nope zero" href="#my-nope">✕ 不爱看<small>0</small></a><div id="stat"></div></nav></aside>
 <main>{"".join(secs)}<section id="my-fav" class="mine"><h2><span>★ 追剧</span><small>0</small></h2><div class="grid"></div></section><section id="my-seen" class="mine"><h2><span>✓ 看过</span><small>0</small></h2><div class="grid"></div></section><section id="my-nope" class="mine"><h2><span>✕ 不爱看</span><small>0</small></h2><div class="grid"></div></section></main></div>
 <footer>「追剧」「看过」「不爱看」只保存在你自己的浏览器里</footer><script>{JS}</script></body></html>'''
 open("index.html", "w").write(page)
