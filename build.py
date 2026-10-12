@@ -7,7 +7,7 @@ NOTE = {"无归": "只找到第一集预告", "超度师": "匹配不确定", "�
         "反相之地": "1-6 集合集", "污染者": "第一季合集", "执念尸": "第一季合集", "山海": "第一季 1-8 合集",
         "我是地狱": "第一季合集", "神坛之下，众生为炉": "1-4 合集", "我穿越到武侠世界的一天": "1-4 合集", "大天蓬": "1-15 合集",
         "粉墨if系列": "系列短片，独立成篇", "安宁大厦生存守则": "前几集合集", "无妻之徒": "第一季合集", "无耻之徒": "1-9 集合集", "嘴炮女修": "系列短片，独立成篇", "彭皮肚系列": "系列短片"}
-ACTS = '<div class="acts"><label class="act fav"><input type="checkbox"><span>追剧</span></label><label class="act seen"><input type="checkbox"><span>看过</span></label></div>'
+ACTS = '<div class="acts"><label class="act fav"><input type="checkbox"><span>追剧</span></label><label class="act seen"><input type="checkbox"><span>看过</span></label><label class="act nope"><input type="checkbox"><span>不爱看</span></label></div>'
 plays = lambda n: f"{n/1e4:.1f}万" if n >= 1e4 else str(n)
 search = lambda t: "https://search.bilibili.com/all?keyword=" + urllib.parse.quote(t)
 url = lambda bv: f"https://www.bilibili.com/video/{bv}"
@@ -42,7 +42,8 @@ for i, (cat, subs) in enumerate(cats):
         blocks.append(f'<div class="sub" id="c{i}-{j}"><h3>{e(sub)}<small>{len(ts)}</small></h3><div class="grid">{"".join(card(t) for t in order(ts))}</div></div>')
         links.append(f'<a class="l2" href="#c{i}-{j}">{e(sub)}<small>{len(ts)}</small></a>')
     secs.append(f'<section id="c{i}"><h2><span>{e(cat)}</span><small>{n}</small></h2>{"".join(blocks)}'
-                f'<details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section>')
+                f'<details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details>'
+                f'<details class="nope hide"><summary>不爱看 <b>0</b> 部</summary><div class="grid"></div></details></section>')
     toc.append(f'<div class="grp"><a class="l1" href="#c{i}">{e(cat)}<small>{n}</small></a><div class="kids">{"".join(links)}</div></div>')
 open("README.md", "w").write("\n".join(md) + "\n")
 
@@ -102,13 +103,14 @@ h4{margin:0;font-size:17px;font-weight:700;letter-spacing:.01em}
 .desc{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);font-size:12.5px;line-height:1.65;color:var(--mute);white-space:pre-line;overflow-wrap:anywhere}
 .vt,.desc{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}.vt{-webkit-line-clamp:2}.desc{-webkit-line-clamp:3}
 .card:hover .vt,.card:hover .desc,.card:focus-within .vt,.card:focus-within .desc{-webkit-line-clamp:unset}
-.acts{position:absolute;top:10px;right:10px;z-index:2;display:flex;gap:6px}
+.acts{position:absolute;top:10px;left:10px;right:10px;z-index:2;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}
 .act{display:flex;gap:5px;align-items:center;padding:4px 10px;border-radius:999px;background:rgba(20,20,22,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;font-size:12.5px;cursor:pointer;white-space:nowrap;user-select:none;transition:background .15s}
-.act:hover{background:rgba(20,20,22,.75)}.act input{margin:0;accent-color:var(--acc)}.fav input{accent-color:var(--gold)}
+.act:hover{background:rgba(20,20,22,.75)}.act input{margin:0;accent-color:var(--acc)}.fav input{accent-color:var(--gold)}.nope input{accent-color:#8a8a92}
 .done .seen{background:var(--acc)}#fav .fav{background:var(--gold)}#fav h2 span{border-color:var(--gold)}
-.done .inner{box-shadow:none}.done .cover img{filter:grayscale(.7);opacity:.75}.done .body{opacity:.65}
-.done{margin-top:20px}.done summary{display:inline-block;cursor:pointer;color:var(--mute);font-size:13px;padding:5px 14px;border:1px dashed var(--line);border-radius:999px;list-style:none}
-.done summary::-webkit-details-marker{display:none}.done summary::before{content:"▸ "}.done[open] summary::before{content:"▾ "}.done summary:hover{color:var(--acc);border-color:var(--acc)}.done .grid{margin-top:12px}
+.done .inner,details.nope .inner{box-shadow:none}.done .cover img{filter:grayscale(.7);opacity:.75}.done .body{opacity:.65}
+details.nope .act.nope{background:#6b6b72}details.nope .cover img{filter:grayscale(1);opacity:.5}details.nope .body{opacity:.5}
+.done,details.nope{margin-top:20px}.done summary,details.nope summary{display:inline-block;cursor:pointer;color:var(--mute);font-size:13px;padding:5px 14px;border:1px dashed var(--line);border-radius:999px;list-style:none}
+details summary::-webkit-details-marker{display:none}details summary::before{content:"▸ "}details[open] summary::before{content:"▾ "}details summary:hover{color:var(--acc);border-color:var(--acc)}details .grid{margin-top:12px}
 .hide,.filtered,.sub.empty{display:none!important}
 footer{text-align:center;color:var(--soft);font-size:12px;padding:0 16px 40px}
 /* 窄屏：目录变成顶部吸顶横条，只列大类 */
@@ -125,24 +127,26 @@ footer{text-align:center;color:var(--soft);font-size:12px;padding:0 16px 40px}
 """
 
 JS = r"""
-// 追剧、看过只存在本机浏览器；看过优先（看完就不再算追剧）
+// 追剧、看过、不爱看只存在本机浏览器。去向优先级：不爱看 > 看过 > 追剧；追剧和不爱看互斥
 const load=k=>{try{return new Set(JSON.parse(localStorage.getItem(k)||"[]"))}catch(_){return new Set}};
-const st={seen:load("seen-v1"),fav:load("fav-v1")},KEYS={seen:"seen-v1",fav:"fav-v1"},TXT={seen:["看过","取消看过"],fav:["追剧","取消追剧"]};
+const st={seen:load("seen-v1"),fav:load("fav-v1"),nope:load("nope-v1")},KEYS={seen:"seen-v1",fav:"fav-v1",nope:"nope-v1"},
+ TXT={seen:["看过","取消看过"],fav:["追剧","取消追剧"],nope:["不爱看","取消不爱看"]},CLASH={fav:"nope",nope:"fav"};
 const cards=[...document.querySelectorAll(".card")],total=cards.length,order=new Map(cards.map((c,i)=>[c,i])),home=new Map(cards.map(c=>[c,c.parentElement]));
 const favSec=document.getElementById("fav"),favLink=document.getElementById("fav-l");
 function place(c){const id=c.dataset.id,h=home.get(c);
- const g=st.seen.has(id)?h.closest("section").querySelector(".done .grid"):st.fav.has(id)?favSec.querySelector(".grid"):h;
+ const sec=h.closest("section"),g=st.nope.has(id)?sec.querySelector("details.nope .grid"):st.seen.has(id)?sec.querySelector(".done .grid"):st.fav.has(id)?favSec.querySelector(".grid"):h;
  for(const k in st){const on=st[k].has(id);c.querySelector(`.${k} input`).checked=on;c.querySelector(`.${k} span`).textContent=TXT[k][+on]}
  const after=[...g.children].find(x=>order.get(x)>order.get(c));g.insertBefore(c,after||null)}
 function count(){
- document.querySelectorAll("section:not(#fav)").forEach(sec=>{const n=sec.querySelectorAll(".done .card").length;
-  sec.querySelector(".done b").textContent=n;sec.querySelector(".done").classList.toggle("hide",!n)});
+ document.querySelectorAll("section:not(#fav) details").forEach(d=>{const n=d.querySelectorAll(".card").length;
+  d.querySelector("b").textContent=n;d.classList.toggle("hide",!n)});
  document.querySelectorAll(".sub").forEach(s=>s.classList.toggle("empty",!s.querySelector(".card")));
  const f=favSec.querySelectorAll(".card").length;favSec.querySelector("small").textContent=f;favSec.classList.toggle("hide",!f);
  favLink.classList.toggle("hide",!f);favLink.querySelector("small").textContent=f;
  document.getElementById("stat").textContent=[st.seen.size&&`已看 ${st.seen.size} / ${total}`,f&&`追剧 ${f}`].filter(Boolean).join(" · ")}
 cards.forEach(c=>{place(c);for(const k in st)c.querySelector(`.${k} input`).onchange=e=>{
- e.target.checked?st[k].add(c.dataset.id):st[k].delete(c.dataset.id);try{localStorage.setItem(KEYS[k],JSON.stringify([...st[k]]))}catch(_){}place(c);count();cur=null;spy()}});
+ const id=c.dataset.id,save=k=>{try{localStorage.setItem(KEYS[k],JSON.stringify([...st[k]]))}catch(_){}};
+ if(e.target.checked){st[k].add(id);const o=CLASH[k];if(o&&st[o].delete(id))save(o)}else st[k].delete(id);save(k);place(c);count();cur=null;spy()}});
 // 搜索
 const q=document.getElementById("q");q.oninput=()=>{const s=q.value.trim().toLowerCase();
  cards.forEach(c=>c.classList.toggle("hide",!!s&&!c.dataset.k.toLowerCase().includes(s)));
@@ -171,6 +175,6 @@ page = f'''<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
 <div class="layout"><aside><input id="q" type="search" placeholder="搜剧名、标题或 UP 主" aria-label="搜索">
 <nav class="toc"><div class="grp"><a class="l1 fav-l hide" id="fav-l" href="#fav">★ 我的追剧<small>0</small></a></div>{"".join(toc)}</nav></aside>
 <main><section id="fav" class="hide"><h2><span>我的追剧</span><small>0</small></h2><div class="grid"></div></section>{"".join(secs)}</main></div>
-<footer>「追剧」和「看过」只保存在你自己的浏览器里</footer><script>{JS}</script></body></html>'''
+<footer>「追剧」「看过」「不爱看」只保存在你自己的浏览器里</footer><script>{JS}</script></body></html>'''
 open("index.html", "w").write(page)
 print(len(fin), "matched")
