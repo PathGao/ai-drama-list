@@ -1,6 +1,6 @@
 # 最近看的 AI 剧
 
-共 162 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
+共 163 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
 
 
 ## 现代玄门
@@ -231,12 +231,13 @@
 - [最帅之人](https://www.bilibili.com/video/BV1JQ8M6vEtK)
 - [马上好](https://www.bilibili.com/video/BV1rKZYB6EQ7)
 - [这是艺术你不懂](https://www.bilibili.com/video/BV1aNwizkEuz)
+- [无妻之徒](https://www.bilibili.com/video/BV1w9gw63EXX)（第一季合集）
 - [颠佬外传](https://www.bilibili.com/video/BV1SFMy68Ea4)
+- [无耻之徒](https://www.bilibili.com/video/BV1zmhZ65EqC)（1-9 集合集）
 - [TV小姐的牛马日记](https://www.bilibili.com/video/BV1RGgZ61EgA)
 - 我被太太们包围了（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E6%88%91%E8%A2%AB%E5%A4%AA%E5%A4%AA%E4%BB%AC%E5%8C%85%E5%9B%B4%E4%BA%86)）
 - 无毒有呕（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E6%97%A0%E6%AF%92%E6%9C%89%E5%91%95)）
 - 失眠症（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E5%A4%B1%E7%9C%A0%E7%97%87)）
-- 无后之徒（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E6%97%A0%E5%90%8E%E4%B9%8B%E5%BE%92)）
 
 ### 现实·温情
 
