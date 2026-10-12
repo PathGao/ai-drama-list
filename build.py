@@ -7,7 +7,7 @@ NOTE = {"无归": "只找到第一集预告", "超度师": "匹配不确定", "�
         "反相之地": "1-6 集合集", "污染者": "第一季合集", "执念尸": "第一季合集", "山海": "第一季 1-8 合集",
         "我是地狱": "第一季合集", "神坛之下，众生为炉": "1-4 合集", "我穿越到武侠世界的一天": "1-4 合集", "大天蓬": "1-15 合集",
         "粉墨if系列": "系列短片，独立成篇", "嘴炮女修": "系列短片，独立成篇", "彭皮肚系列": "系列短片"}
-SEEN = '<label class="seen"><input type="checkbox"><span>看过</span></label>'
+SEEN = '<div class="acts"><label class="act fav"><input type="checkbox"><span>追剧</span></label><label class="act seen"><input type="checkbox"><span>看过</span></label></div>'
 plays = lambda n: f"{n/1e4:.1f}万" if n >= 1e4 else str(n)
 search = lambda t: "https://search.bilibili.com/all?keyword=" + urllib.parse.quote(t)
 url = lambda bv: f"https://www.bilibili.com/video/{bv}"
@@ -83,9 +83,10 @@ h3{{margin:0;font-size:17px;font-weight:700;letter-spacing:.01em}}
 .card:hover .vt,.card:hover .desc,.card:focus-within .vt,.card:focus-within .desc{{-webkit-line-clamp:unset}}
 /* 触屏没有悬停：单列时直接显示全文 */
 @media (hover:none){{.card::before,.inner::after{{display:none}}.inner{{position:static;height:auto}}.vt,.desc{{-webkit-line-clamp:unset}}}}
-.seen{{position:absolute;top:10px;right:10px;z-index:2;display:flex;gap:5px;align-items:center;padding:4px 10px;border-radius:999px;background:rgba(20,20,22,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;font-size:12.5px;cursor:pointer;white-space:nowrap;user-select:none;transition:background .15s}}
-.seen:hover{{background:rgba(20,20,22,.75)}}.seen input{{margin:0;accent-color:var(--acc)}}
-.done .seen{{background:var(--acc)}}.done .inner{{box-shadow:none}}.done .cover img{{filter:grayscale(.7);opacity:.75}}.done .body{{opacity:.65}}
+.acts{{position:absolute;top:10px;right:10px;z-index:2;display:flex;gap:6px}}
+.act{{display:flex;gap:5px;align-items:center;padding:4px 10px;border-radius:999px;background:rgba(20,20,22,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;font-size:12.5px;cursor:pointer;white-space:nowrap;user-select:none;transition:background .15s}}
+.act:hover{{background:rgba(20,20,22,.75)}}.act input{{margin:0;accent-color:var(--acc)}}.fav input{{accent-color:#f5a623}}
+.done .seen{{background:var(--acc)}}#fav .fav{{background:#f5a623}}#fav h2 span{{border-color:#f5a623}}.done .inner{{box-shadow:none}}.done .cover img{{filter:grayscale(.7);opacity:.75}}.done .body{{opacity:.65}}
 .done{{margin-top:16px}}.done summary{{display:inline-block;cursor:pointer;color:var(--mute);font-size:13px;padding:5px 14px;border:1px dashed var(--line);border-radius:999px;list-style:none}}
 .done summary::-webkit-details-marker{{display:none}}.done summary::before{{content:"▸ "}}.done[open] summary::before{{content:"▾ "}}.done summary:hover{{color:var(--acc);border-color:var(--acc)}}.done .grid{{margin-top:12px}}
 .hide{{display:none!important}}
@@ -93,19 +94,24 @@ footer{{text-align:center;color:var(--soft);font-size:12px;padding:0 16px 40px}}
 </style></head><body>
 <header class="hero"><h1>AI <i>剧</i>清单</h1><p class="sub">{total} 部 · {len(cats)} 类 · 点卡片看 B 站第一集</p><div id="stat"></div></header>
 <div class="bar"><input id="q" type="search" placeholder="搜剧名、标题或 UP 主" aria-label="搜索"><nav>{nav}</nav></div>
-<main>{body}</main><footer>勾选「看过」只保存在你自己的浏览器里</footer><script>
+<main><section id="fav" class="hide"><h2><span>我的追剧</span><small>0</small></h2><div class="grid"></div></section>{body}</main><footer>「追剧」和「看过」只保存在你自己的浏览器里</footer><script>
 const q=document.getElementById("q");q.oninput=()=>{{const s=q.value.trim().toLowerCase();
 document.querySelectorAll(".card").forEach(c=>c.classList.toggle("hide",!!s&&!c.dataset.k.toLowerCase().includes(s)));
 document.querySelectorAll("section").forEach(x=>x.classList.toggle("hide",!x.querySelector(".card:not(.hide)")))}};
-// 看过状态只存在本机浏览器
-const KEY="seen-v1";let seen=new Set();try{{seen=new Set(JSON.parse(localStorage.getItem(KEY)||"[]"))}}catch(_){{}}
-const total=document.querySelectorAll(".card").length,order=new Map([...document.querySelectorAll(".card")].map((c,i)=>[c,i]));
-function place(c){{const sec=c.closest("section"),on=seen.has(c.dataset.id),g=on?sec.querySelector(".done .grid"):sec.querySelector(".grid");
-c.querySelector("input").checked=on;c.querySelector(".seen span").textContent=on?"取消看过":"看过";const after=[...g.children].find(x=>order.get(x)>order.get(c));g.insertBefore(c,after||null)}}
-function count(){{document.querySelectorAll("section").forEach(sec=>{{const n=sec.querySelectorAll(".done .card").length;
+// 追剧、看过只存在本机浏览器；看过优先（看完就不再算追剧）
+const load=k=>{{try{{return new Set(JSON.parse(localStorage.getItem(k)||"[]"))}}catch(_){{return new Set}}}};
+const st={{seen:load("seen-v1"),fav:load("fav-v1")}},KEYS={{seen:"seen-v1",fav:"fav-v1"}},TXT={{seen:["看过","取消看过"],fav:["追剧","取消追剧"]}};
+const cards=[...document.querySelectorAll(".card")],total=cards.length,order=new Map(cards.map((c,i)=>[c,i])),home=new Map(cards.map(c=>[c,c.closest("section")]));
+const favSec=document.getElementById("fav");
+function place(c){{const id=c.dataset.id,h=home.get(c);
+const g=st.seen.has(id)?h.querySelector(".done .grid"):st.fav.has(id)?favSec.querySelector(".grid"):h.querySelector(".grid");
+for(const k in st){{const on=st[k].has(id);c.querySelector(`.${{k}} input`).checked=on;c.querySelector(`.${{k}} span`).textContent=TXT[k][+on]}}
+const after=[...g.children].find(x=>order.get(x)>order.get(c));g.insertBefore(c,after||null)}}
+function count(){{document.querySelectorAll("section:not(#fav)").forEach(sec=>{{const n=sec.querySelectorAll(".done .card").length;
 sec.querySelector(".done b").textContent=n;sec.querySelector(".done").classList.toggle("hide",!n)}});
-document.getElementById("stat").textContent=seen.size?`已看 ${{seen.size}} / ${{total}}`:""}}
-document.querySelectorAll(".card").forEach(c=>{{place(c);c.querySelector("input").onchange=e=>{{
-e.target.checked?seen.add(c.dataset.id):seen.delete(c.dataset.id);try{{localStorage.setItem(KEY,JSON.stringify([...seen]))}}catch(_){{}}place(c);count()}}}});count();
+const f=favSec.querySelectorAll(".card").length;favSec.querySelector("small").textContent=f;favSec.classList.toggle("hide",!f);
+document.getElementById("stat").textContent=[st.seen.size&&`已看 ${{st.seen.size}} / ${{total}}`,f&&`追剧 ${{f}}`].filter(Boolean).join(" · ")}}
+cards.forEach(c=>{{place(c);for(const k in st)c.querySelector(`.${{k}} input`).onchange=e=>{{
+e.target.checked?st[k].add(c.dataset.id):st[k].delete(c.dataset.id);try{{localStorage.setItem(KEYS[k],JSON.stringify([...st[k]]))}}catch(_){{}}place(c);count()}}}});count();
 </script></body></html>''')
 print(len(fin), "matched")
