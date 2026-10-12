@@ -1,6 +1,6 @@
 # 最近看的 AI 剧
 
-共 159 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
+共 162 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
 
 
 ## 现代玄门
@@ -58,6 +58,7 @@
 
 ### 规则怪谈·伪人
 
+- [安宁大厦生存守则](https://www.bilibili.com/video/BV17eLt6mEJF)（前几集合集）
 - [雨夜之下](https://www.bilibili.com/video/BV1XYgw69Epc)
 - [恐怖世界](https://www.bilibili.com/video/BV1xYj96ME3P)
 - [反相之地](https://www.bilibili.com/video/BV1qubn6ZEM9)（1-6 集合集）
@@ -147,6 +148,7 @@
 - [神坛之下，众生为炉](https://www.bilibili.com/video/BV1yc5F6kEG5)（1-4 合集）
 - [燕然](https://www.bilibili.com/video/BV1xf8X6BELP)
 - [嘴炮女修](https://www.bilibili.com/video/BV1zbEG62ETA)（系列短片，独立成篇）
+- [枯魂道君](https://www.bilibili.com/video/BV1fhj16iEk2)
 - 问苍生（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E9%97%AE%E8%8B%8D%E7%94%9F)）
 
 ## 武侠·历史
@@ -234,6 +236,7 @@
 - 我被太太们包围了（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E6%88%91%E8%A2%AB%E5%A4%AA%E5%A4%AA%E4%BB%AC%E5%8C%85%E5%9B%B4%E4%BA%86)）
 - 无毒有呕（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E6%97%A0%E6%AF%92%E6%9C%89%E5%91%95)）
 - 失眠症（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E5%A4%B1%E7%9C%A0%E7%97%87)）
+- 无后之徒（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E6%97%A0%E5%90%8E%E4%B9%8B%E5%BE%92)）
 
 ### 现实·温情
 
