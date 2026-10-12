@@ -110,7 +110,7 @@
 
 - [我是地狱](https://www.bilibili.com/video/BV1fLNg66EVD)（第一季合集）
 - [颠佬外传](https://www.bilibili.com/video/BV1SFMy68Ea4)
-- [最帅之人](https://www.bilibili.com/video/BV1Y2HZ6kEnK)（匹配不确定）
+- [最帅之人](https://www.bilibili.com/video/BV1JQ8M6vEtK)（匹配不确定）
 - 东京天师录 道士下山在Tokyo（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E4%B8%9C%E4%BA%AC%E5%A4%A9%E5%B8%88%E5%BD%95%20%E9%81%93%E5%A3%AB%E4%B8%8B%E5%B1%B1%E5%9C%A8Tokyo)）
 - [危险校花](https://www.bilibili.com/video/BV1sDaS6PErs)
 - [星际摄影师](https://www.bilibili.com/video/BV1iWaf6CEes)
