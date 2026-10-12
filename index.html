@@ -3,9 +3,9 @@
 :root{--bg:#f6f6f4;--card:#fff;--fg:#1d1d1f;--mute:#6b6b70;--line:#e3e3e0;--acc:#fb7299}
 @media (prefers-color-scheme:dark){:root{--bg:#151517;--card:#1f1f22;--fg:#ececee;--mute:#9a9aa2;--line:#2e2e33}}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,"PingFang SC",sans-serif}
-header{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 16px}
+header{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 16px;text-align:center}
 h1{margin:0 0 8px;font-size:20px}input{width:100%;max-width:360px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);font-size:14px}
-nav{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:13px}nav a{color:var(--mute);text-decoration:none}nav a:hover{color:var(--acc)}
+nav{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;margin-top:8px;font-size:13px}nav a{color:var(--mute);text-decoration:none}nav a:hover{color:var(--acc)}
 main{max-width:1280px;margin:0 auto;padding:8px 16px 48px}h2{font-size:17px;margin:28px 0 12px;scroll-margin-top:130px}h2 small{color:var(--mute);font-weight:400}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
 .card{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;color:inherit;text-decoration:none}
@@ -13,10 +13,10 @@ main{max-width:1280px;margin:0 auto;padding:8px 16px 48px}h2{font-size:17px;marg
 .ph{display:grid;place-items:center;color:var(--mute)}.body{padding:10px 12px 12px}h3{margin:0;font-size:16px}
 .note{display:inline-block;margin-top:4px;font-size:12px;color:var(--acc);border:1px solid var(--acc);border-radius:4px;padding:0 5px}
 .vt{margin:6px 0 2px;font-size:13px}.meta{margin:0;font-size:12px;color:var(--mute)}
-.desc{margin:6px 0 0;font-size:12.5px;color:var(--mute);white-space:pre-line;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
-.card:hover .desc{-webkit-line-clamp:unset}.hide{display:none!important}
+.desc{margin:6px 0 0;font-size:12.5px;color:var(--mute);white-space:pre-line;overflow-wrap:anywhere}
+.hide{display:none!important}
 .card>a{color:inherit;text-decoration:none;flex:1}
-.seen{position:absolute;top:8px;right:8px;display:flex;gap:4px;align-items:center;padding:3px 8px;border-radius:6px;background:rgba(0,0,0,.6);color:#fff;font-size:12.5px;cursor:pointer}
+.seen{position:absolute;top:8px;right:8px;display:flex;gap:4px;align-items:center;padding:3px 8px;border-radius:6px;background:rgba(0,0,0,.6);color:#fff;font-size:12.5px;cursor:pointer;white-space:nowrap;flex-shrink:0}
 .seen input{margin:0;accent-color:var(--acc)}.done .card{opacity:.6}
 .done{margin-top:14px}.done summary{cursor:pointer;color:var(--mute);font-size:14px;padding:6px 0}.done .grid{margin-top:8px}
 #stat{margin-left:10px;font-size:13px;color:var(--mute);font-weight:400}
@@ -25,37 +25,37 @@ main{max-width:1280px;margin:0 auto;padding:8px 16px 48px}h2{font-size:17px;marg
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/45342dbb8063a2c3ce4f3ff86496e8f41e9c5fce.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>港魇</h3>
 <p class="vt">《港魇》壹</p><p class="meta">UP：脆弱且三弟 · 557,900 播放</p>
-<p class="desc">个人自制港风神魔电影《港魇》第一集</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="天师李淑芬" data-k="天师李淑芬《天师李淑芬》第一集AIGC异想天开的老李"><a href="https://www.bilibili.com/video/BV1o9MP6cEUm" target="_blank" rel="noopener">
+<p class="desc">个人自制港风神魔电影《港魇》第一集</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="天师李淑芬" data-k="天师李淑芬《天师李淑芬》第一集AIGC异想天开的老李"><a href="https://www.bilibili.com/video/BV1o9MP6cEUm" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/0f3edeeda83b842dfd01e069763808262e7f79ff.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>天师李淑芬</h3>
 <p class="vt">《天师李淑芬》第一集</p><p class="meta">UP：AIGC异想天开的老李 · 1,176,405 播放</p>
-<p class="desc">咸鱼天师李淑芬的打工日记。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="我在现代当幽差" data-k="我在现代当幽差【我在现代当幽差】：大哥，你阳寿未尽啊【UP动画】红豆稀饭中"><a href="https://www.bilibili.com/video/BV17Hgp6XEaR" target="_blank" rel="noopener">
+<p class="desc">咸鱼天师李淑芬的打工日记。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="我在现代当幽差" data-k="我在现代当幽差【我在现代当幽差】：大哥，你阳寿未尽啊【UP动画】红豆稀饭中"><a href="https://www.bilibili.com/video/BV17Hgp6XEaR" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/14cfe807e426da4e4000dd4c6d88995a67c0bf65.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>我在现代当幽差</h3>
 <p class="vt">【我在现代当幽差】：大哥，你阳寿未尽啊【UP动画】</p><p class="meta">UP：红豆稀饭中 · 7,179,490 播放</p>
 <p class="desc">全新剧集，本片诞生于seedance2.0与2.5交界之处，所以前半段视频是2.0原生4K，后半段是2.5原生720P，单集成本在6k往上，希望大伙多点赞投币，帮up回回血吧T.T
 
-感谢创意来源@是一舟阿  ，虽然写的剧本没用上，泪目，让我们期待一舟老师后续的返场吧~</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="AAA道士陈末" data-k="AAA道士陈末【AAA道士陈末】01丨穿越到3011年，被猫娘捡到了？路问东"><a href="https://www.bilibili.com/video/BV1dbto6oEKu" target="_blank" rel="noopener">
+感谢创意来源@是一舟阿  ，虽然写的剧本没用上，泪目，让我们期待一舟老师后续的返场吧~</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="AAA道士陈末" data-k="AAA道士陈末【AAA道士陈末】01丨穿越到3011年，被猫娘捡到了？路问东"><a href="https://www.bilibili.com/video/BV1dbto6oEKu" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/a12a8db422ab8022dd475d7bf5b8b3e6a74d2d24.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>AAA道士陈末</h3>
 <p class="vt">【AAA道士陈末】01丨穿越到3011年，被猫娘捡到了？</p><p class="meta">UP：路问东 · 107,249 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="邪修润魂子" data-k="邪修润魂子【邪修润魂子】EP01 在灯塔国当邪修，就是爽啊！【AI全民制作人】AAA宇宙边角料"><a href="https://www.bilibili.com/video/BV1useJ6tEpf" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="邪修润魂子" data-k="邪修润魂子【邪修润魂子】EP01 在灯塔国当邪修，就是爽啊！【AI全民制作人】AAA宇宙边角料"><a href="https://www.bilibili.com/video/BV1useJ6tEpf" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/b13917eb9379e1d7cfc246aafaff734792039080.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>邪修润魂子</h3>
 <p class="vt">【邪修润魂子】EP01 在灯塔国当邪修，就是爽啊！【AI全民制作人】</p><p class="meta">UP：AAA宇宙边角料 · 2,255,349 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="归墟" data-k="归墟萌新原创末日故事连载剧【归墟】第一集-失踪泫九AI"><a href="https://www.bilibili.com/video/BV1mf9EBPEe9" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="归墟" data-k="归墟萌新原创末日故事连载剧【归墟】第一集-失踪泫九AI"><a href="https://www.bilibili.com/video/BV1mf9EBPEe9" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/18a82d7f9906c50fbd35e8183c99e208ea35779d.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>归墟</h3>
 <p class="vt">萌新原创末日故事连载剧【归墟】第一集-失踪</p><p class="meta">UP：泫九AI · 1,571,651 播放</p>
 <p class="desc">声明：该视频画面由AI生成，请勿当真。
 创作不易请勿搬运。
 这是一个由失踪案开始的逃亡、废土与新物种时代的原创长篇故事。从第一只巨蚁出现开始，城市失守，秩序崩塌，人类开始为活下去付出代价。
-原创故事，长期连载中。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="蟲垩纪" data-k="蟲垩纪悬疑惊悚怪物剧：《蟲垩纪》 第一集【AI全民制作人】景禾ai"><a href="https://www.bilibili.com/video/BV1opg36pEPf" target="_blank" rel="noopener">
+原创故事，长期连载中。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="蟲垩纪" data-k="蟲垩纪悬疑惊悚怪物剧：《蟲垩纪》 第一集【AI全民制作人】景禾ai"><a href="https://www.bilibili.com/video/BV1opg36pEPf" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/9824cc2b1312f1b61f990d8a188778a5cda868b1.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>蟲垩纪</h3>
 <p class="vt">悬疑惊悚怪物剧：《蟲垩纪》 第一集【AI全民制作人】</p><p class="meta">UP：景禾ai · 1,422,356 播放</p>
 <p class="desc">这个世界发生了我们理解不了的变化.... 原创ai剧情故事蟲垩纪 
-本视频全程由Seko全程提供支持，内容全程在Seko进行创作剧情内容为演绎需要，无不良引导，请勿过度曲解。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="能力有限" data-k="能力有限【能力有限】 | EP01｜超英救世界，打工狗失业｜一万个平行宇宙三十二月AIGC"><a href="https://www.bilibili.com/video/BV1tTbk6zEtC" target="_blank" rel="noopener">
+本视频全程由Seko全程提供支持，内容全程在Seko进行创作剧情内容为演绎需要，无不良引导，请勿过度曲解。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="能力有限" data-k="能力有限【能力有限】 | EP01｜超英救世界，打工狗失业｜一万个平行宇宙三十二月AIGC"><a href="https://www.bilibili.com/video/BV1tTbk6zEtC" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/d44a6abd9053d5e6fecf374d282700ae0f10f511.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>能力有限</h3>
 <p class="vt">【能力有限】 | EP01｜超英救世界，打工狗失业｜一万个平行宇宙</p><p class="meta">UP：三十二月AIGC · 63,964 播放</p>
@@ -65,17 +65,17 @@ main{max-width:1280px;margin:0 auto;padding:8px 16px 48px}h2{font-size:17px;marg
 收入清零，理赔遭拒，还要撞上劫匪。能力有限，责任也有限…么？
 感谢@TapNow  平台支持  
 一人手搓小半个月，能力有限，如果你喜欢这个故事，请三连充电～
-你的支持，可以让故事继续下去～</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="花郎" data-k="花郎韩国版咒术回战？动作剧情片《花郎：零》第一集SleepingHo"><a href="https://www.bilibili.com/video/BV12LYq6YE4W" target="_blank" rel="noopener">
+你的支持，可以让故事继续下去～</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="花郎" data-k="花郎韩国版咒术回战？动作剧情片《花郎：零》第一集SleepingHo"><a href="https://www.bilibili.com/video/BV12LYq6YE4W" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/f49a0b8070ff2e984dd6a71d18bcb8486cdd0d77.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>花郎</h3>
 <p class="vt">韩国版咒术回战？动作剧情片《花郎：零》第一集</p><p class="meta">UP：SleepingHo · 95,566 播放</p>
 <p class="desc">海外原创：YAJA
 汉化&amp;国内宣传代理：SleepingHo
-《花郎：零》是一部韩国黑暗奇幻剧集，故事发生在一个因悲伤而死的人会变成怪物的世界——讲述了秘密部队“花郎”与怪物战斗的故事。该剧由YAJA原创AI制作，李大建执导，高慧珍、李大建编剧，林钟民担任执行制片。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="烂仔英雄" data-k="烂仔英雄《烂仔英雄》第一集【AI全民制作人】阿猫阿狗AIGC"><a href="https://www.bilibili.com/video/BV1aZe66sE6F" target="_blank" rel="noopener">
+《花郎：零》是一部韩国黑暗奇幻剧集，故事发生在一个因悲伤而死的人会变成怪物的世界——讲述了秘密部队“花郎”与怪物战斗的故事。该剧由YAJA原创AI制作，李大建执导，高慧珍、李大建编剧，林钟民担任执行制片。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="烂仔英雄" data-k="烂仔英雄《烂仔英雄》第一集【AI全民制作人】阿猫阿狗AIGC"><a href="https://www.bilibili.com/video/BV1aZe66sE6F" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/7db6de6682dee4d831cabc5362d19d6036901f4c.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>烂仔英雄</h3>
 <p class="vt">《烂仔英雄》第一集【AI全民制作人】</p><p class="meta">UP：阿猫阿狗AIGC · 125,352 播放</p>
-<p class="desc">穷人靠变异，富人靠科技，牛马靠咖啡</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="临江战纪" data-k="临江战纪《临江战纪》序章：练习时长两年半的顶流爱豆被废，女主被捕，灰袍组织全员登场！【AI全民制作人】【HiShorts！X updream AI短片大赛-剧情单元】Denn1s666"><a href="https://www.bilibili.com/video/BV1MThe6sEX7" target="_blank" rel="noopener">
+<p class="desc">穷人靠变异，富人靠科技，牛马靠咖啡</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="临江战纪" data-k="临江战纪《临江战纪》序章：练习时长两年半的顶流爱豆被废，女主被捕，灰袍组织全员登场！【AI全民制作人】【HiShorts！X updream AI短片大赛-剧情单元】Denn1s666"><a href="https://www.bilibili.com/video/BV1MThe6sEX7" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/663436586f26fcda841ab6eb5db159bd6b46da06.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>临江战纪</h3>
 <p class="vt">《临江战纪》序章：练习时长两年半的顶流爱豆被废，女主被捕，灰袍组织全员登场！【AI全民制作人】【HiShorts！X updream AI短片大赛-剧情单元】</p><p class="meta">UP：Denn1s666 · 180,797 播放</p>
@@ -85,28 +85,28 @@ main{max-width:1280px;margin:0 auto;padding:8px 16px 48px}h2{font-size:17px;marg
 临江市觉醒者商演现场突发袭击。
 辛予被调查局带走，唐照照中招昏迷，裴见川被灰袍组织抓走并废掉觉醒能力。
 当星冕娱乐、觉醒者调查局、灰袍组织和临江各方势力同时入局——
-这座城市的英雄，究竟是谁？</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="工牌特工" data-k="工牌特工"><a href="https://search.bilibili.com/all?keyword=%E5%B7%A5%E7%89%8C%E7%89%B9%E5%B7%A5" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>工牌特工</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="无归" data-k="无归《无归》第一集预告：大爆炸！等等，怎么还有个女孩子Tassels一"><a href="https://www.bilibili.com/video/BV1a9816ZEqL" target="_blank" rel="noopener">
+这座城市的英雄，究竟是谁？</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="工牌特工" data-k="工牌特工"><a href="https://search.bilibili.com/all?keyword=%E5%B7%A5%E7%89%8C%E7%89%B9%E5%B7%A5" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>工牌特工</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="无归" data-k="无归《无归》第一集预告：大爆炸！等等，怎么还有个女孩子Tassels一"><a href="https://www.bilibili.com/video/BV1a9816ZEqL" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/7a048da41c91a58a7e48cedcf72eab22b383c68c.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>无归</h3><span class="note">只找到第一集预告</span>
 <p class="vt">《无归》第一集预告：大爆炸！等等，怎么还有个女孩子</p><p class="meta">UP：Tassels一 · 16,761 播放</p>
-<p class="desc">第一集预告：新角色登场！总是伴随着爆炸来的女孩</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="灰潮" data-k="灰潮《灰潮》EP01 斩断昨日下水道的老鼠人___"><a href="https://www.bilibili.com/video/BV15hbK67E3X" target="_blank" rel="noopener">
+<p class="desc">第一集预告：新角色登场！总是伴随着爆炸来的女孩</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="灰潮" data-k="灰潮《灰潮》EP01 斩断昨日下水道的老鼠人___"><a href="https://www.bilibili.com/video/BV15hbK67E3X" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/febaf4c203c8ccda65ef34bc6d72fcd975a4b7dc.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>灰潮</h3>
 <p class="vt">《灰潮》EP01 斩断昨日</p><p class="meta">UP：下水道的老鼠人___ · 14,966 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="清洁工档案" data-k="清洁工档案《清洁工档案》第一集爱做梦LoveDreaming"><a href="https://www.bilibili.com/video/BV1exjU6qEcF" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="清洁工档案" data-k="清洁工档案《清洁工档案》第一集爱做梦LoveDreaming"><a href="https://www.bilibili.com/video/BV1exjU6qEcF" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/f0f87cad21f72083b111cba5c43272432894c0bc.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>清洁工档案</h3>
 <p class="vt">《清洁工档案》第一集</p><p class="meta">UP：爱做梦LoveDreaming · 136,033 播放</p>
-<p class="desc">纯普通人没学过导演 剪辑 漫剧 所以恳请大家多多帮助 剧情都是现想的 也希望大家帮忙多提意见 有很多不足之处希望大家锐评</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="永夜门" data-k="永夜门永夜门第一集：薪火相传，生生不息凡响tc-"><a href="https://www.bilibili.com/video/BV1imub6KEaE" target="_blank" rel="noopener">
+<p class="desc">纯普通人没学过导演 剪辑 漫剧 所以恳请大家多多帮助 剧情都是现想的 也希望大家帮忙多提意见 有很多不足之处希望大家锐评</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="永夜门" data-k="永夜门永夜门第一集：薪火相传，生生不息凡响tc-"><a href="https://www.bilibili.com/video/BV1imub6KEaE" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/51c478cce30baabab0c244141d01573bde1952c3.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>永夜门</h3>
 <p class="vt">永夜门第一集：薪火相传，生生不息</p><p class="meta">UP：凡响tc- · 57,810 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="404" data-k="404《404》第一集｜内含恐怖元素，谨慎观看源稚草"><a href="https://www.bilibili.com/video/BV1zvTc69E1B" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="404" data-k="404《404》第一集｜内含恐怖元素，谨慎观看源稚草"><a href="https://www.bilibili.com/video/BV1zvTc69E1B" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/1b5b50e024efa4283c1213c8967a403cc7022143.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>404</h3>
 <p class="vt">《404》第一集｜内含恐怖元素，谨慎观看</p><p class="meta">UP：源稚草 · 99,200 播放</p>
-<p class="desc">超自然事件大规模爆发，各国政府无力再向公众隐瞒，分别实施了成立官方超自然协调理事会PECC以及扶持民营企业组建相关机构等措施，以应对严重事态。事件中目标通常具有巨大的商业价值，使得各方势力融入大量资金争夺事件负责权。在市场极度内卷的情况下，一家以高水准、高专业度、超高成功执行率的的小微企业脱颖而出——404超自然事件调查有限公司</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="妖怪猎人" data-k="妖怪猎人妖怪猎人【AI 全民制作人】萝卜King的B站"><a href="https://www.bilibili.com/video/BV1KBhN6rEWW" target="_blank" rel="noopener">
+<p class="desc">超自然事件大规模爆发，各国政府无力再向公众隐瞒，分别实施了成立官方超自然协调理事会PECC以及扶持民营企业组建相关机构等措施，以应对严重事态。事件中目标通常具有巨大的商业价值，使得各方势力融入大量资金争夺事件负责权。在市场极度内卷的情况下，一家以高水准、高专业度、超高成功执行率的的小微企业脱颖而出——404超自然事件调查有限公司</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="妖怪猎人" data-k="妖怪猎人妖怪猎人【AI 全民制作人】萝卜King的B站"><a href="https://www.bilibili.com/video/BV1KBhN6rEWW" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/a2eff7edeb3ce896045a0133e82865bd605f9fb1.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>妖怪猎人</h3>
 <p class="vt">妖怪猎人【AI 全民制作人】</p><p class="meta">UP：萝卜King的B站 · 352,985 播放</p>
@@ -114,73 +114,73 @@ main{max-width:1280px;margin:0 auto;padding:8px 16px 48px}h2{font-size:17px;marg
 中式恐怖+玄幻悬疑，胆小慎入。
 觉得不错的观众老爷们记得点个关注~后续还有更多妖怪猎人系列更新！
 
-PS：本作主要用SD2.0制作，少量结尾戏采用SD2.5，本集所有内容均为本人独立制作和创作。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="奉天承运" data-k="奉天承运悬疑少年热血剧：《奉天承运》第一集网文作者大年年"><a href="https://www.bilibili.com/video/BV1jWbB6GEaC" target="_blank" rel="noopener">
+PS：本作主要用SD2.0制作，少量结尾戏采用SD2.5，本集所有内容均为本人独立制作和创作。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="奉天承运" data-k="奉天承运悬疑少年热血剧：《奉天承运》第一集网文作者大年年"><a href="https://www.bilibili.com/video/BV1jWbB6GEaC" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/c3565db5811f70db4db09e7c11191ec2afaccaa8.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>奉天承运</h3>
 <p class="vt">悬疑少年热血剧：《奉天承运》第一集</p><p class="meta">UP：网文作者大年年 · 10,555 播放</p>
 <p class="desc">“你们警察管那叫心魔，但在我们这行看来……欲望，是活的。”
 欲望化信念，信念改命运，命运定气运。
 原创都市奇幻短剧《奉天承运》第一集全片上线！站在命运之上的暗夜博弈正式开局。
-#AI短剧 #高概念短剧 #科幻悬疑 #国风科幻 #短剧推荐</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="无毒有呕" data-k="无毒有呕"><a href="https://search.bilibili.com/all?keyword=%E6%97%A0%E6%AF%92%E6%9C%89%E5%91%95" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>无毒有呕</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="引渡小分队" data-k="引渡小分队第二十七个人是谁‖引渡小分队【AI全民制作人】引渡小分队"><a href="https://www.bilibili.com/video/BV1kheP6MEEZ" target="_blank" rel="noopener">
+#AI短剧 #高概念短剧 #科幻悬疑 #国风科幻 #短剧推荐</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="无毒有呕" data-k="无毒有呕"><a href="https://search.bilibili.com/all?keyword=%E6%97%A0%E6%AF%92%E6%9C%89%E5%91%95" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>无毒有呕</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="引渡小分队" data-k="引渡小分队第二十七个人是谁‖引渡小分队【AI全民制作人】引渡小分队"><a href="https://www.bilibili.com/video/BV1kheP6MEEZ" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/69adcb593c3b6df02f33553a3a8d4b4396db8ce9.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>引渡小分队</h3><span class="note">单元剧，非第一集</span>
 <p class="vt">第二十七个人是谁‖引渡小分队【AI全民制作人】</p><p class="meta">UP：引渡小分队 · 1,643,792 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="杀手小姐" data-k="杀手小姐"><a href="https://search.bilibili.com/all?keyword=%E6%9D%80%E6%89%8B%E5%B0%8F%E5%A7%90" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>杀手小姐</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="天机秘档" data-k="天机秘档【天机秘档】EP01 「住在地铁里的诡」【AI 全民制作人】饕餮篇（上）卢柏霖同学"><a href="https://www.bilibili.com/video/BV1T2b96kE6t" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="杀手小姐" data-k="杀手小姐"><a href="https://search.bilibili.com/all?keyword=%E6%9D%80%E6%89%8B%E5%B0%8F%E5%A7%90" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>杀手小姐</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="天机秘档" data-k="天机秘档【天机秘档】EP01 「住在地铁里的诡」【AI 全民制作人】饕餮篇（上）卢柏霖同学"><a href="https://www.bilibili.com/video/BV1T2b96kE6t" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/5b719e85dc26ef1dc23a9a5d2cdbacfdf3750492.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>天机秘档</h3>
 <p class="vt">【天机秘档】EP01 「住在地铁里的诡」【AI 全民制作人】饕餮篇（上）</p><p class="meta">UP：卢柏霖同学 · 182,383 播放</p>
 <p class="desc">全新剧集，本片诞生于seedance2.0与2.5交接那段时间，前面15分钟全部是2.0做的，后面一分钟的彩蛋全部是2.5所做，前后磨了快一个多月，总花费近万元的算力，终于把我脑子里的故事拍出来了，这个世界早在十年前上大学就想好了，如今我也终于有机会和他们正式面。希望大家多点赞投币，帮up回回血吧！
-第二集已经在制作中。原创故事，长期连载，请多点赞收藏评论支持，点赞越多，更新越快!</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="办事处" data-k="办事处《办事处》真人原创ip/aigc真人剧/单元系列剧 第一章打拐 （愿天下无拐）【AI全民制作人】怪兽办事处"><a href="https://www.bilibili.com/video/BV1uWb86gEpr" target="_blank" rel="noopener">
+第二集已经在制作中。原创故事，长期连载，请多点赞收藏评论支持，点赞越多，更新越快!</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="办事处" data-k="办事处《办事处》真人原创ip/aigc真人剧/单元系列剧 第一章打拐 （愿天下无拐）【AI全民制作人】怪兽办事处"><a href="https://www.bilibili.com/video/BV1uWb86gEpr" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/3ad78d173d7a47359dee7bbcdbf5eef4dc2b7e50.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>办事处</h3>
 <p class="vt">《办事处》真人原创ip/aigc真人剧/单元系列剧 第一章打拐 （愿天下无拐）【AI全民制作人】</p><p class="meta">UP：怪兽办事处 · 403,720 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="遗能术士" data-k="遗能术士一个小球就能激活机甲？【遗能术士】试播集小黄导-烛制作AIGC"><a href="https://www.bilibili.com/video/BV1orN16zEie" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="遗能术士" data-k="遗能术士一个小球就能激活机甲？【遗能术士】试播集小黄导-烛制作AIGC"><a href="https://www.bilibili.com/video/BV1orN16zEie" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/01f600ecde0ac3ce26ae5b522e87772ea5d1b32d.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>遗能术士</h3>
 <p class="vt">一个小球就能激活机甲？【遗能术士】试播集</p><p class="meta">UP：小黄导-烛制作AIGC · 60,001 播放</p>
-<p class="desc">在@商汤SekoAI  的算力支持下，我们筹备出了长篇AI科幻剧《遗能术士》。剧集规划三季，每季 10 集。我很高兴地带着该剧第一季第一集，也是本作试播集，与各位观众朋友们见面，愿这部作品顺利孵化，这也将是我未来创作方向上最为重要的一部作品。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="梦.少女" data-k="梦.少女10天手搓｜原创 AI 动画《梦·少女》众乐乐无限"><a href="https://www.bilibili.com/video/BV1tg8E6VE9v" target="_blank" rel="noopener">
+<p class="desc">在@商汤SekoAI  的算力支持下，我们筹备出了长篇AI科幻剧《遗能术士》。剧集规划三季，每季 10 集。我很高兴地带着该剧第一季第一集，也是本作试播集，与各位观众朋友们见面，愿这部作品顺利孵化，这也将是我未来创作方向上最为重要的一部作品。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="梦.少女" data-k="梦.少女10天手搓｜原创 AI 动画《梦·少女》众乐乐无限"><a href="https://www.bilibili.com/video/BV1tg8E6VE9v" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/224fe6a1fdbad31b3cdff2ba9f800abdba224199.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>梦.少女</h3>
 <p class="vt">10天手搓｜原创 AI 动画《梦·少女》</p><p class="meta">UP：众乐乐无限 · 10,280 播放</p>
-<p class="desc">有一天，少女做了一个梦，梦里她和龙签订了契约，白天上课，晚上化身龙的战士，去梦境里铲除人的妄念。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="大傩" data-k="大傩原创AI短剧《大傩》｜第1回 纸人开路，冥婚巡游首帧动画"><a href="https://www.bilibili.com/video/BV1VHQqBsEci" target="_blank" rel="noopener">
+<p class="desc">有一天，少女做了一个梦，梦里她和龙签订了契约，白天上课，晚上化身龙的战士，去梦境里铲除人的妄念。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="大傩" data-k="大傩原创AI短剧《大傩》｜第1回 纸人开路，冥婚巡游首帧动画"><a href="https://www.bilibili.com/video/BV1VHQqBsEci" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/08b001346cc0f2b137b7df7eacd9cf5ec7f08fed.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>大傩</h3>
 <p class="vt">原创AI短剧《大傩》｜第1回 纸人开路，冥婚巡游</p><p class="meta">UP：首帧动画 · 150,971 播放</p>
 <p class="desc">原创AI短剧《大傩》｜ “郎君，既识得宝贝，可识得奴家？”
-内含恐怖元素，虚构演绎，谨慎观看，请勿迷信</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="越界" data-k="越界【越界】EP01 人类窥见神明留下的力量 也打开了通往深渊的门火花zibo"><a href="https://www.bilibili.com/video/BV1GRtg6WEgg" target="_blank" rel="noopener">
+内含恐怖元素，虚构演绎，谨慎观看，请勿迷信</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="越界" data-k="越界【越界】EP01 人类窥见神明留下的力量 也打开了通往深渊的门火花zibo"><a href="https://www.bilibili.com/video/BV1GRtg6WEgg" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/b8fcb94c13d204670845c7eeac7100c142e5dbda.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>越界</h3>
 <p class="vt">【越界】EP01 人类窥见神明留下的力量 也打开了通往深渊的门</p><p class="meta">UP：火花zibo · 46,039 播放</p>
-<p class="desc">个人原创ai动画</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="魔女的眼泪" data-k="魔女的眼泪原创魔幻悬疑剧《魔女的眼泪》第一集：安妮生来就能偷看别人记忆，是同学眼里的异类。同学林峰的出现，让安妮不知所措，因为林峰记忆只有一片黑色迷雾。安妮宝宝的日常"><a href="https://www.bilibili.com/video/BV1z6pw6AEz5" target="_blank" rel="noopener">
+<p class="desc">个人原创ai动画</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="魔女的眼泪" data-k="魔女的眼泪原创魔幻悬疑剧《魔女的眼泪》第一集：安妮生来就能偷看别人记忆，是同学眼里的异类。同学林峰的出现，让安妮不知所措，因为林峰记忆只有一片黑色迷雾。安妮宝宝的日常"><a href="https://www.bilibili.com/video/BV1z6pw6AEz5" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/d76d843fd86e3dacf76e0524f743691a0d508340.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>魔女的眼泪</h3>
 <p class="vt">原创魔幻悬疑剧《魔女的眼泪》第一集：安妮生来就能偷看别人记忆，是同学眼里的异类。同学林峰的出现，让安妮不知所措，因为林峰记忆只有一片黑色迷雾。</p><p class="meta">UP：安妮宝宝的日常 · 13,056 播放</p>
-<p class="desc">你知道吗？能看到别人的记忆，真的很痛苦，你的出现让我觉得神秘有趣又刺激，我想接近你，因为看不到你的记忆反而更安心。当了解你之后，我的世界崩塌了，原来你和我竟是同类。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="有异人" data-k="有异人原创AIGC剧集《有异人》【AI全民制作人】失败的漫2026"><a href="https://www.bilibili.com/video/BV1psN86KEt5" target="_blank" rel="noopener">
+<p class="desc">你知道吗？能看到别人的记忆，真的很痛苦，你的出现让我觉得神秘有趣又刺激，我想接近你，因为看不到你的记忆反而更安心。当了解你之后，我的世界崩塌了，原来你和我竟是同类。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="有异人" data-k="有异人原创AIGC剧集《有异人》【AI全民制作人】失败的漫2026"><a href="https://www.bilibili.com/video/BV1psN86KEt5" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/38f6c54ae4b112ce9c64d1236e521b5cbcefecbc.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>有异人</h3>
 <p class="vt">原创AIGC剧集《有异人》【AI全民制作人】</p><p class="meta">UP：失败的漫2026 · 4,688,594 播放</p>
-<p class="desc">当外星文明不断挤压人类的生存空间，沉寂已久的异人开始反抗</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="超度师" data-k="超度师《超度师》+[视频类赛道+AI叙事短片] 原创剧情AI动漫制作008"><a href="https://www.bilibili.com/video/BV14atx6sE7T" target="_blank" rel="noopener">
+<p class="desc">当外星文明不断挤压人类的生存空间，沉寂已久的异人开始反抗</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="超度师" data-k="超度师《超度师》+[视频类赛道+AI叙事短片] 原创剧情AI动漫制作008"><a href="https://www.bilibili.com/video/BV14atx6sE7T" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/a2a1966f68e97434e152eb3cb414642dcc055739.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>超度师</h3><span class="note">匹配不确定</span>
 <p class="vt">《超度师》+[视频类赛道+AI叙事短片] 原创剧情</p><p class="meta">UP：AI动漫制作008 · 1,225 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="这是我的世界" data-k="这是我的世界原创AI剧集《我的世界》第一季 | 异世界 | 第一集林杉导演AIGC"><a href="https://www.bilibili.com/video/BV1G8Gv6XEwX" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="这是我的世界" data-k="这是我的世界原创AI剧集《我的世界》第一季 | 异世界 | 第一集林杉导演AIGC"><a href="https://www.bilibili.com/video/BV1G8Gv6XEwX" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/39989c18afd7e6576a935b9151e905c7402f3726.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>这是我的世界</h3>
 <p class="vt">原创AI剧集《我的世界》第一季 | 异世界 | 第一集</p><p class="meta">UP：林杉导演AIGC · 109,183 播放</p>
 <p class="desc">工作太忙，只能抽空先放出《我的世界》第一集
 先把故事推起来，后面再慢慢补。后续不定时更新，大家随缘关注。别催，我不抗压。
 算是一个&quot;有生之年系列&quot;.
-慢慢做，尽量不糊弄。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="TV小姐的牛马日记" data-k="TV小姐的牛马日记《TV小姐的牛马日记》第一集【AI全民制作人】账号已注销"><a href="https://www.bilibili.com/video/BV1RGgZ61EgA" target="_blank" rel="noopener">
+慢慢做，尽量不糊弄。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="TV小姐的牛马日记" data-k="TV小姐的牛马日记《TV小姐的牛马日记》第一集【AI全民制作人】账号已注销"><a href="https://www.bilibili.com/video/BV1RGgZ61EgA" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/1dc06214b20a842c89a816a7d60947a1e7f01f06.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>TV小姐的牛马日记</h3>
 <p class="vt">《TV小姐的牛马日记》第一集【AI全民制作人】</p><p class="meta">UP：账号已注销 · 991 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section><section id="c1"><h2>现代·校园 <small>7</small></h2><div class="grid"><div class="card" data-id="反相之地" data-k="反相之地《反相之地》1-6集合集不腻漫剧"><a href="https://www.bilibili.com/video/BV1qubn6ZEM9" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section><section id="c1"><h2>现代·校园 <small>7</small></h2><div class="grid"><div class="card" data-id="反相之地" data-k="反相之地《反相之地》1-6集合集不腻漫剧"><a href="https://www.bilibili.com/video/BV1qubn6ZEM9" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/66e682e896e67b9a6bb57c4486e07fc2dc04d8c2.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>反相之地</h3><span class="note">1-6 集合集</span>
 <p class="vt">《反相之地》1-6集合集</p><p class="meta">UP：不腻漫剧 · 384,443 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="雨夜之下" data-k="雨夜之下原创怪谈惊悚剧：《雨夜之下》第一集【AI全民制作人】方块超会剪"><a href="https://www.bilibili.com/video/BV1XYgw69Epc" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="雨夜之下" data-k="雨夜之下原创怪谈惊悚剧：《雨夜之下》第一集【AI全民制作人】方块超会剪"><a href="https://www.bilibili.com/video/BV1XYgw69Epc" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/b791e90f2f91676204e21ab2e4affd8a333d5964.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>雨夜之下</h3>
 <p class="vt">原创怪谈惊悚剧：《雨夜之下》第一集【AI全民制作人】</p><p class="meta">UP：方块超会剪 · 778,293 播放</p>
@@ -191,11 +191,11 @@ PS：本作主要用SD2.0制作，少量结尾戏采用SD2.5，本集所有内�
 狐子@火花狐狸  
 宿管阿姨@龙之王修罗  
 
-开始尝试新的类型，不知道各位喜不喜欢~哈哈哈，求三连！！！</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="圣前显人" data-k="圣前显人能力越小，责任越小  |  原创短片《圣前显人》牛田羊"><a href="https://www.bilibili.com/video/BV1pBMf6fEzy" target="_blank" rel="noopener">
+开始尝试新的类型，不知道各位喜不喜欢~哈哈哈，求三连！！！</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="圣前显人" data-k="圣前显人能力越小，责任越小  |  原创短片《圣前显人》牛田羊"><a href="https://www.bilibili.com/video/BV1pBMf6fEzy" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/535cb74115c84f61e598814cff8c5693325bda86.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>圣前显人</h3>
 <p class="vt">能力越小，责任越小  |  原创短片《圣前显人》</p><p class="meta">UP：牛田羊 · 1,665,022 播放</p>
-<p class="desc">危机来临，全班同学甚至连好兄弟演都不演了……</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="放学后，有异常" data-k="放学后，有异常《放学后，有异常》EP.01走青丨zauceng"><a href="https://www.bilibili.com/video/BV1LiuR6zEmN" target="_blank" rel="noopener">
+<p class="desc">危机来临，全班同学甚至连好兄弟演都不演了……</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="放学后，有异常" data-k="放学后，有异常《放学后，有异常》EP.01走青丨zauceng"><a href="https://www.bilibili.com/video/BV1LiuR6zEmN" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/00e9f8ab12cc393bcd48a4cdbb0c969f79f12977.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>放学后，有异常</h3>
 <p class="vt">《放学后，有异常》EP.01</p><p class="meta">UP：走青丨zauceng · 16,497 播放</p>
@@ -218,42 +218,42 @@ PS：本作主要用SD2.0制作，少量结尾戏采用SD2.5，本集所有内�
 而是真的拿来演故事。
 如果三个每天只能用三次超能力的人凑到一起，
 大概不会拯救世界。
-大概率会先把事情搞得更麻烦。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="清微观来的插班生" data-k="清微观来的插班生《清微观来的插班生》EP01 ：方圆百里，没鬼了 【UP动画】粉墨"><a href="https://www.bilibili.com/video/BV1uoaA6CEjy" target="_blank" rel="noopener">
+大概率会先把事情搞得更麻烦。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="清微观来的插班生" data-k="清微观来的插班生《清微观来的插班生》EP01 ：方圆百里，没鬼了 【UP动画】粉墨"><a href="https://www.bilibili.com/video/BV1uoaA6CEjy" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/ad9214e8a01355b3f142de1404b5c394e1d4481d.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>清微观来的插班生</h3>
 <p class="vt">《清微观来的插班生》EP01 ：方圆百里，没鬼了 【UP动画】</p><p class="meta">UP：粉墨 · 655,732 播放</p>
 <p class="desc">全新剧集，不吓人的，放心看。做着做着差点搞成美食番了。
-第二集已经在制作中。谢谢投币关注！</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="我的仙人初恋" data-k="我的仙人初恋【原创短剧】《我的仙人初恋》01集：她不会是喜欢我吧？【AI全民制作人】怪影阿修"><a href="https://www.bilibili.com/video/BV1mfaG6AELV" target="_blank" rel="noopener">
+第二集已经在制作中。谢谢投币关注！</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="我的仙人初恋" data-k="我的仙人初恋【原创短剧】《我的仙人初恋》01集：她不会是喜欢我吧？【AI全民制作人】怪影阿修"><a href="https://www.bilibili.com/video/BV1mfaG6AELV" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/5e803ca0ac25a56441dd41b1eb4a0de7bbfc59ee.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>我的仙人初恋</h3>
 <p class="vt">【原创短剧】《我的仙人初恋》01集：她不会是喜欢我吧？【AI全民制作人】</p><p class="meta">UP：怪影阿修 · 275,113 播放</p>
-<p class="desc">【原创】热血奇幻校园短剧连载中，仙人女友李玉婷对抗全世界</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="豪物语" data-k="豪物语【豪物语】：就你叫嘉豪啊 【UP动画】艺术家不2真人"><a href="https://www.bilibili.com/video/BV1Nap461E9p" target="_blank" rel="noopener">
+<p class="desc">【原创】热血奇幻校园短剧连载中，仙人女友李玉婷对抗全世界</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="豪物语" data-k="豪物语【豪物语】：就你叫嘉豪啊 【UP动画】艺术家不2真人"><a href="https://www.bilibili.com/video/BV1Nap461E9p" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/bd67579679d269219ae8b9d74f0bb3d215943473.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>豪物语</h3>
 <p class="vt">【豪物语】：就你叫嘉豪啊 【UP动画】</p><p class="meta">UP：艺术家不2真人 · 1,478,466 播放</p>
-<p class="desc">原创剧情，如有雷同纯属巧合</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section><section id="c2"><h2>怪兽·山海经·丧尸·僵尸 <small>20</small></h2><div class="grid"><div class="card" data-id="污染者" data-k="污染者污染者 （合集）全流程原创ai剧 无小说低雅人士zxstudio"><a href="https://www.bilibili.com/video/BV1EEK86PEWL" target="_blank" rel="noopener">
+<p class="desc">原创剧情，如有雷同纯属巧合</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section><section id="c2"><h2>怪兽·山海经·丧尸·僵尸 <small>20</small></h2><div class="grid"><div class="card" data-id="污染者" data-k="污染者污染者 （合集）全流程原创ai剧 无小说低雅人士zxstudio"><a href="https://www.bilibili.com/video/BV1EEK86PEWL" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/cd091851267d6328ae7f812ada4d059433c67655.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>污染者</h3><span class="note">第一季合集</span>
 <p class="vt">污染者 （合集）全流程原创ai剧 无小说</p><p class="meta">UP：低雅人士zxstudio · 76,587 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="雾山精神病院" data-k="雾山精神病院"><a href="https://search.bilibili.com/all?keyword=%E9%9B%BE%E5%B1%B1%E7%B2%BE%E7%A5%9E%E7%97%85%E9%99%A2" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>雾山精神病院</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="执念尸" data-k="执念尸《执念尸》第一季合集老宫特西范"><a href="https://www.bilibili.com/video/BV1aoEC6ZEF9" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="雾山精神病院" data-k="雾山精神病院"><a href="https://search.bilibili.com/all?keyword=%E9%9B%BE%E5%B1%B1%E7%B2%BE%E7%A5%9E%E7%97%85%E9%99%A2" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>雾山精神病院</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="执念尸" data-k="执念尸《执念尸》第一季合集老宫特西范"><a href="https://www.bilibili.com/video/BV1aoEC6ZEF9" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/96dd88c3f40ffcb40f243b7e01453fced88d7ff3.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>执念尸</h3><span class="note">第一季合集</span>
 <p class="vt">《执念尸》第一季合集</p><p class="meta">UP：老宫特西范 · 4,565,555 播放</p>
-<p class="desc">第二季在路上</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="恶魔岛" data-k="恶魔岛"><a href="https://search.bilibili.com/all?keyword=%E6%81%B6%E9%AD%94%E5%B2%9B" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>恶魔岛</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="停止呼吸" data-k="停止呼吸【停止呼吸】第一集||当僵尸白日现身韩国街头，会怎么样？CC二分之一"><a href="https://www.bilibili.com/video/BV1p6M46uEvz" target="_blank" rel="noopener">
+<p class="desc">第二季在路上</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="恶魔岛" data-k="恶魔岛"><a href="https://search.bilibili.com/all?keyword=%E6%81%B6%E9%AD%94%E5%B2%9B" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>恶魔岛</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="停止呼吸" data-k="停止呼吸【停止呼吸】第一集||当僵尸白日现身韩国街头，会怎么样？CC二分之一"><a href="https://www.bilibili.com/video/BV1p6M46uEvz" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/2b7cdcbf1fa1ae8ddda42e801a32110cf71cfbb7.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>停止呼吸</h3>
 <p class="vt">【停止呼吸】第一集||当僵尸白日现身韩国街头，会怎么样？</p><p class="meta">UP：CC二分之一 · 632,816 播放</p>
-<p class="desc">清朝棺木被转运至韩国，里面的存在悄然苏醒。末法时代，这片地域无人懂法，当僵尸无惧阳光，又会发生什么？</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="渡骸" data-k="渡骸『渡骸』 第一集 当日本出现中国僵尸原创ai短剧椿野大怪"><a href="https://www.bilibili.com/video/BV1RvVo6QEsB" target="_blank" rel="noopener">
+<p class="desc">清朝棺木被转运至韩国，里面的存在悄然苏醒。末法时代，这片地域无人懂法，当僵尸无惧阳光，又会发生什么？</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="渡骸" data-k="渡骸『渡骸』 第一集 当日本出现中国僵尸原创ai短剧椿野大怪"><a href="https://www.bilibili.com/video/BV1RvVo6QEsB" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/b3378022e90825f7f75b19f5e6d58438fd5eed71.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>渡骸</h3>
 <p class="vt">『渡骸』 第一集 当日本出现中国僵尸原创ai短剧</p><p class="meta">UP：椿野大怪 · 1,052,689 播放</p>
-<p class="desc">只是一个想好好打磨作品的人</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="格洛诺斯" data-k="格洛诺斯原创丧尸剧集「格洛诺斯」01「 丧尸末日电台 III 」衍生剧【AI月月抢位赛】御坂网络连接中"><a href="https://www.bilibili.com/video/BV1tcas6hEnP" target="_blank" rel="noopener">
+<p class="desc">只是一个想好好打磨作品的人</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="格洛诺斯" data-k="格洛诺斯原创丧尸剧集「格洛诺斯」01「 丧尸末日电台 III 」衍生剧【AI月月抢位赛】御坂网络连接中"><a href="https://www.bilibili.com/video/BV1tcas6hEnP" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/00bbb8905b448c51a92ef856e9109a6430e0527c.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>格洛诺斯</h3>
 <p class="vt">原创丧尸剧集「格洛诺斯」01「 丧尸末日电台 III 」衍生剧【AI月月抢位赛】</p><p class="meta">UP：御坂网络连接中 · 524,715 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="港女 丧尸 机关枪" data-k="港女 丧尸 机关枪《港女 丧尸 机关枪》EP.01 EP.02｜毕业日变生存游戏！香港校园丧尸惊悚·原创AI短片示像映畫"><a href="https://www.bilibili.com/video/BV1y9eX61Eud" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="港女 丧尸 机关枪" data-k="港女 丧尸 机关枪《港女 丧尸 机关枪》EP.01 EP.02｜毕业日变生存游戏！香港校园丧尸惊悚·原创AI短片示像映畫"><a href="https://www.bilibili.com/video/BV1y9eX61Eud" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/a0699cf9596accffc9fa4ac8c8be051aa5bc94d7.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>港女 丧尸 机关枪</h3>
 <p class="vt">《港女 丧尸 机关枪》EP.01 EP.02｜毕业日变生存游戏！香港校园丧尸惊悚·原创AI短片</p><p class="meta">UP：示像映畫 · 78,736 播放</p>
@@ -268,60 +268,60 @@ PS：本作主要用SD2.0制作，少量结尾戏采用SD2.5，本集所有内�
 
 这是一部运用AI生成技术创作的原创剧情短片。故事、人物与事件均属虚构。片中含惊悚及暴力场面，请按个人接受程度观看。
 
-如果是你，会选择抱团求生，还是分头寻找出路？欢迎在弹幕和评论区聊聊。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="感染区" data-k="感染区《感染区》SEASON-1 EP01-车门之外814宇宙"><a href="https://www.bilibili.com/video/BV1kHeF6oE1v" target="_blank" rel="noopener">
+如果是你，会选择抱团求生，还是分头寻找出路？欢迎在弹幕和评论区聊聊。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="感染区" data-k="感染区《感染区》SEASON-1 EP01-车门之外814宇宙"><a href="https://www.bilibili.com/video/BV1kHeF6oE1v" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/7aa6c50c9c4b7976d65007a0503c19cb8a62f1f6.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>感染区</h3>
 <p class="vt">《感染区》SEASON-1 EP01-车门之外</p><p class="meta">UP：814宇宙 · 336,988 播放</p>
-<p class="desc">2040年，文明依旧繁荣，但一堵高墙隔开了两个世界。十一年前，“锈蚀体”事件让五座城市的旧工业区成为永久禁区。这里没有结束的末日，只有被遗忘的人与重新建立的秩序。当许宁踏入感染区，她将发现，真正需要审判的，或许从来不是感染者。欢迎来到感染区。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="末日合伙人" data-k="末日合伙人【末日合伙人】EP01 为了一根破香肠至于这么大阵仗嘛？！【AI全民制作人】卜肉熊brx"><a href="https://www.bilibili.com/video/BV1tgY56BEqX" target="_blank" rel="noopener">
+<p class="desc">2040年，文明依旧繁荣，但一堵高墙隔开了两个世界。十一年前，“锈蚀体”事件让五座城市的旧工业区成为永久禁区。这里没有结束的末日，只有被遗忘的人与重新建立的秩序。当许宁踏入感染区，她将发现，真正需要审判的，或许从来不是感染者。欢迎来到感染区。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="末日合伙人" data-k="末日合伙人【末日合伙人】EP01 为了一根破香肠至于这么大阵仗嘛？！【AI全民制作人】卜肉熊brx"><a href="https://www.bilibili.com/video/BV1tgY56BEqX" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/f3f27a7b4774dd5ab80af0b8039f19506e0e47bc.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>末日合伙人</h3>
 <p class="vt">【末日合伙人】EP01 为了一根破香肠至于这么大阵仗嘛？！【AI全民制作人】</p><p class="meta">UP：卜肉熊brx · 8,788 播放</p>
 <p class="desc">人类少女和一猫一狗，在末日废墟里为了最后一根香肠闯出了一场大祸。
-原创AI微电影。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="丧尸镇" data-k="丧尸镇AI短片｜《丧尸镇》第一章：欢迎来到丧尸镇 Welcome to zombie town「改编自植物大战僵尸」让AIGC爆炸吧"><a href="https://www.bilibili.com/video/BV1V69xB8EJD" target="_blank" rel="noopener">
+原创AI微电影。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="丧尸镇" data-k="丧尸镇AI短片｜《丧尸镇》第一章：欢迎来到丧尸镇 Welcome to zombie town「改编自植物大战僵尸」让AIGC爆炸吧"><a href="https://www.bilibili.com/video/BV1V69xB8EJD" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/1156a74ef39be8e2fb32f9b941e8386541112f6d.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>丧尸镇</h3>
 <p class="vt">AI短片｜《丧尸镇》第一章：欢迎来到丧尸镇 Welcome to zombie town「改编自植物大战僵尸」</p><p class="meta">UP：让AIGC爆炸吧 · 1,717,499 播放</p>
-<p class="desc">AI短片｜《丧尸镇》第一章：欢迎来到丧尸镇 Welcome to zombie town「改编自植物大战僵尸」</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="尸解仙2050" data-k="尸解仙2050重口中式科幻末日题材【尸解仙2050】EP01 一口气看完，要素过多，吐血爆肝制作，多线超展开【AI全民制作人】李想诗"><a href="https://www.bilibili.com/video/BV1Xxaa64EKU" target="_blank" rel="noopener">
+<p class="desc">AI短片｜《丧尸镇》第一章：欢迎来到丧尸镇 Welcome to zombie town「改编自植物大战僵尸」</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="尸解仙2050" data-k="尸解仙2050重口中式科幻末日题材【尸解仙2050】EP01 一口气看完，要素过多，吐血爆肝制作，多线超展开【AI全民制作人】李想诗"><a href="https://www.bilibili.com/video/BV1Xxaa64EKU" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/42490a0d465ae9bc6f9df661ae9b532cfc55e7ec.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>尸解仙2050</h3>
 <p class="vt">重口中式科幻末日题材【尸解仙2050】EP01 一口气看完，要素过多，吐血爆肝制作，多线超展开【AI全民制作人】</p><p class="meta">UP：李想诗 · 44,135 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="山海驯兽师" data-k="山海驯兽师山海驯兽师正式版 第一集阿伟AIGC"><a href="https://www.bilibili.com/video/BV1z3tE6REZm" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="山海驯兽师" data-k="山海驯兽师山海驯兽师正式版 第一集阿伟AIGC"><a href="https://www.bilibili.com/video/BV1z3tE6REZm" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/0511a19038e6244d5b489883b9968d57c9c3a146.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>山海驯兽师</h3>
 <p class="vt">山海驯兽师正式版 第一集</p><p class="meta">UP：阿伟AIGC · 8,219 播放</p>
-<p class="desc">山海驯兽师正式版 第一集，这是一个成长番，还请大家有点耐心，小刀和应龙都会逐渐成长！</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="山海兽医" data-k="山海兽医山海兽医 第一集 开端门口的谢老板"><a href="https://www.bilibili.com/video/BV1Cz316YEo3" target="_blank" rel="noopener">
+<p class="desc">山海驯兽师正式版 第一集，这是一个成长番，还请大家有点耐心，小刀和应龙都会逐渐成长！</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="山海兽医" data-k="山海兽医山海兽医 第一集 开端门口的谢老板"><a href="https://www.bilibili.com/video/BV1Cz316YEo3" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/6de401c3212dc3447e0fe1d7525da7e3fdd39673.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>山海兽医</h3>
 <p class="vt">山海兽医 第一集 开端</p><p class="meta">UP：门口的谢老板 · 2,451,286 播放</p>
-<p class="desc">五十年前融入人类的山海异兽突然集体生病，脆弱的平衡开始出现裂痕。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="复苏纪" data-k="复苏纪《复苏纪》第一集沄舒_"><a href="https://www.bilibili.com/video/BV17Qbn6FEJ3" target="_blank" rel="noopener">
+<p class="desc">五十年前融入人类的山海异兽突然集体生病，脆弱的平衡开始出现裂痕。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="复苏纪" data-k="复苏纪《复苏纪》第一集沄舒_"><a href="https://www.bilibili.com/video/BV17Qbn6FEJ3" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/4df77c98535ecc19868946570b0c89555717fa7f.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>复苏纪</h3>
 <p class="vt">《复苏纪》第一集</p><p class="meta">UP：沄舒_ · 47,074 播放</p>
-<p class="desc">白枕鹤，被认为是神话“九头鸟”的现实原型。量子生物学家殷平追踪的白枕鹤群在迁徙过程中，突然围绕一个地方不停转圈，候鸟不归，殷平由此展开了调查，空中的白枕鹤突然坠落，异变因何而起，又会带来什么？这是一个由庞大世界观所构成的宇宙，一定会给你带来不一样的视觉惊喜，欢迎收看复苏纪第一季第一集，候鸟不归。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="困兽之战" data-k="困兽之战个人原创末日题材故事《困兽之战》01集 【AI全民制作人】艺一111"><a href="https://www.bilibili.com/video/BV1yG8j6PERJ" target="_blank" rel="noopener">
+<p class="desc">白枕鹤，被认为是神话“九头鸟”的现实原型。量子生物学家殷平追踪的白枕鹤群在迁徙过程中，突然围绕一个地方不停转圈，候鸟不归，殷平由此展开了调查，空中的白枕鹤突然坠落，异变因何而起，又会带来什么？这是一个由庞大世界观所构成的宇宙，一定会给你带来不一样的视觉惊喜，欢迎收看复苏纪第一季第一集，候鸟不归。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="困兽之战" data-k="困兽之战个人原创末日题材故事《困兽之战》01集 【AI全民制作人】艺一111"><a href="https://www.bilibili.com/video/BV1yG8j6PERJ" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/12f500a21a023bd0ac349d8cbf1401b36d59c792.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>困兽之战</h3>
 <p class="vt">个人原创末日题材故事《困兽之战》01集 【AI全民制作人】</p><p class="meta">UP：艺一111 · 156,637 播放</p>
 <p class="desc">这是一场横跨亿万年的遴选，一场跨越神话与现实的角斗。
 地球，是斗兽场。
 万物，是角斗士。
-而我们，连弃权的资格，都从未拥有。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="乡村惊魂夜" data-k="乡村惊魂夜乡村惊魂夜——狂蟒之灾次级英雄娄不凡"><a href="https://www.bilibili.com/video/BV1CXej66Eki" target="_blank" rel="noopener">
+而我们，连弃权的资格，都从未拥有。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="乡村惊魂夜" data-k="乡村惊魂夜乡村惊魂夜——狂蟒之灾次级英雄娄不凡"><a href="https://www.bilibili.com/video/BV1CXej66Eki" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/3680f093a993a4e94df558769800d80d6d7ac1f3.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>乡村惊魂夜</h3><span class="note">单元剧，非第一集</span>
 <p class="vt">乡村惊魂夜——狂蟒之灾</p><p class="meta">UP：次级英雄娄不凡 · 486,786 播放</p>
-<p class="desc">大蟒蛇要来了耶~</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="造神计划" data-k="造神计划《造神计划》第一集可恶是幻术"><a href="https://www.bilibili.com/video/BV1G23q6dEjm" target="_blank" rel="noopener">
+<p class="desc">大蟒蛇要来了耶~</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="造神计划" data-k="造神计划《造神计划》第一集可恶是幻术"><a href="https://www.bilibili.com/video/BV1G23q6dEjm" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/b239f740c8fd2a956bd9b59af4362625393acd1a.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>造神计划</h3>
 <p class="vt">《造神计划》第一集</p><p class="meta">UP：可恶是幻术 · 114,181 播放</p>
 <p class="desc">“造神计划”调查组全面暴露，TIB Corporation发动血腥清洗。
-在谎言编织的牢笼与末日废土的绝境中，两个被命运碾碎的“遗孤”，如何背负着亲人的遗志，寻回人性的微光</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="山海" data-k="山海《山海》第一季1-8集合集编导拾光"><a href="https://www.bilibili.com/video/BV1mEth6BEYS" target="_blank" rel="noopener">
+在谎言编织的牢笼与末日废土的绝境中，两个被命运碾碎的“遗孤”，如何背负着亲人的遗志，寻回人性的微光</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="山海" data-k="山海《山海》第一季1-8集合集编导拾光"><a href="https://www.bilibili.com/video/BV1mEth6BEYS" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/b6813840010626ed1e4c204057281841811ee10b.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>山海</h3><span class="note">第一季 1-8 合集</span>
 <p class="vt">《山海》第一季1-8集合集</p><p class="meta">UP：编导拾光 · 499,728 播放</p>
-<p class="desc">五色天光降临全球，万物返祖，人类血脉觉醒。地铁检修工陈望因意外感知地脉，加入山海署，与伙伴对抗异兽、追查灾变真相。随着深入地底，他们发现不周山、建木、应龙与上古文明真实存在，而一场沉睡数千年的更大危机，也正随建木复苏重新降临。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="沙幕之下" data-k="沙幕之下泽生纪元系列第一部《沙幕之下》，个人原创AI科幻作品，19分钟真诚之作【AI全民制作人】林云程Szuhan"><a href="https://www.bilibili.com/video/BV168ew6FEEt" target="_blank" rel="noopener">
+<p class="desc">五色天光降临全球，万物返祖，人类血脉觉醒。地铁检修工陈望因意外感知地脉，加入山海署，与伙伴对抗异兽、追查灾变真相。随着深入地底，他们发现不周山、建木、应龙与上古文明真实存在，而一场沉睡数千年的更大危机，也正随建木复苏重新降临。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="沙幕之下" data-k="沙幕之下泽生纪元系列第一部《沙幕之下》，个人原创AI科幻作品，19分钟真诚之作【AI全民制作人】林云程Szuhan"><a href="https://www.bilibili.com/video/BV168ew6FEEt" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/c908ebea836957b1de391eae4e75ad1cef6b4a24.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>沙幕之下</h3>
 <p class="vt">泽生纪元系列第一部《沙幕之下》，个人原创AI科幻作品，19分钟真诚之作【AI全民制作人】</p><p class="meta">UP：林云程Szuhan · 28,322 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section><section id="c3"><h2>未来科幻·赛博朋克 <small>19</small></h2><div class="grid"><div class="card" data-id="补魂匠" data-k="补魂匠AI科幻神作《补魂匠》｜导演凭该片被美国NBC评为“AI界的乔治・卢卡斯”Youtube高质量精选"><a href="https://www.bilibili.com/video/BV164by6eER4" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section><section id="c3"><h2>未来科幻·赛博朋克 <small>19</small></h2><div class="grid"><div class="card" data-id="补魂匠" data-k="补魂匠AI科幻神作《补魂匠》｜导演凭该片被美国NBC评为“AI界的乔治・卢卡斯”Youtube高质量精选"><a href="https://www.bilibili.com/video/BV164by6eER4" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/6197e975f503b80ca15781275bbb1c4888524f11.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>补魂匠</h3>
 <p class="vt">AI科幻神作《补魂匠》｜导演凭该片被美国NBC评为“AI界的乔治・卢卡斯”</p><p class="meta">UP：Youtube高质量精选 · 29,170 播放</p>
@@ -356,7 +356,7 @@ PS：本作主要用SD2.0制作，少量结尾戏采用SD2.5，本集所有内�
 音效素材：Florian Ardelean、Mihai Cosmin Popa、Marian Bǎlan、Rǎzvan Ilinca
 拟音师：马里安・巴兰
 终混混音师：马里安・巴兰
-后期总监：拉兹万・伊林卡</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="石榴" data-k="石榴油管爆火的AI科幻神作《石榴》｜这可能是目前AI电影天花板级别的代表作！它告诉我们AI电影究竟能做到何种程度？Youtube高质量精选"><a href="https://www.bilibili.com/video/BV1FPuh65Eua" target="_blank" rel="noopener">
+后期总监：拉兹万・伊林卡</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="石榴" data-k="石榴油管爆火的AI科幻神作《石榴》｜这可能是目前AI电影天花板级别的代表作！它告诉我们AI电影究竟能做到何种程度？Youtube高质量精选"><a href="https://www.bilibili.com/video/BV1FPuh65Eua" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/9415fb2f3f1e578a9249318818bfd5f2a0b977e5.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>石榴</h3>
 <p class="vt">油管爆火的AI科幻神作《石榴》｜这可能是目前AI电影天花板级别的代表作！它告诉我们AI电影究竟能做到何种程度？</p><p class="meta">UP：Youtube高质量精选 · 528,950 播放</p>
@@ -402,34 +402,34 @@ PS：本作主要用SD2.0制作，少量结尾戏采用SD2.5，本集所有内�
 
 声音设计 &amp; 后期混音：马里安・巴兰（Marian Bălan）
 
-后期总监：勒兹万・伊林卡（Răzvan Ilinca）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="山" data-k="山一个人，耗时18个月，2万元成本，手搓94分钟以刘慈欣小说《山》为故事原型的AI仿真人完整版科幻内容【ai全民制作人】#SpecialForAAIFF野生锅导演"><a href="https://www.bilibili.com/video/BV1o74y6XEcM" target="_blank" rel="noopener">
+后期总监：勒兹万・伊林卡（Răzvan Ilinca）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="山" data-k="山一个人，耗时18个月，2万元成本，手搓94分钟以刘慈欣小说《山》为故事原型的AI仿真人完整版科幻内容【ai全民制作人】#SpecialForAAIFF野生锅导演"><a href="https://www.bilibili.com/video/BV1o74y6XEcM" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/041975b1de6259be51c6d811d2288340f7e759ba.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>山</h3>
 <p class="vt">一个人，耗时18个月，2万元成本，手搓94分钟以刘慈欣小说《山》为故事原型的AI仿真人完整版科幻内容【ai全民制作人】#SpecialForAAIFF</p><p class="meta">UP：野生锅导演 · 3,503,099 播放</p>
-<p class="desc">从2025年2月开始启动创作，完全用业余时间制作，共耗时18个月。这个故事的原著是刘慈欣的短篇科幻《山》，是除《三体》之外我最喜欢的一部科幻小说作品，感谢AI，可以让我把它影视化。这18个月还经历了数轮AI视频技术的大升级，影片里现在还残留少部分上上上上个时代AI技术残留，实在改不过来了，整体不影响食用。这部电影的灵魂属于刘慈欣，如果喜欢，别忘三连ღ( ´･ᴗ･` )比心</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="星河外卖员" data-k="星河外卖员星河外卖员: 卡皮不在天津四 【AI全民制作人】最后讲述者"><a href="https://www.bilibili.com/video/BV1aPGu6yEjD" target="_blank" rel="noopener">
+<p class="desc">从2025年2月开始启动创作，完全用业余时间制作，共耗时18个月。这个故事的原著是刘慈欣的短篇科幻《山》，是除《三体》之外我最喜欢的一部科幻小说作品，感谢AI，可以让我把它影视化。这18个月还经历了数轮AI视频技术的大升级，影片里现在还残留少部分上上上上个时代AI技术残留，实在改不过来了，整体不影响食用。这部电影的灵魂属于刘慈欣，如果喜欢，别忘三连ღ( ´･ᴗ･` )比心</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="星河外卖员" data-k="星河外卖员星河外卖员: 卡皮不在天津四 【AI全民制作人】最后讲述者"><a href="https://www.bilibili.com/video/BV1aPGu6yEjD" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/1a150adb10eb8f0874fef95f188da38c8b3a3240.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>星河外卖员</h3>
 <p class="vt">星河外卖员: 卡皮不在天津四 【AI全民制作人】</p><p class="meta">UP：最后讲述者 · 591,463 播放</p>
 <p class="desc">特别出场及配音：@善良的诚哥  
 音乐: 来到了天津卫 by @没6的沈龙Loong 
-观众客串：@某学园の我妻川木  （厨师豚鼠）@loyolry  （校服水豚）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="余烬之后" data-k="余烬之后原创AIGC动画《余烬之后》第二集：求援编导厉岑"><a href="https://www.bilibili.com/video/BV1kS736JE3s" target="_blank" rel="noopener">
+观众客串：@某学园の我妻川木  （厨师豚鼠）@loyolry  （校服水豚）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="余烬之后" data-k="余烬之后原创AIGC动画《余烬之后》第二集：求援编导厉岑"><a href="https://www.bilibili.com/video/BV1kS736JE3s" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/fcd5f9ca01b13f7d432727725681e0f78d242f3a.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>余烬之后</h3><span class="note">只找到第二集</span>
 <p class="vt">原创AIGC动画《余烬之后》第二集：求援</p><p class="meta">UP：编导厉岑 · 56,592 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="赛博英雄传" data-k="赛博英雄传60岁大爷手搓20分钟AI长片《赛博英雄传》六旬老汉赵大爷"><a href="https://www.bilibili.com/video/BV1Bng369Ets" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="赛博英雄传" data-k="赛博英雄传60岁大爷手搓20分钟AI长片《赛博英雄传》六旬老汉赵大爷"><a href="https://www.bilibili.com/video/BV1Bng369Ets" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/02c6d6e0be2d0cba827facf06d3244b2209763f9.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>赛博英雄传</h3>
 <p class="vt">60岁大爷手搓20分钟AI长片《赛博英雄传》</p><p class="meta">UP：六旬老汉赵大爷 · 748,500 播放</p>
-<p class="desc">感谢大家以及团队小伙子们，我们优化后的样片终于做出来了！</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="零号档案" data-k="零号档案《零号档案》不存在的战友？耗时7天创作三角洲悬疑剧情短剧久浩九号"><a href="https://www.bilibili.com/video/BV1jk3z6TEQz" target="_blank" rel="noopener">
+<p class="desc">感谢大家以及团队小伙子们，我们优化后的样片终于做出来了！</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="零号档案" data-k="零号档案《零号档案》不存在的战友？耗时7天创作三角洲悬疑剧情短剧久浩九号"><a href="https://www.bilibili.com/video/BV1jk3z6TEQz" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/89091de285f89094650ef9076103b85924f8fb6e.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>零号档案</h3><span class="note">匹配不确定</span>
 <p class="vt">《零号档案》不存在的战友？耗时7天创作三角洲悬疑剧情短剧</p><p class="meta">UP：久浩九号 · 1,232,553 播放</p>
-<p class="desc">在一次行动中，队友乌鲁鲁由于特殊原因未能及时撤离，可当主角回到特勤处后，事情好像远没有想象中的那么简单……</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="零·共生体" data-k="零·共生体手搓一部CG动画剧集《零・共生体》EP01集【UP动画】（已更新两集）哈哈先森O"><a href="https://www.bilibili.com/video/BV1TGNt6qEPm" target="_blank" rel="noopener">
+<p class="desc">在一次行动中，队友乌鲁鲁由于特殊原因未能及时撤离，可当主角回到特勤处后，事情好像远没有想象中的那么简单……</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="零·共生体" data-k="零·共生体手搓一部CG动画剧集《零・共生体》EP01集【UP动画】（已更新两集）哈哈先森O"><a href="https://www.bilibili.com/video/BV1TGNt6qEPm" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/eeff142550ff946c1b6c455c82848124b77489be.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>零·共生体</h3>
 <p class="vt">手搓一部CG动画剧集《零・共生体》EP01集【UP动画】（已更新两集）</p><p class="meta">UP：哈哈先森O · 121,780 播放</p>
 <p class="desc">《零・共生体》已更新两集！全 AI 制作佛系肝完，喜欢的可以三连支持下，更多剧集正在路上，点关注不迷路。
-上班党，每集制作时间较长（估计半个月到一个月之间，全部流程独自完成），都是下班空闲时间或者周末做的。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="深骸" data-k="深骸《深骸》第1集|末日降临，人类进入深海穹顶都市，是新生还是绝路…【UP动画】椒盐烤蛋"><a href="https://www.bilibili.com/video/BV1CYTD6MESR" target="_blank" rel="noopener">
+上班党，每集制作时间较长（估计半个月到一个月之间，全部流程独自完成），都是下班空闲时间或者周末做的。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="深骸" data-k="深骸《深骸》第1集|末日降临，人类进入深海穹顶都市，是新生还是绝路…【UP动画】椒盐烤蛋"><a href="https://www.bilibili.com/video/BV1CYTD6MESR" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/4d888c966371c3f37ce35cf3f4085f46f08e79fe.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>深骸</h3>
 <p class="vt">《深骸》第1集|末日降临，人类进入深海穹顶都市，是新生还是绝路…【UP动画】</p><p class="meta">UP：椒盐烤蛋 · 153,588 播放</p>
@@ -441,7 +441,7 @@ PS：本作主要用SD2.0制作，少量结尾戏采用SD2.5，本集所有内�
 外貌：（关键特征）
 人物背景：
 
-希望大家多多参与！！！</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="新城记" data-k="新城记【连载】情感科幻剧集《新城记》EP1 ：一场事故【UP动画】【费那奇动画周×updream-AI动画征集】粉墨"><a href="https://www.bilibili.com/video/BV1iXhG65EZM" target="_blank" rel="noopener">
+希望大家多多参与！！！</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="新城记" data-k="新城记【连载】情感科幻剧集《新城记》EP1 ：一场事故【UP动画】【费那奇动画周×updream-AI动画征集】粉墨"><a href="https://www.bilibili.com/video/BV1iXhG65EZM" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/4c41647927a4d74e7ac38fbe9fb0f1868b7e1f21.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>新城记</h3>
 <p class="vt">【连载】情感科幻剧集《新城记》EP1 ：一场事故【UP动画】【费那奇动画周×updream-AI动画征集】</p><p class="meta">UP：粉墨 · 147,100 播放</p>
@@ -449,12 +449,12 @@ PS：本作主要用SD2.0制作，少量结尾戏采用SD2.5，本集所有内�
 这是一部偏黑色侦探的科幻剧，连续剧情，预计第一季会有10集左右。
 从一场悬疑调查开始，这不仅是一个关于机器人与人类的科幻故事，更是一段关于家庭、记忆与生命的未来寓言。
 本剧集也许不是热闹有打击感的爽剧，没有采用绚丽多彩的视觉效果，不同于传统赛博朋克中以权力与技术为核心的宏大叙事，甚至面对死亡都有几分克制。剧情会缓缓展开，多头并行，老实说，看起来恐怕需要一点耐心。
-这是全剧的第1集，如果有幸合您的胃口，希望赶紧看到剧集更新，请留言告诉我们，谢谢观看！</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="灵笼修仙传" data-k="灵笼修仙传【灵笼修仙传】-凡人灵笼-误入久川-其壹么鸣堂"><a href="https://www.bilibili.com/video/BV1QqQCBqE2W" target="_blank" rel="noopener">
+这是全剧的第1集，如果有幸合您的胃口，希望赶紧看到剧集更新，请留言告诉我们，谢谢观看！</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="灵笼修仙传" data-k="灵笼修仙传【灵笼修仙传】-凡人灵笼-误入久川-其壹么鸣堂"><a href="https://www.bilibili.com/video/BV1QqQCBqE2W" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/0679c835d2538278f8dfa7ca18112ff2780bfe28.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>灵笼修仙传</h3>
 <p class="vt">【灵笼修仙传】-凡人灵笼-误入久川-其壹</p><p class="meta">UP：么鸣堂 · 1,101,283 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="最后的爱情神话" data-k="最后的爱情神话"><a href="https://search.bilibili.com/all?keyword=%E6%9C%80%E5%90%8E%E7%9A%84%E7%88%B1%E6%83%85%E7%A5%9E%E8%AF%9D" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>最后的爱情神话</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="最高级的bug" data-k="最高级的bug终于解禁可以发出来了。原创科幻短片《最高级的BUG》-狼sir-"><a href="https://www.bilibili.com/video/BV1jc7Y6YEBp" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="最后的爱情神话" data-k="最后的爱情神话"><a href="https://search.bilibili.com/all?keyword=%E6%9C%80%E5%90%8E%E7%9A%84%E7%88%B1%E6%83%85%E7%A5%9E%E8%AF%9D" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>最后的爱情神话</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="最高级的bug" data-k="最高级的bug终于解禁可以发出来了。原创科幻短片《最高级的BUG》-狼sir-"><a href="https://www.bilibili.com/video/BV1jc7Y6YEBp" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/5987a9e3e70195a59441643ebb2f7a5171b5b7bd.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>最高级的bug</h3>
 <p class="vt">终于解禁可以发出来了。原创科幻短片《最高级的BUG》</p><p class="meta">UP：-狼sir- · 670,580 播放</p>
@@ -492,12 +492,12 @@ PS：本作主要用SD2.0制作，少量结尾戏采用SD2.5，本集所有内�
 也有人说，那是某种更高维度的神迹。
 	
 有的人，畏惧于它神明一般强大的力量。
-但更多人，安心于它雏菊一般温柔而纯净的灵魂。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="0.99" data-k="0.99"><a href="https://search.bilibili.com/all?keyword=0.99" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>0.99</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="爱丽丝计划" data-k="爱丽丝计划AIGC短片《Project Alice｜爱丽丝计划》AMZHARBOUR"><a href="https://www.bilibili.com/video/BV1vM5t6rErn" target="_blank" rel="noopener">
+但更多人，安心于它雏菊一般温柔而纯净的灵魂。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="0.99" data-k="0.99"><a href="https://search.bilibili.com/all?keyword=0.99" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>0.99</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="爱丽丝计划" data-k="爱丽丝计划AIGC短片《Project Alice｜爱丽丝计划》AMZHARBOUR"><a href="https://www.bilibili.com/video/BV1vM5t6rErn" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/bca66b9ce4e14b23ecbcf79c2a6593b34f17c231.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>爱丽丝计划</h3>
 <p class="vt">AIGC短片《Project Alice｜爱丽丝计划》</p><p class="meta">UP：AMZHARBOUR · 57,715 播放</p>
-<p class="desc">Project Alice（爱丽丝计划）——参与者提供临时身体租凭，让精英客户以获得身临其境的不同人生体验。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="星际坟场" data-k="星际坟场AI科幻电影《马尾藻迷航：星际坟场》| 宇宙中也有一片“马尾藻海”，进得去，却出不来！因为那是被诅咒的星际坟场...Youtube高质量精选"><a href="https://www.bilibili.com/video/BV1zzw7zqE5N" target="_blank" rel="noopener">
+<p class="desc">Project Alice（爱丽丝计划）——参与者提供临时身体租凭，让精英客户以获得身临其境的不同人生体验。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="星际坟场" data-k="星际坟场AI科幻电影《马尾藻迷航：星际坟场》| 宇宙中也有一片“马尾藻海”，进得去，却出不来！因为那是被诅咒的星际坟场...Youtube高质量精选"><a href="https://www.bilibili.com/video/BV1zzw7zqE5N" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/7ee49464304d16abe6827572a710e067d6400e98.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>星际坟场</h3>
 <p class="vt">AI科幻电影《马尾藻迷航：星际坟场》| 宇宙中也有一片“马尾藻海”，进得去，却出不来！因为那是被诅咒的星际坟场...</p><p class="meta">UP：Youtube高质量精选 · 49,923 播放</p>
@@ -506,12 +506,12 @@ PS：本作主要用SD2.0制作，少量结尾戏采用SD2.5，本集所有内�
 
 但这只是噩梦的开始。 随着探索的深入，Ree发现这片星球并非死物——它是活的。 那些隐藏在阈限空间深处的巨大废墟、徘徊在光影边缘的类人生物，以及那声回荡在寂静深处的“咆哮”…… 当生存本能彻底取代了理智，她面对的不仅是外星怪物的猎杀，更是这片空间对精神的终极蚕食。
 
-ps：续集会继续更，大家自己开AI翻译吧...</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="银河系挽救指南" data-k="银河系挽救指南论文被剽窃，却要拯救世界？科幻短片《银河系挽救指南》【AI全民制作人】开火吧少年"><a href="https://www.bilibili.com/video/BV1xv496AEBE" target="_blank" rel="noopener">
+ps：续集会继续更，大家自己开AI翻译吧...</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="银河系挽救指南" data-k="银河系挽救指南论文被剽窃，却要拯救世界？科幻短片《银河系挽救指南》【AI全民制作人】开火吧少年"><a href="https://www.bilibili.com/video/BV1xv496AEBE" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/dcefb36bc26ab79e5990013b8ed6f7480dffc27b.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>银河系挽救指南</h3>
 <p class="vt">论文被剽窃，却要拯救世界？科幻短片《银河系挽救指南》【AI全民制作人】</p><p class="meta">UP：开火吧少年 · 145,134 播放</p>
 <p class="desc">#RoboNeo 本片使用AI工具：RoboNeo，特别鸣谢RoboNeo的信任，提供充足的算力支持！
-这部练习短片，我模仿借鉴致敬了我心中的多部科幻经典。被我薅的影片包括但不限于《黑衣人》、《银河系漫游指南》、《降临》、《挽救计划》、《异形》、《星际穿越》等等...那是被我一顿薅啊...但是故事和核心表达是我自己的，相信一定有朋友看完以后，知道我在骂哪群人。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="魂砌" data-k="魂砌赛博驱魔！ 当遗体成为建筑的原料 ——《魂砌》【第五届寻光小宇宙奖】你郭"><a href="https://www.bilibili.com/video/BV1Ku4y1d7iY" target="_blank" rel="noopener">
+这部练习短片，我模仿借鉴致敬了我心中的多部科幻经典。被我薅的影片包括但不限于《黑衣人》、《银河系漫游指南》、《降临》、《挽救计划》、《异形》、《星际穿越》等等...那是被我一顿薅啊...但是故事和核心表达是我自己的，相信一定有朋友看完以后，知道我在骂哪群人。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="魂砌" data-k="魂砌赛博驱魔！ 当遗体成为建筑的原料 ——《魂砌》【第五届寻光小宇宙奖】你郭"><a href="https://www.bilibili.com/video/BV1Ku4y1d7iY" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/c805f6bb773d586e5249c4cc6e82ad4a419274bf.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>魂砌</h3>
 <p class="vt">赛博驱魔！ 当遗体成为建筑的原料 ——《魂砌》【第五届寻光小宇宙奖】</p><p class="meta">UP：你郭 · 850,299 播放</p>
@@ -520,7 +520,7 @@ ps：续集会继续更，大家自己开AI翻译吧...</p></div></a><label clas
 人类文明不断更迭，一代代人逝去，建筑越来越高——或许我们正住在前人筑成的墓碑中。
 我以这样的想法搭建出了一个中式赛博的世界观，以动画呈现，抚慰家人逝去的哀伤，平息自我对死亡的恐惧。
 当然，这里必少不了我最爱的机器、驱魔、赛博世界的元素。
-希望大家喜欢。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="余象(MIND TRICK)" data-k="余象(MIND TRICK)【第五届寻光小宇宙奖】制作耗时3年，个人原创科幻短片《余象(MIND TRICK)》-MV8-"><a href="https://www.bilibili.com/video/BV18G4y1c7kk" target="_blank" rel="noopener">
+希望大家喜欢。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="余象(MIND TRICK)" data-k="余象(MIND TRICK)【第五届寻光小宇宙奖】制作耗时3年，个人原创科幻短片《余象(MIND TRICK)》-MV8-"><a href="https://www.bilibili.com/video/BV18G4y1c7kk" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/46274c6ad3398b00606bf5e9bfa31a5ebef934a8.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>余象(MIND TRICK)</h3>
 <p class="vt">【第五届寻光小宇宙奖】制作耗时3年，个人原创科幻短片《余象(MIND TRICK)》</p><p class="meta">UP：-MV8- · 2,185,542 播放</p>
@@ -583,111 +583,111 @@ K制药职员  可可
 配乐 Dark Forest Corporation
 片尾音乐 ostmaker
 
-蒙太奇影像： James Weiss  Science Photo Library  BlackBoxGuild  Mortrek Media Andriy Nekrasov  Ahmet odabas  Crishnaa</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section><section id="c4"><h2>灵异·诡异·恐怖 <small>9</small></h2><div class="grid"><div class="card" data-id="天禄卦所" data-k="天禄卦所原创ai漫剧《天禄卦所》第一集：血肉苦弱，赛博永生？陈野Neo"><a href="https://www.bilibili.com/video/BV1zDQABiEJW" target="_blank" rel="noopener">
+蒙太奇影像： James Weiss  Science Photo Library  BlackBoxGuild  Mortrek Media Andriy Nekrasov  Ahmet odabas  Crishnaa</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section><section id="c4"><h2>灵异·诡异·恐怖 <small>9</small></h2><div class="grid"><div class="card" data-id="天禄卦所" data-k="天禄卦所原创ai漫剧《天禄卦所》第一集：血肉苦弱，赛博永生？陈野Neo"><a href="https://www.bilibili.com/video/BV1zDQABiEJW" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/286c27795dfab27364ada1ba49c5221746266b7a.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>天禄卦所</h3>
 <p class="vt">原创ai漫剧《天禄卦所》第一集：血肉苦弱，赛博永生？</p><p class="meta">UP：陈野Neo · 171,233 播放</p>
-<p class="desc">虚构演绎，请勿迷信</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="月亮入侵" data-k="月亮入侵月亮入侵 第01集 原创架空伪人模拟恐怖短片系列 【up动画】-严厉的月亮-"><a href="https://www.bilibili.com/video/BV1RNME6cEgp" target="_blank" rel="noopener">
+<p class="desc">虚构演绎，请勿迷信</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="月亮入侵" data-k="月亮入侵月亮入侵 第01集 原创架空伪人模拟恐怖短片系列 【up动画】-严厉的月亮-"><a href="https://www.bilibili.com/video/BV1RNME6cEgp" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/f8fcf62383ffa0395560093615cf859a7d10bacd.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>月亮入侵</h3>
 <p class="vt">月亮入侵 第01集 原创架空伪人模拟恐怖短片系列 【up动画】</p><p class="meta">UP：-严厉的月亮- · 290,333 播放</p>
 <p class="desc">全新原创剧情动画短片开更！
 使用Blender3D建模+僵毁游戏场景+UPDREAM AICG制作
 点个关注不迷路，我先去搬个砖攒点钱充SD的token
-下一集在肝了兄弟们！</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="恐怖世界" data-k="恐怖世界恐怖世界 第1集  加班过劳死，直接穿越到恐怖世界-严厉的月亮-"><a href="https://www.bilibili.com/video/BV1xYj96ME3P" target="_blank" rel="noopener">
+下一集在肝了兄弟们！</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="恐怖世界" data-k="恐怖世界恐怖世界 第1集  加班过劳死，直接穿越到恐怖世界-严厉的月亮-"><a href="https://www.bilibili.com/video/BV1xYj96ME3P" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/2513b3627d089e074cf28d06a13625de2cfe4c12.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>恐怖世界</h3>
 <p class="vt">恐怖世界 第1集  加班过劳死，直接穿越到恐怖世界</p><p class="meta">UP：-严厉的月亮- · 477,841 播放</p>
 <p class="desc">加班过劳死，直接穿越到恐怖世界，屋外全是伪人，还差点被好心姐姐砍死。 
 新人第一部ai短片！大家如果喜欢一定要帮我点个赞，努力爆肝第二集
-全平台同名，目前主要在在抖抖更，慢慢将作品同步到阿b这边</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="异兽降临" data-k="异兽降临全球首部AIGC影视级巨制《异兽降临》第一集全球首发-团队耗时1320个小时抽图13000张【AI影像征集大赛-中国故事】神虚AIGC"><a href="https://www.bilibili.com/video/BV17btbzPEDL" target="_blank" rel="noopener">
+全平台同名，目前主要在在抖抖更，慢慢将作品同步到阿b这边</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="异兽降临" data-k="异兽降临全球首部AIGC影视级巨制《异兽降临》第一集全球首发-团队耗时1320个小时抽图13000张【AI影像征集大赛-中国故事】神虚AIGC"><a href="https://www.bilibili.com/video/BV17btbzPEDL" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/c8345a73f47cc6155b8d00644e4f2afb75aada96.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>异兽降临</h3>
 <p class="vt">全球首部AIGC影视级巨制《异兽降临》第一集全球首发-团队耗时1320个小时抽图13000张【AI影像征集大赛-中国故事】</p><p class="meta">UP：神虚AIGC · 248,751 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="梦蛔山" data-k="梦蛔山"><a href="https://search.bilibili.com/all?keyword=%E6%A2%A6%E8%9B%94%E5%B1%B1" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>梦蛔山</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="福仙童" data-k="福仙童AI民俗恐怖片《福仙童》预告阳光鼠尾草LIMO"><a href="https://www.bilibili.com/video/BV1fnt36vEa3" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="梦蛔山" data-k="梦蛔山"><a href="https://search.bilibili.com/all?keyword=%E6%A2%A6%E8%9B%94%E5%B1%B1" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>梦蛔山</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="福仙童" data-k="福仙童AI民俗恐怖片《福仙童》预告阳光鼠尾草LIMO"><a href="https://www.bilibili.com/video/BV1fnt36vEa3" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/8e38fe67955d08889906b91a9768bb97a5df661d.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>福仙童</h3><span class="note">只找到预告</span>
 <p class="vt">AI民俗恐怖片《福仙童》预告</p><p class="meta">UP：阳光鼠尾草LIMO · 80,883 播放</p>
 <p class="desc">⚠️本视频由AI生成，内容纯属虚构，包含微恐画面，请酌情观看。
 本片部分画面包含压抑氛围与惊悚元素，建议在光线充足的环境下观看。
-所有画面均为AI生成，不涉及真实事件及人物。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="野佛" data-k="野佛原创悬疑恐怖短剧《野佛》第一幕：拜佛【AI全民制作人】foooga"><a href="https://www.bilibili.com/video/BV1TQtB6FErA" target="_blank" rel="noopener">
+所有画面均为AI生成，不涉及真实事件及人物。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="野佛" data-k="野佛原创悬疑恐怖短剧《野佛》第一幕：拜佛【AI全民制作人】foooga"><a href="https://www.bilibili.com/video/BV1TQtB6FErA" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/ab127f10e292d7ea6bea3a387a5949ab50ee974e.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>野佛</h3>
 <p class="vt">原创悬疑恐怖短剧《野佛》第一幕：拜佛【AI全民制作人】</p><p class="meta">UP：foooga · 186,299 播放</p>
-<p class="desc">真佛不坐无名庙，正神不受来路香。邪祟借身披佛相，信众叩首尽为伥。本剧围绕一尊被邪祟寄生的深山佛像展开，讲述谢山等人误入神秘禁地，在受蛊惑的信众、诡秘的供奉仪式与不断蔓延的异变中追查野佛真相，并与一股借信仰寄生人心的邪恶力量展开生死对抗。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="万相" data-k="万相“水池里冒出了什么东西” 【志怪恐怖动画】《万相》：001诡忌剧场"><a href="https://www.bilibili.com/video/BV19u1UB6Etn" target="_blank" rel="noopener">
+<p class="desc">真佛不坐无名庙，正神不受来路香。邪祟借身披佛相，信众叩首尽为伥。本剧围绕一尊被邪祟寄生的深山佛像展开，讲述谢山等人误入神秘禁地，在受蛊惑的信众、诡秘的供奉仪式与不断蔓延的异变中追查野佛真相，并与一股借信仰寄生人心的邪恶力量展开生死对抗。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="万相" data-k="万相“水池里冒出了什么东西” 【志怪恐怖动画】《万相》：001诡忌剧场"><a href="https://www.bilibili.com/video/BV19u1UB6Etn" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/c274be1d27031376b216b4095a5ce0ebe66ce998.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>万相</h3>
 <p class="vt">“水池里冒出了什么东西” 【志怪恐怖动画】《万相》：001</p><p class="meta">UP：诡忌剧场 · 1,689,065 播放</p>
 <p class="desc">可能是新系列的第一集。爱审核老师（比心）
-石佛配音：@゛杰森ヽ麦斯</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="后室·西贡结界" data-k="后室·西贡结界【后室·西贡结界】EP1 前往西贡【AI全民制作人】-你翔哥哥-"><a href="https://www.bilibili.com/video/BV17Xbo6NEde" target="_blank" rel="noopener">
+石佛配音：@゛杰森ヽ麦斯</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="后室·西贡结界" data-k="后室·西贡结界【后室·西贡结界】EP1 前往西贡【AI全民制作人】-你翔哥哥-"><a href="https://www.bilibili.com/video/BV17Xbo6NEde" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/46ac9cb684ef6db69471aec0dea39159385fe748.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>后室·西贡结界</h3>
 <p class="vt">【后室·西贡结界】EP1 前往西贡【AI全民制作人】</p><p class="meta">UP：-你翔哥哥- · 19,214 播放</p>
 <p class="desc">【本片为原创虚构故事，基于K版后室进行本土化改编，发生在另一个平行时空，如有雷同，纯属巧合】
 
 1997年，休班警员林德华为了替母亲拍下已经拆除的罗坳村，孤身一身前往西贡老家，之后就神秘消失，“西贡结界”的传说也就此传开了…
-12年后一档节目再次提起这一事件，女警何慧珊也再次展开调查，这一次，她终于把“西贡结界”和百川集团的“后室计划”联系到了一起，一份跨越24年的迷离档案也逐渐浮出水面…</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section><section id="c5"><h2>现代·其他 <small>33</small></h2><div class="grid"><div class="card" data-id="我是地狱" data-k="我是地狱我是地狱第一季(1-11完整超长版)大坏蛋大好蛋"><a href="https://www.bilibili.com/video/BV1fLNg66EVD" target="_blank" rel="noopener">
+12年后一档节目再次提起这一事件，女警何慧珊也再次展开调查，这一次，她终于把“西贡结界”和百川集团的“后室计划”联系到了一起，一份跨越24年的迷离档案也逐渐浮出水面…</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section><section id="c5"><h2>现代·其他 <small>33</small></h2><div class="grid"><div class="card" data-id="我是地狱" data-k="我是地狱我是地狱第一季(1-11完整超长版)大坏蛋大好蛋"><a href="https://www.bilibili.com/video/BV1fLNg66EVD" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/27639424c07335726e322d930240318890ab5d6e.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>我是地狱</h3><span class="note">第一季合集</span>
 <p class="vt">我是地狱第一季(1-11完整超长版)</p><p class="meta">UP：大坏蛋大好蛋 · 96,632 播放</p>
-<p class="desc">个人原创ai系列短片我是地狱,内容简介:姐姐是阿伟生命中唯一的光,姐姐出事以后,阿伟选择用自己的方式讨回公道,心灰意冷的阿伟在强制私立福利院认识了安心和安雅两姐妹,冰冷的心在慢慢被融化,却陷入更大的深渊与黑暗,从此阿伟成为了罪犯的地狱.(后续还在陆续更新中)</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="颠佬外传" data-k="颠佬外传《癫佬外传》第一集阿猫阿狗AIGC"><a href="https://www.bilibili.com/video/BV1SFMy68Ea4" target="_blank" rel="noopener">
+<p class="desc">个人原创ai系列短片我是地狱,内容简介:姐姐是阿伟生命中唯一的光,姐姐出事以后,阿伟选择用自己的方式讨回公道,心灰意冷的阿伟在强制私立福利院认识了安心和安雅两姐妹,冰冷的心在慢慢被融化,却陷入更大的深渊与黑暗,从此阿伟成为了罪犯的地狱.(后续还在陆续更新中)</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="颠佬外传" data-k="颠佬外传《癫佬外传》第一集阿猫阿狗AIGC"><a href="https://www.bilibili.com/video/BV1SFMy68Ea4" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/3da64847066a82e4a14b0b3411f6cd62164af202.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>颠佬外传</h3>
 <p class="vt">《癫佬外传》第一集</p><p class="meta">UP：阿猫阿狗AIGC · 109,191 播放</p>
-<p class="desc">在日本做营销的爸爸回来的第一件事居然是问儿子借....</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="最帅之人" data-k="最帅之人大学第一天，我帅晕了红发学姐最帅之人jg"><a href="https://www.bilibili.com/video/BV1JQ8M6vEtK" target="_blank" rel="noopener">
+<p class="desc">在日本做营销的爸爸回来的第一件事居然是问儿子借....</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="最帅之人" data-k="最帅之人大学第一天，我帅晕了红发学姐最帅之人jg"><a href="https://www.bilibili.com/video/BV1JQ8M6vEtK" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/193ef0e2b5b7c2acb3a04351de095688d4c5da33.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>最帅之人</h3><span class="note">匹配不确定</span>
 <p class="vt">大学第一天，我帅晕了红发学姐</p><p class="meta">UP：最帅之人jg · 1,402,814 播放</p>
-<p class="desc">大学第一天，我帅晕了红发学姐</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="东京天师录 道士下山在Tokyo" data-k="东京天师录 道士下山在Tokyo"><a href="https://search.bilibili.com/all?keyword=%E4%B8%9C%E4%BA%AC%E5%A4%A9%E5%B8%88%E5%BD%95%20%E9%81%93%E5%A3%AB%E4%B8%8B%E5%B1%B1%E5%9C%A8Tokyo" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>东京天师录 道士下山在Tokyo</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="危险校花" data-k="危险校花《危险校花》第一集洪都拉斯黄瓜"><a href="https://www.bilibili.com/video/BV1sDaS6PErs" target="_blank" rel="noopener">
+<p class="desc">大学第一天，我帅晕了红发学姐</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="东京天师录 道士下山在Tokyo" data-k="东京天师录 道士下山在Tokyo"><a href="https://search.bilibili.com/all?keyword=%E4%B8%9C%E4%BA%AC%E5%A4%A9%E5%B8%88%E5%BD%95%20%E9%81%93%E5%A3%AB%E4%B8%8B%E5%B1%B1%E5%9C%A8Tokyo" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>东京天师录 道士下山在Tokyo</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="危险校花" data-k="危险校花《危险校花》第一集洪都拉斯黄瓜"><a href="https://www.bilibili.com/video/BV1sDaS6PErs" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/e6a0935ebccf51b141205c0da5d6c0b5bec8278d.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>危险校花</h3>
 <p class="vt">《危险校花》第一集</p><p class="meta">UP：洪都拉斯黄瓜 · 21,709 播放</p>
 <p class="desc">原创短剧《危险校花》第一集。 
 一个被全校以为普通的少年，和他那个隐藏身份的特工姐姐。 你以为她在被欺负，其实她只是在等一个动手的理由。
-下集预告：网恋奔现拿玫瑰花接头，结果被黑帮当成杀手带走了……</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="星际摄影师" data-k="星际摄影师《星际摄影师》～去救一颗星球！BFC蓝色多脑盒"><a href="https://www.bilibili.com/video/BV1iWaf6CEes" target="_blank" rel="noopener">
+下集预告：网恋奔现拿玫瑰花接头，结果被黑帮当成杀手带走了……</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="星际摄影师" data-k="星际摄影师《星际摄影师》～去救一颗星球！BFC蓝色多脑盒"><a href="https://www.bilibili.com/video/BV1iWaf6CEes" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/c5bdd2a5580a56020c2e6e9a58e4b9ef2768b013.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>星际摄影师</h3>
 <p class="vt">《星际摄影师》～去救一颗星球！</p><p class="meta">UP：BFC蓝色多脑盒 · 19,066 播放</p>
-<p class="desc">哪里系下的结，就回到哪里松开。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="地府厨神" data-k="地府厨神阴间厨艺考核《地府厨神》ep01【UP动画】阿尼漫剧工作室"><a href="https://www.bilibili.com/video/BV1Mftg6DEEb" target="_blank" rel="noopener">
+<p class="desc">哪里系下的结，就回到哪里松开。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="地府厨神" data-k="地府厨神阴间厨艺考核《地府厨神》ep01【UP动画】阿尼漫剧工作室"><a href="https://www.bilibili.com/video/BV1Mftg6DEEb" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/ce447d92d0d5048f661e1dd9ed082285c0487c91.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>地府厨神</h3>
 <p class="vt">阴间厨艺考核《地府厨神》ep01【UP动画】</p><p class="meta">UP：阿尼漫剧工作室 · 23,601 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="山君" data-k="山君"><a href="https://search.bilibili.com/all?keyword=%E5%B1%B1%E5%90%9B" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>山君</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="寻龙" data-k="寻龙全新aigc短剧《寻龙》第一集狗头军师AI"><a href="https://www.bilibili.com/video/BV1GRGw6tE5P" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="山君" data-k="山君"><a href="https://search.bilibili.com/all?keyword=%E5%B1%B1%E5%90%9B" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>山君</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="寻龙" data-k="寻龙全新aigc短剧《寻龙》第一集狗头军师AI"><a href="https://www.bilibili.com/video/BV1GRGw6tE5P" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/a7186a7fc156e8be53c637b97439c88875b8ea8a.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>寻龙</h3>
 <p class="vt">全新aigc短剧《寻龙》第一集</p><p class="meta">UP：狗头军师AI · 5,544 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="呼噜西部" data-k="呼噜西部《呼噜西部》第一集：属于猫猫的西部世界！蓝白红Art-AIGC创作中"><a href="https://www.bilibili.com/video/BV15Pum6EETC" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="呼噜西部" data-k="呼噜西部《呼噜西部》第一集：属于猫猫的西部世界！蓝白红Art-AIGC创作中"><a href="https://www.bilibili.com/video/BV15Pum6EETC" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/87636bf46ca0d22362f14c2b64d62a74c75e5cdb.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>呼噜西部</h3>
 <p class="vt">《呼噜西部》第一集：属于猫猫的西部世界！</p><p class="meta">UP：蓝白红Art-AIGC创作中 · 347,905 播放</p>
-<p class="desc">猫猫称霸的西部世界是怎样的？他们如何对抗黑暗势力？主角三人又是如何相遇的？他们关系怎样？他们最终的目标是什么？他们又会相互背叛吗？ 这部AI剧集《呼噜西部》将为您解答。本视频由updream制作！</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="双鱼玉佩" data-k="双鱼玉佩【749系列AI短剧双鱼玉佩】第1集来了！比格白AI"><a href="https://www.bilibili.com/video/BV1ggmUY7EmM" target="_blank" rel="noopener">
+<p class="desc">猫猫称霸的西部世界是怎样的？他们如何对抗黑暗势力？主角三人又是如何相遇的？他们关系怎样？他们最终的目标是什么？他们又会相互背叛吗？ 这部AI剧集《呼噜西部》将为您解答。本视频由updream制作！</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="双鱼玉佩" data-k="双鱼玉佩【749系列AI短剧双鱼玉佩】第1集来了！比格白AI"><a href="https://www.bilibili.com/video/BV1ggmUY7EmM" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/22e747d33ddbdc0b10d2839f3668db341fe187ab.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>双鱼玉佩</h3>
 <p class="vt">【749系列AI短剧双鱼玉佩】第1集来了！</p><p class="meta">UP：比格白AI · 15,619 播放</p>
 <p class="desc">经过漫长的打磨，跟练音舍小伙伴们终于推出第一集AI短剧！
 还是希望通过创作AI短剧的过程来感受AI技术的进步与短剧故事进行融合，想办法“去AI味”，让大家把注意力集中在故事本身。
 由于一些AI还未成熟的地方一定是存在很多瑕疵的，但我们会随着AI一起成长，在这个“爽剧横行”的潮流下专注做故事。
-喜欢的小伙伴多多支持，感谢！</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="小孟来了" data-k="小孟来了孟婆也会退休？AI短片《小孟来了》丨一万个平行宇宙艺类分子"><a href="https://www.bilibili.com/video/BV1grgf61Ejx" target="_blank" rel="noopener">
+喜欢的小伙伴多多支持，感谢！</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="小孟来了" data-k="小孟来了孟婆也会退休？AI短片《小孟来了》丨一万个平行宇宙艺类分子"><a href="https://www.bilibili.com/video/BV1grgf61Ejx" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/d74c0025ee93641c533fafdd64f0ad00164a6c95.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>小孟来了</h3>
 <p class="vt">孟婆也会退休？AI短片《小孟来了》丨一万个平行宇宙</p><p class="meta">UP：艺类分子 · 4,223,499 播放</p>
-<p class="desc">她以为孟婆只负责让人忘记，后来才明白，有些人得先好好告别。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="人间姻缘办事处" data-k="人间姻缘办事处"><a href="https://search.bilibili.com/all?keyword=%E4%BA%BA%E9%97%B4%E5%A7%BB%E7%BC%98%E5%8A%9E%E4%BA%8B%E5%A4%84" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>人间姻缘办事处</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="我被太太们包围了" data-k="我被太太们包围了"><a href="https://search.bilibili.com/all?keyword=%E6%88%91%E8%A2%AB%E5%A4%AA%E5%A4%AA%E4%BB%AC%E5%8C%85%E5%9B%B4%E4%BA%86" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>我被太太们包围了</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="我在神界崩老头" data-k="我在神界崩老头"><a href="https://search.bilibili.com/all?keyword=%E6%88%91%E5%9C%A8%E7%A5%9E%E7%95%8C%E5%B4%A9%E8%80%81%E5%A4%B4" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>我在神界崩老头</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="全家福" data-k="全家福"><a href="https://search.bilibili.com/all?keyword=%E5%85%A8%E5%AE%B6%E7%A6%8F" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>全家福</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="反正也没时间活，挺好的" data-k="反正也没时间活，挺好的《反正也没时间活》，时间的意义到底是什么，你的时间还有多少，怎么定义，如果有时间你会愿意去交换吗土豆不知道-"><a href="https://www.bilibili.com/video/BV17Jg36xEZY" target="_blank" rel="noopener">
+<p class="desc">她以为孟婆只负责让人忘记，后来才明白，有些人得先好好告别。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="人间姻缘办事处" data-k="人间姻缘办事处"><a href="https://search.bilibili.com/all?keyword=%E4%BA%BA%E9%97%B4%E5%A7%BB%E7%BC%98%E5%8A%9E%E4%BA%8B%E5%A4%84" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>人间姻缘办事处</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="我被太太们包围了" data-k="我被太太们包围了"><a href="https://search.bilibili.com/all?keyword=%E6%88%91%E8%A2%AB%E5%A4%AA%E5%A4%AA%E4%BB%AC%E5%8C%85%E5%9B%B4%E4%BA%86" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>我被太太们包围了</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="我在神界崩老头" data-k="我在神界崩老头"><a href="https://search.bilibili.com/all?keyword=%E6%88%91%E5%9C%A8%E7%A5%9E%E7%95%8C%E5%B4%A9%E8%80%81%E5%A4%B4" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>我在神界崩老头</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="全家福" data-k="全家福"><a href="https://search.bilibili.com/all?keyword=%E5%85%A8%E5%AE%B6%E7%A6%8F" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>全家福</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="反正也没时间活，挺好的" data-k="反正也没时间活，挺好的《反正也没时间活》，时间的意义到底是什么，你的时间还有多少，怎么定义，如果有时间你会愿意去交换吗土豆不知道-"><a href="https://www.bilibili.com/video/BV17Jg36xEZY" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/90f5cba505584cee84401ad1736fa48d8f03d2f2.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>反正也没时间活，挺好的</h3>
 <p class="vt">《反正也没时间活》，时间的意义到底是什么，你的时间还有多少，怎么定义，如果有时间你会愿意去交换吗</p><p class="meta">UP：土豆不知道- · 29,819 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="回家资格证" data-k="回家资格证"><a href="https://search.bilibili.com/all?keyword=%E5%9B%9E%E5%AE%B6%E8%B5%84%E6%A0%BC%E8%AF%81" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>回家资格证</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="恐龙不能停" data-k="恐龙不能停--【恐龙不能停】第一集----个人原创电影。超级神奇的木偶"><a href="https://www.bilibili.com/video/BV18Tby67EG9" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="回家资格证" data-k="回家资格证"><a href="https://search.bilibili.com/all?keyword=%E5%9B%9E%E5%AE%B6%E8%B5%84%E6%A0%BC%E8%AF%81" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>回家资格证</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="恐龙不能停" data-k="恐龙不能停--【恐龙不能停】第一集----个人原创电影。超级神奇的木偶"><a href="https://www.bilibili.com/video/BV18Tby67EG9" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/81b81e13196da38032cd333922045ba0ce893753.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>恐龙不能停</h3>
 <p class="vt">--【恐龙不能停】第一集----个人原创电影。</p><p class="meta">UP：超级神奇的木偶 · 11,041,111 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="老秦" data-k="老秦“死亡不是终点，遗忘才是。” | 《老秦》原创AI短片【AI全民制作人】SillyZ_Official"><a href="https://www.bilibili.com/video/BV1PYYo6XEW9" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="老秦" data-k="老秦“死亡不是终点，遗忘才是。” | 《老秦》原创AI短片【AI全民制作人】SillyZ_Official"><a href="https://www.bilibili.com/video/BV1PYYo6XEW9" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/6c55230d9a3946473970595c4ae1d860e6567724.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>老秦</h3>
 <p class="vt">“死亡不是终点，遗忘才是。” | 《老秦》原创AI短片【AI全民制作人】</p><p class="meta">UP：SillyZ_Official · 5,647,080 播放</p>
@@ -700,45 +700,45 @@ K制药职员  可可
 背景音乐：
  Lia Ouyang Rusli - LOVE 
 Fred again.. - Julia(deep diving) 
-Hidekazu Sakamoto - white color</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="扳机" data-k="扳机地表最强【4K】AI短片——【扳机】，你还能看出和实拍有什么区别吗？王军城工作室"><a href="https://www.bilibili.com/video/BV1sttk6wEF5" target="_blank" rel="noopener">
+Hidekazu Sakamoto - white color</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="扳机" data-k="扳机地表最强【4K】AI短片——【扳机】，你还能看出和实拍有什么区别吗？王军城工作室"><a href="https://www.bilibili.com/video/BV1sttk6wEF5" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/f83fbe14e486e87805ee8086732e3a6a715b5a59.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>扳机</h3><span class="note">匹配不确定</span>
 <p class="vt">地表最强【4K】AI短片——【扳机】，你还能看出和实拍有什么区别吗？</p><p class="meta">UP：王军城工作室 · 2,536 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="外星往事" data-k="外星往事《外星往事》试播集｜外星人来地球了！但迟到了那么一小会…【UP动画】张拉灯"><a href="https://www.bilibili.com/video/BV1xX7P6NEsJ" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="外星往事" data-k="外星往事《外星往事》试播集｜外星人来地球了！但迟到了那么一小会…【UP动画】张拉灯"><a href="https://www.bilibili.com/video/BV1xX7P6NEsJ" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/865ebc3a306d1ad3441c8514ae8f78cb14caa1a8.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>外星往事</h3>
 <p class="vt">《外星往事》试播集｜外星人来地球了！但迟到了那么一小会…【UP动画】</p><p class="meta">UP：张拉灯 · 3,633,076 播放</p>
 <p class="desc">心心念念，外星人终于来到了地球了！
 但迟到了那么一小会......
 
-原创AI科幻短片《地球往事》，编剧/导演：张拉灯。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="西西弗斯推的石头，居然是孙悟空" data-k="西西弗斯推的石头，居然是孙悟空西西弗斯推的石头，居然是孙悟空......【AI全民制作人】#SpecialForAAIFF张拉灯"><a href="https://www.bilibili.com/video/BV1a3th65EQb" target="_blank" rel="noopener">
+原创AI科幻短片《地球往事》，编剧/导演：张拉灯。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="西西弗斯推的石头，居然是孙悟空" data-k="西西弗斯推的石头，居然是孙悟空西西弗斯推的石头，居然是孙悟空......【AI全民制作人】#SpecialForAAIFF张拉灯"><a href="https://www.bilibili.com/video/BV1a3th65EQb" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/f6deea4b2be71c9cb7bba80264abcaed8b33c318.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>西西弗斯推的石头，居然是孙悟空</h3>
 <p class="vt">西西弗斯推的石头，居然是孙悟空......【AI全民制作人】#SpecialForAAIFF</p><p class="meta">UP：张拉灯 · 6,023,325 播放</p>
-<p class="desc">这谁又能想得到呢？西西弗斯推的石头，居然是孙悟空……</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="粉墨if系列" data-k="粉墨if系列粉墨IF系列之《倒霉蛋》，2025海南岛国际电影节AI电影季获奖作品粉墨"><a href="https://www.bilibili.com/video/BV1cWywBDE3x" target="_blank" rel="noopener">
+<p class="desc">这谁又能想得到呢？西西弗斯推的石头，居然是孙悟空……</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="粉墨if系列" data-k="粉墨if系列粉墨IF系列之《倒霉蛋》，2025海南岛国际电影节AI电影季获奖作品粉墨"><a href="https://www.bilibili.com/video/BV1cWywBDE3x" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/2d43d133ea219f01b46404cc5efc830b6fe73f0a.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>粉墨if系列</h3><span class="note">系列短片，独立成篇</span>
 <p class="vt">粉墨IF系列之《倒霉蛋》，2025海南岛国际电影节AI电影季获奖作品</p><p class="meta">UP：粉墨 · 600,828 播放</p>
-<p class="desc">这是很快就会发生的未来吗？原创AI短片《倒霉蛋》，获得第七届海南岛国际电影节·AI电影季“最佳剪辑”奖！</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="马上好" data-k="马上好AI短片《马上好》，拖延症患者王延在春节回家的当天发现整个世界都陷入了拖延症的怪圈之中【B站AI创作大赛-开放赛道】Keanu98"><a href="https://www.bilibili.com/video/BV1rKZYB6EQ7" target="_blank" rel="noopener">
+<p class="desc">这是很快就会发生的未来吗？原创AI短片《倒霉蛋》，获得第七届海南岛国际电影节·AI电影季“最佳剪辑”奖！</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="马上好" data-k="马上好AI短片《马上好》，拖延症患者王延在春节回家的当天发现整个世界都陷入了拖延症的怪圈之中【B站AI创作大赛-开放赛道】Keanu98"><a href="https://www.bilibili.com/video/BV1rKZYB6EQ7" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/0f26f80acbaf1a5120c24a0f1b5ae2bb18a2aebf.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>马上好</h3>
 <p class="vt">AI短片《马上好》，拖延症患者王延在春节回家的当天发现整个世界都陷入了拖延症的怪圈之中【B站AI创作大赛-开放赛道】</p><p class="meta">UP：Keanu98 · 830,357 播放</p>
-<p class="desc">拖延症患者王延在春节回家的当天发现整个世界都陷入了拖延症的怪圈之中。多年后，王延回忆起那个春节才意识到，那是他过去时代中，最美好的回忆。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="失眠症" data-k="失眠症"><a href="https://search.bilibili.com/all?keyword=%E5%A4%B1%E7%9C%A0%E7%97%87" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>失眠症</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="这是艺术你不懂" data-k="这是艺术你不懂AI短片：《这是艺术！你不懂》。电影爱好者王岛企图拍一部文艺片《天井》来展示自己的才华，但是一切都偏离了他预期中的轨道【B站AI创作大赛】【一万个平行宇宙】Keanu98"><a href="https://www.bilibili.com/video/BV1aNwizkEuz" target="_blank" rel="noopener">
+<p class="desc">拖延症患者王延在春节回家的当天发现整个世界都陷入了拖延症的怪圈之中。多年后，王延回忆起那个春节才意识到，那是他过去时代中，最美好的回忆。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="失眠症" data-k="失眠症"><a href="https://search.bilibili.com/all?keyword=%E5%A4%B1%E7%9C%A0%E7%97%87" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>失眠症</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="这是艺术你不懂" data-k="这是艺术你不懂AI短片：《这是艺术！你不懂》。电影爱好者王岛企图拍一部文艺片《天井》来展示自己的才华，但是一切都偏离了他预期中的轨道【B站AI创作大赛】【一万个平行宇宙】Keanu98"><a href="https://www.bilibili.com/video/BV1aNwizkEuz" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/17e7a426c16f1c6ddc4a001f3fa2e60421b09e47.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>这是艺术你不懂</h3>
 <p class="vt">AI短片：《这是艺术！你不懂》。电影爱好者王岛企图拍一部文艺片《天井》来展示自己的才华，但是一切都偏离了他预期中的轨道【B站AI创作大赛】【一万个平行宇宙】</p><p class="meta">UP：Keanu98 · 188,918 播放</p>
-<p class="desc">电影爱好者王岛企图拍一部文艺片《天井》来展示自己的才华，但是随着拍摄的完成，一切都偏离了他预期中的轨道。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="新数码宝贝·全面战争" data-k="新数码宝贝·全面战争《新数码宝贝 · 全面战争》第一集！【梦重新开始】不睡的彻"><a href="https://www.bilibili.com/video/BV1hN8t6BEMs" target="_blank" rel="noopener">
+<p class="desc">电影爱好者王岛企图拍一部文艺片《天井》来展示自己的才华，但是随着拍摄的完成，一切都偏离了他预期中的轨道。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="新数码宝贝·全面战争" data-k="新数码宝贝·全面战争《新数码宝贝 · 全面战争》第一集！【梦重新开始】不睡的彻"><a href="https://www.bilibili.com/video/BV1hN8t6BEMs" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/d8cd462ecd08c66825415f8da630c7b6a532adfd.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>新数码宝贝·全面战争</h3>
 <p class="vt">《新数码宝贝 · 全面战争》第一集！【梦重新开始】</p><p class="meta">UP：不睡的彻 · 3,417,017 播放</p>
 <p class="desc">希望大家喜欢我的作品~
 
-8月24日00:30分 视频源已更换，增加了15秒。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="数码宝贝真人版" data-k="数码宝贝真人版《数码宝贝真人版》第一集 精编版10分39秒 天女兽重现人间 世界之门开启麻药药"><a href="https://www.bilibili.com/video/BV1V7496yEtT" target="_blank" rel="noopener">
+8月24日00:30分 视频源已更换，增加了15秒。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="数码宝贝真人版" data-k="数码宝贝真人版《数码宝贝真人版》第一集 精编版10分39秒 天女兽重现人间 世界之门开启麻药药"><a href="https://www.bilibili.com/video/BV1V7496yEtT" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/4395d8bdde8666964067df04f0a44a4d9ef019d4.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>数码宝贝真人版</h3>
 <p class="vt">《数码宝贝真人版》第一集 精编版10分39秒 天女兽重现人间 世界之门开启</p><p class="meta">UP：麻药药 · 142,387 播放</p>
-<p class="desc">数码宝贝真人版 世界之门开启 精编加长版10分39秒 献给不想长大的你，改编自@不睡的彻 ，演员@山海观雾 小米崽饰美美，我是她铁粉，是个人超级好的小姐姐#AI短剧 #数码宝贝真人版 #AI创作 #数码宝贝</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="数码宝贝危机纪元" data-k="数码宝贝危机纪元数码宝贝：危机纪元 第1集｜女恶魔兽登场！【AI真人电影】锋利的腿毛毛毛"><a href="https://www.bilibili.com/video/BV1roHB6PEC8" target="_blank" rel="noopener">
+<p class="desc">数码宝贝真人版 世界之门开启 精编加长版10分39秒 献给不想长大的你，改编自@不睡的彻 ，演员@山海观雾 小米崽饰美美，我是她铁粉，是个人超级好的小姐姐#AI短剧 #数码宝贝真人版 #AI创作 #数码宝贝</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="数码宝贝危机纪元" data-k="数码宝贝危机纪元数码宝贝：危机纪元 第1集｜女恶魔兽登场！【AI真人电影】锋利的腿毛毛毛"><a href="https://www.bilibili.com/video/BV1roHB6PEC8" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/b7a314006bf85bd5b6f6cd9321ebc49d01fcf591.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>数码宝贝危机纪元</h3>
 <p class="vt">数码宝贝：危机纪元 第1集｜女恶魔兽登场！【AI真人电影】</p><p class="meta">UP：锋利的腿毛毛毛 · 5,748 播放</p>
@@ -746,7 +746,7 @@ Hidekazu Sakamoto - white color</p></div></a><label class="seen"><input type="ch
 城市中的巨兽袭击，只是危机的开始。接连消失的数码宝贝、废弃工业区里的秘密行动，以及突然现身的女恶魔兽……这些事件，究竟有什么联系？
 《数码宝贝：危机纪元》第1集。
 这是我制作的数码宝贝同人AI短剧，尝试用写实电影风格，讲述一个关于重逢、失踪与危机的故事。
-第一次发布作品，欢迎在评论区聊聊你最喜欢的镜头，也欢迎提出剧情和画面上的建议。喜欢这个故事的话，可以关注后续更新！</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="新数码宝贝·重拾花冠" data-k="新数码宝贝·重拾花冠【新数码宝贝 · 重拾花冠】飞了20年的帽子，我终于接住了猪猪队长_1"><a href="https://www.bilibili.com/video/BV1R5eJ6PEvZ" target="_blank" rel="noopener">
+第一次发布作品，欢迎在评论区聊聊你最喜欢的镜头，也欢迎提出剧情和画面上的建议。喜欢这个故事的话，可以关注后续更新！</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="新数码宝贝·重拾花冠" data-k="新数码宝贝·重拾花冠【新数码宝贝 · 重拾花冠】飞了20年的帽子，我终于接住了猪猪队长_1"><a href="https://www.bilibili.com/video/BV1R5eJ6PEvZ" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/441d2c63469338d58792bcb2fc2f52ad88528d79.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>新数码宝贝·重拾花冠</h3>
 <p class="vt">【新数码宝贝 · 重拾花冠】飞了20年的帽子，我终于接住了</p><p class="meta">UP：猪猪队长_1 · 33,300 播放</p>
@@ -755,47 +755,47 @@ Hidekazu Sakamoto - white color</p></div></a><label class="seen"><input type="ch
 
 
 小花1500r，还请大家多多支持，帮忙推给你的朋友~
-希望大家喜欢我的作品</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="数码宝贝:时空陷落" data-k="数码宝贝:时空陷落《数码宝贝:时空陷落》第一集:光明的湮灭写剧本的丧彪"><a href="https://www.bilibili.com/video/BV18Ltk6gESm" target="_blank" rel="noopener">
+希望大家喜欢我的作品</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="数码宝贝:时空陷落" data-k="数码宝贝:时空陷落《数码宝贝:时空陷落》第一集:光明的湮灭写剧本的丧彪"><a href="https://www.bilibili.com/video/BV18Ltk6gESm" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/b5595cff65627a06fcf6c08ba966f79fdbafe322.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>数码宝贝:时空陷落</h3>
 <p class="vt">《数码宝贝:时空陷落》第一集:光明的湮灭</p><p class="meta">UP：写剧本的丧彪 · 30,899 播放</p>
-<p class="desc">正式版剧情开始，一滴都没有了，求求大家的热度，阿B这里好像没什么人看</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="彭皮肚系列" data-k="彭皮肚系列未来世界的牛马抢着要加班？｜彭皮肚 S1E01冒牌行星"><a href="https://www.bilibili.com/video/BV1MhhtzRE3i" target="_blank" rel="noopener">
+<p class="desc">正式版剧情开始，一滴都没有了，求求大家的热度，阿B这里好像没什么人看</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="彭皮肚系列" data-k="彭皮肚系列未来世界的牛马抢着要加班？｜彭皮肚 S1E01冒牌行星"><a href="https://www.bilibili.com/video/BV1MhhtzRE3i" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/6cff235619efc134eca87c0c1a3b491240cffeb3.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>彭皮肚系列</h3><span class="note">系列短片</span>
 <p class="vt">未来世界的牛马抢着要加班？｜彭皮肚 S1E01</p><p class="meta">UP：冒牌行星 · 12,784 播放</p>
-<p class="desc">未来能把时间当钱花，牛马的生活更充实了</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section><section id="c6"><h2>古代·传统东方 <small>32</small></h2><div class="grid"><div class="card miss" data-id="问苍生" data-k="问苍生"><a href="https://search.bilibili.com/all?keyword=%E9%97%AE%E8%8B%8D%E7%94%9F" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>问苍生</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="万物生" data-k="万物生《万物生》第2集｜问心晨熙AIGC"><a href="https://www.bilibili.com/video/BV1ZQEV6SEJx" target="_blank" rel="noopener">
+<p class="desc">未来能把时间当钱花，牛马的生活更充实了</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section><section id="c6"><h2>古代·传统东方 <small>32</small></h2><div class="grid"><div class="card miss" data-id="问苍生" data-k="问苍生"><a href="https://search.bilibili.com/all?keyword=%E9%97%AE%E8%8B%8D%E7%94%9F" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>问苍生</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="万物生" data-k="万物生《万物生》第2集｜问心晨熙AIGC"><a href="https://www.bilibili.com/video/BV1ZQEV6SEJx" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/9bca876794e7bf51e871a9516519705ef4fa947a.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>万物生</h3><span class="note">只找到第2集</span>
 <p class="vt">《万物生》第2集｜问心</p><p class="meta">UP：晨熙AIGC · 477,701 播放</p>
 <p class="desc">人活一世，无非是见天地，见众生，见自己。
-你见了天地，天地未必有眼看你。你见了众生，众生未必另眼瞧你。唯有见自己，贪嗔痴爱恨，来去聚散空。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="大明14444" data-k="大明14444大明14444：凌霄船台退役星舰交易指南 赚了还是亏了？星海大明锦衣卫AIGC"><a href="https://www.bilibili.com/video/BV1Ui9MBuE2k" target="_blank" rel="noopener">
+你见了天地，天地未必有眼看你。你见了众生，众生未必另眼瞧你。唯有见自己，贪嗔痴爱恨，来去聚散空。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="大明14444" data-k="大明14444大明14444：凌霄船台退役星舰交易指南 赚了还是亏了？星海大明锦衣卫AIGC"><a href="https://www.bilibili.com/video/BV1Ui9MBuE2k" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/31daeb19aab55b78dea503c1ee4c7a8e393132f6.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>大明14444</h3>
 <p class="vt">大明14444：凌霄船台退役星舰交易指南 赚了还是亏了？</p><p class="meta">UP：星海大明锦衣卫AIGC · 824,136 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="棋逢对手" data-k="棋逢对手棋逢对手风墟AIGC"><a href="https://www.bilibili.com/video/BV1Z3eg65EkS" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="棋逢对手" data-k="棋逢对手棋逢对手风墟AIGC"><a href="https://www.bilibili.com/video/BV1Z3eg65EkS" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/7646cdbcbb8b9412b8626d3444a53d60c6bb41e0.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>棋逢对手</h3>
 <p class="vt">棋逢对手</p><p class="meta">UP：风墟AIGC · 1,448,966 播放</p>
 <p class="desc">改编自原著第六回，以全新的视觉效果来演绎两人的经典大战，视觉上加入了黑猴的感觉
-声明：游戏内90%配乐来自黑神话悟空，结尾配乐来自鞠婧祎壁上观</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="长安异闻录" data-k="长安异闻录长安异闻录 第一卷 | 算命 【AI全民制作人】【AI全能艺术家计划 】佛系的Rick"><a href="https://www.bilibili.com/video/BV1EQtt6JEJu" target="_blank" rel="noopener">
+声明：游戏内90%配乐来自黑神话悟空，结尾配乐来自鞠婧祎壁上观</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="长安异闻录" data-k="长安异闻录长安异闻录 第一卷 | 算命 【AI全民制作人】【AI全能艺术家计划 】佛系的Rick"><a href="https://www.bilibili.com/video/BV1EQtt6JEJu" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/cf0c35606cd2af041480a8445318adc38dff5d37.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>长安异闻录</h3>
 <p class="vt">长安异闻录 第一卷 | 算命 【AI全民制作人】【AI全能艺术家计划 】</p><p class="meta">UP：佛系的Rick · 1,209,841 播放</p>
 <p class="desc">他学会了算别人，却始终没算明白自己。
 从他收下第一锭银子开始，他就已经成了局中人。
-该视频由LibTV创作</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="诡案录" data-k="诡案录当中式志怪遇到后室：水中好像有什么在看着我？《诡案录》【AI全民制作人】喵君Mill"><a href="https://www.bilibili.com/video/BV1G9u46WEjK" target="_blank" rel="noopener">
+该视频由LibTV创作</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="诡案录" data-k="诡案录当中式志怪遇到后室：水中好像有什么在看着我？《诡案录》【AI全民制作人】喵君Mill"><a href="https://www.bilibili.com/video/BV1G9u46WEjK" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/a6d9c69db7fa21659c2d51cc3b8e8134bd14fcf5.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>诡案录</h3>
 <p class="vt">当中式志怪遇到后室：水中好像有什么在看着我？《诡案录》【AI全民制作人】</p><p class="meta">UP：喵君Mill · 1,068,256 播放</p>
-<p class="desc">新的一期《诡案录》来啦，讲述文延卿的一段往事</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="燕然" data-k="燕然神秘少女携超大兔兔勇闯仙侠世界！？96分钟大型传统仙侠电影《燕然》来了！wuhu动画人空间"><a href="https://www.bilibili.com/video/BV1xf8X6BELP" target="_blank" rel="noopener">
+<p class="desc">新的一期《诡案录》来啦，讲述文延卿的一段往事</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="燕然" data-k="燕然神秘少女携超大兔兔勇闯仙侠世界！？96分钟大型传统仙侠电影《燕然》来了！wuhu动画人空间"><a href="https://www.bilibili.com/video/BV1xf8X6BELP" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/1bfe46ae6ba0a7d370c17ce02091790432482a1d.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>燕然</h3>
 <p class="vt">神秘少女携超大兔兔勇闯仙侠世界！？96分钟大型传统仙侠电影《燕然》来了！</p><p class="meta">UP：wuhu动画人空间 · 161,713 播放</p>
 <p class="desc">wuhu MCN新锐导演张小千携最新大型御兽仙侠IP《燕然》来啦!（第一集）
 历经三月将自制96分钟大型传统仙侠电影《燕然》 ，目前以分剧集的形式全网发布！
 第一集：大唐安西元年，西域燕然城召开万灵大会。魁首十人，将代表大唐进入安西灵境，角逐仙道至尊！
-片尾还有彩蛋!</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="归藏" data-k="归藏原创志怪单元剧《归藏》 序回：人生天地间，忽如远行客【AI全民制作人】休息的小狗崽"><a href="https://www.bilibili.com/video/BV1KBh56aEUe" target="_blank" rel="noopener">
+片尾还有彩蛋!</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="归藏" data-k="归藏原创志怪单元剧《归藏》 序回：人生天地间，忽如远行客【AI全民制作人】休息的小狗崽"><a href="https://www.bilibili.com/video/BV1KBh56aEUe" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/88c8a2dcc552c2b9f251345aad89c14ac546a926.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>归藏</h3>
 <p class="vt">原创志怪单元剧《归藏》 序回：人生天地间，忽如远行客【AI全民制作人】</p><p class="meta">UP：休息的小狗崽 · 705,129 播放</p>
@@ -803,29 +803,29 @@ Hidekazu Sakamoto - white color</p></div></a><label class="seen"><input type="ch
 最近这段时间家里发生了些事,先是我爸脑出血住院了，后面我自己也肺部感染住院了。
 这个片子做得也是很曲折了，我们花了很大的心力制作打戏，消除ai感，为的是让看的观众能全情沉浸式投入。
 后续第一集也制作完成了，目前正在后期制作，马上就要完成啦。
-请大家多多点赞收藏关注~</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="窃丹" data-k="窃丹窃丹-卖龙 | 第一集：黄沙吞马影，邪祟逐人来。苍天无眼处，卖龙换民开。志怪/克苏鲁风格公路片。# AI全能艺术家计划【AI 全民制作人】洋月亮鉴定师"><a href="https://www.bilibili.com/video/BV19W896nE94" target="_blank" rel="noopener">
+请大家多多点赞收藏关注~</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="窃丹" data-k="窃丹窃丹-卖龙 | 第一集：黄沙吞马影，邪祟逐人来。苍天无眼处，卖龙换民开。志怪/克苏鲁风格公路片。# AI全能艺术家计划【AI 全民制作人】洋月亮鉴定师"><a href="https://www.bilibili.com/video/BV19W896nE94" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/de5783e241a2d5bec3698bcbab5686c787beb84c.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>窃丹</h3>
 <p class="vt">窃丹-卖龙 | 第一集：黄沙吞马影，邪祟逐人来。苍天无眼处，卖龙换民开。志怪/克苏鲁风格公路片。# AI全能艺术家计划【AI 全民制作人】</p><p class="meta">UP：洋月亮鉴定师 · 156,804 播放</p>
-<p class="desc">黄沙吞马影，邪祟逐人来。苍天无眼处，卖龙换民开。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="相骨" data-k="相骨"><a href="https://search.bilibili.com/all?keyword=%E7%9B%B8%E9%AA%A8" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>相骨</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="诡墨堰骨" data-k="诡墨堰骨AI自制动画《诡墨堰骨》第一集喜宙创意"><a href="https://www.bilibili.com/video/BV1EvL86REyH" target="_blank" rel="noopener">
+<p class="desc">黄沙吞马影，邪祟逐人来。苍天无眼处，卖龙换民开。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="相骨" data-k="相骨"><a href="https://search.bilibili.com/all?keyword=%E7%9B%B8%E9%AA%A8" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>相骨</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="诡墨堰骨" data-k="诡墨堰骨AI自制动画《诡墨堰骨》第一集喜宙创意"><a href="https://www.bilibili.com/video/BV1EvL86REyH" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/410ec9ce5f938fa04be9d9e87e9dbb13cba7d1dd.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>诡墨堰骨</h3>
 <p class="vt">AI自制动画《诡墨堰骨》第一集</p><p class="meta">UP：喜宙创意 · 702,646 播放</p>
-<p class="desc">自制漫剧《诡墨堰骨》第一集~花了20天时间，自己写的剧本，然后生成资产，视频，剪辑~希望大家喜欢~</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="东方猎人录" data-k="东方猎人录【怪物猎人，但是山海经】东方猎人录 S1E1最后讲述者"><a href="https://www.bilibili.com/video/BV1vtc2zCEEa" target="_blank" rel="noopener">
+<p class="desc">自制漫剧《诡墨堰骨》第一集~花了20天时间，自己写的剧本，然后生成资产，视频，剪辑~希望大家喜欢~</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="东方猎人录" data-k="东方猎人录【怪物猎人，但是山海经】东方猎人录 S1E1最后讲述者"><a href="https://www.bilibili.com/video/BV1vtc2zCEEa" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/ac17bb1b3b9e6d1bc4db5ada12239986d34afcc1.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>东方猎人录</h3>
 <p class="vt">【怪物猎人，但是山海经】东方猎人录 S1E1</p><p class="meta">UP：最后讲述者 · 18,184 播放</p>
 <p class="desc">如果这起大家的反馈不错，我准备把它做成一个系列，讲述东方大陆的猎人洛岚的故事。还记得小学五年级就开始写怪猎的同人小说，当时我跟朋友说：“诶这个看的时候放某某bgm肯定特别有画面感”。到现在已经十几年了，终于可以圆梦了。
 BGM：《英雄之证》琵琶版本 by@琵琶刘亦琳  （原作：甲田雅人）
 《攻防自在、乱戦必至の城塞》by 堀諭史
-《ポッケ村のテーマ》by 成田暁彦</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="走狗烹" data-k="走狗烹原创古风志怪短片《走狗烹》第一集，正邪颠倒，尸解修仙【AI全民制作人】花千树2077"><a href="https://www.bilibili.com/video/BV1eU7Y68EKe" target="_blank" rel="noopener">
+《ポッケ村のテーマ》by 成田暁彦</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="走狗烹" data-k="走狗烹原创古风志怪短片《走狗烹》第一集，正邪颠倒，尸解修仙【AI全民制作人】花千树2077"><a href="https://www.bilibili.com/video/BV1eU7Y68EKe" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/cd799ee6ff7631341b43186090c453654651f473.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>走狗烹</h3>
 <p class="vt">原创古风志怪短片《走狗烹》第一集，正邪颠倒，尸解修仙【AI全民制作人】</p><p class="meta">UP：花千树2077 · 39,552 播放</p>
 <p class="desc">我没有团队，只是一个喜欢玩游戏、玩AI的普通UP，一直以来，都希望做一部暗黑风格的、有大量高燃斗法场面的仙侠片子，之前经过好几次试验，总算确定了画面风格，这次也算下了血本，完成了《走狗烹》第一集...话说现在的AI视频算力真贵啊，短短不到6分钟的片子，成本已经突破了1000元（主要是特效镜头超过了50%）！
 我没想过收回成本这么遥远的事情，只想稳稳地编好故事、做好片子，把自己心中的故事做出来分享给大家，与众同乐，善莫大焉。
-目前《走狗烹》的第二集已经在制作中了，希望这个系列能收获比以往更多的点赞、转发、三连，你们的鼓励就是我制作视频最大的动力，谢谢大家！</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="恶仙" data-k="恶仙原创AI漫剧《恶仙》第一集，中式克苏鲁风格，更多正片内容即将解锁，敬请期待！众乐乐漫剧场"><a href="https://www.bilibili.com/video/BV1uUfmBAEtc" target="_blank" rel="noopener">
+目前《走狗烹》的第二集已经在制作中了，希望这个系列能收获比以往更多的点赞、转发、三连，你们的鼓励就是我制作视频最大的动力，谢谢大家！</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="恶仙" data-k="恶仙原创AI漫剧《恶仙》第一集，中式克苏鲁风格，更多正片内容即将解锁，敬请期待！众乐乐漫剧场"><a href="https://www.bilibili.com/video/BV1uUfmBAEtc" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/e839b1dce4ffba05e7f0ab1d1c3fa20121064480.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>恶仙</h3>
 <p class="vt">原创AI漫剧《恶仙》第一集，中式克苏鲁风格，更多正片内容即将解锁，敬请期待！</p><p class="meta">UP：众乐乐漫剧场 · 782,091 播放</p>
@@ -833,53 +833,53 @@ BGM：《英雄之证》琵琶版本 by@琵琶刘亦琳  （原作：甲田雅�
 
 为免遭吞魂，一人一葫踏上以妖续命的修罗道。借妖眼观人间，林玄窥见的却是善恶颠倒：妖邪泣血护子，神明却大啖婴孩。
 
-而在除妖的尽头，母亲当年“弑夫剜眼”的残酷真相轰然揭开——原来这满天神佛皆是画皮，而他林玄，竟是用来唤醒虚空“祟神”的一根“证道香”……</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="照山河" data-k="照山河"><a href="https://search.bilibili.com/all?keyword=%E7%85%A7%E5%B1%B1%E6%B2%B3" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>照山河</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="大师兄" data-k="大师兄原创AI短片《大师兄》，回归最纯粹的武侠，全流程独立创作【AI全民制作人】柯克明"><a href="https://www.bilibili.com/video/BV1pF4k6tEQb" target="_blank" rel="noopener">
+而在除妖的尽头，母亲当年“弑夫剜眼”的残酷真相轰然揭开——原来这满天神佛皆是画皮，而他林玄，竟是用来唤醒虚空“祟神”的一根“证道香”……</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="照山河" data-k="照山河"><a href="https://search.bilibili.com/all?keyword=%E7%85%A7%E5%B1%B1%E6%B2%B3" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>照山河</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="大师兄" data-k="大师兄原创AI短片《大师兄》，回归最纯粹的武侠，全流程独立创作【AI全民制作人】柯克明"><a href="https://www.bilibili.com/video/BV1pF4k6tEQb" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/86159fc0fde81271265327c6dbc90371c407de76.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>大师兄</h3>
 <p class="vt">原创AI短片《大师兄》，回归最纯粹的武侠，全流程独立创作【AI全民制作人】</p><p class="meta">UP：柯克明 · 373,938 播放</p>
-<p class="desc">原创AI短片电影《大师兄》。 十年前写的故事，虽青涩，却赤诚。感谢AI，让所有旧梦得圆。 全流程独立创作。《大师兄 短片电影原声带》已同步上线。本作品已进行著作权自愿登记，著作权归柯克明所有。未经许可，不得擅自使用。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="小麦战记" data-k="小麦战记《小麦战记》-长剧版第一集 part1 【ai全民制作人】南山坡上卿"><a href="https://www.bilibili.com/video/BV1ZRYB6RECG" target="_blank" rel="noopener">
+<p class="desc">原创AI短片电影《大师兄》。 十年前写的故事，虽青涩，却赤诚。感谢AI，让所有旧梦得圆。 全流程独立创作。《大师兄 短片电影原声带》已同步上线。本作品已进行著作权自愿登记，著作权归柯克明所有。未经许可，不得擅自使用。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="小麦战记" data-k="小麦战记《小麦战记》-长剧版第一集 part1 【ai全民制作人】南山坡上卿"><a href="https://www.bilibili.com/video/BV1ZRYB6RECG" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/1fc3c1e4de66da09fc6ea272b142867b848e080b.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>小麦战记</h3>
 <p class="vt">《小麦战记》-长剧版第一集 part1 【ai全民制作人】</p><p class="meta">UP：南山坡上卿 · 7,982 播放</p>
 <p class="desc">作者：dy 山笑 
-区别于之前的短剧版本，这个版本完善了故事线，重构了剧本和分镜，采用了长剧/电视剧的叙事结构，故事更清晰，希望大家喜欢。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="合龙" data-k="合龙合龙第一集故事皮蛋"><a href="https://www.bilibili.com/video/BV1VFY56LET2" target="_blank" rel="noopener">
+区别于之前的短剧版本，这个版本完善了故事线，重构了剧本和分镜，采用了长剧/电视剧的叙事结构，故事更清晰，希望大家喜欢。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="合龙" data-k="合龙合龙第一集故事皮蛋"><a href="https://www.bilibili.com/video/BV1VFY56LET2" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/0fc0bf7b2e288708d9e5e56bb8ff1f1849f0aa92.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>合龙</h3><span class="note">匹配不确定</span>
 <p class="vt">合龙第一集</p><p class="meta">UP：故事皮蛋 · 5,238 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="天地诡物志" data-k="天地诡物志AI自制新作《天地诡物志》第一集，堂堂连载！！！【B站AI创作大赛-开放赛道】MEGA究极冬瓜皮"><a href="https://www.bilibili.com/video/BV1pBwkzLEBz" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="天地诡物志" data-k="天地诡物志AI自制新作《天地诡物志》第一集，堂堂连载！！！【B站AI创作大赛-开放赛道】MEGA究极冬瓜皮"><a href="https://www.bilibili.com/video/BV1pBwkzLEBz" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/dc8f112f630c6a576a993a66701511c5fc5bbd0b.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>天地诡物志</h3>
 <p class="vt">AI自制新作《天地诡物志》第一集，堂堂连载！！！【B站AI创作大赛-开放赛道】</p><p class="meta">UP：MEGA究极冬瓜皮 · 61,019 播放</p>
-<p class="desc">AI自制新作《天地诡物志》第一集，堂堂连载！！！自己一个人肝了好久，也算是完成了从小到大自己做动画的梦想，希望大家能够喜欢。在此给各位义父抱拳了！！【B站AI创作大赛-开放赛道】</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="科学修仙时代" data-k="科学修仙时代【科学修仙】被法宝寄生后如何科学修仙...【UP动画】第一集么鸣堂"><a href="https://www.bilibili.com/video/BV1rT5e6iEB3" target="_blank" rel="noopener">
+<p class="desc">AI自制新作《天地诡物志》第一集，堂堂连载！！！自己一个人肝了好久，也算是完成了从小到大自己做动画的梦想，希望大家能够喜欢。在此给各位义父抱拳了！！【B站AI创作大赛-开放赛道】</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="科学修仙时代" data-k="科学修仙时代【科学修仙】被法宝寄生后如何科学修仙...【UP动画】第一集么鸣堂"><a href="https://www.bilibili.com/video/BV1rT5e6iEB3" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/cb0592d85c876d9442905eff30b10c384aa4c375.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>科学修仙时代</h3>
 <p class="vt">【科学修仙】被法宝寄生后如何科学修仙...【UP动画】第一集</p><p class="meta">UP：么鸣堂 · 773,703 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="神坛之下，众生为炉" data-k="神坛之下，众生为炉神坛之下，众生为炉｜1-4合集，重制优化版阿墩的AI小剧场"><a href="https://www.bilibili.com/video/BV1yc5F6kEG5" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="神坛之下，众生为炉" data-k="神坛之下，众生为炉神坛之下，众生为炉｜1-4合集，重制优化版阿墩的AI小剧场"><a href="https://www.bilibili.com/video/BV1yc5F6kEG5" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/f6d45682b5bfb47ab5b64f1cefbb1e80969916ad.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>神坛之下，众生为炉</h3><span class="note">1-4 合集</span>
 <p class="vt">神坛之下，众生为炉｜1-4合集，重制优化版</p><p class="meta">UP：阿墩的AI小剧场 · 206,061 播放</p>
-<p class="desc">年轻嘴炮女修的暗黑无限流之旅，第一副本完整合集，EP01全面重制。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="嘴炮女修" data-k="嘴炮女修嘴炮女修：黄眉，你这小西天不错，我收了！阿墩的AI小剧场"><a href="https://www.bilibili.com/video/BV1zbEG62ETA" target="_blank" rel="noopener">
+<p class="desc">年轻嘴炮女修的暗黑无限流之旅，第一副本完整合集，EP01全面重制。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="嘴炮女修" data-k="嘴炮女修嘴炮女修：黄眉，你这小西天不错，我收了！阿墩的AI小剧场"><a href="https://www.bilibili.com/video/BV1zbEG62ETA" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/568609a2869208144865c5701e7a0c2d3f42927f.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>嘴炮女修</h3><span class="note">系列短片，独立成篇</span>
 <p class="vt">嘴炮女修：黄眉，你这小西天不错，我收了！</p><p class="meta">UP：阿墩的AI小剧场 · 148,722 播放</p>
-<p class="desc">瑶瑶乱三界·西游篇01｜强夺小西天（上）黄眉不同意。法相对轰。人种袋开了。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="立志成为恶兽" data-k="立志成为恶兽【立志成为恶兽】01 穿越成恶兽啦？！【UP动画】立志成为恶兽"><a href="https://www.bilibili.com/video/BV1iRtA6gEuc" target="_blank" rel="noopener">
+<p class="desc">瑶瑶乱三界·西游篇01｜强夺小西天（上）黄眉不同意。法相对轰。人种袋开了。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="立志成为恶兽" data-k="立志成为恶兽【立志成为恶兽】01 穿越成恶兽啦？！【UP动画】立志成为恶兽"><a href="https://www.bilibili.com/video/BV1iRtA6gEuc" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/b3c2707e4a9a99c9f789af1cb4658d18cb1b967f.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>立志成为恶兽</h3>
 <p class="vt">【立志成为恶兽】01 穿越成恶兽啦？！【UP动画】</p><p class="meta">UP：立志成为恶兽 · 3,991,924 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="妖怪澡堂" data-k="妖怪澡堂丨妖怪澡堂丨正式开张，惊喜女宾一位！叫兽易小星"><a href="https://www.bilibili.com/video/BV11QTL6MEPA" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="妖怪澡堂" data-k="妖怪澡堂丨妖怪澡堂丨正式开张，惊喜女宾一位！叫兽易小星"><a href="https://www.bilibili.com/video/BV11QTL6MEPA" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/29631f05b6ba3f0ddd2b04ef6d75db9e841be482.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>妖怪澡堂</h3>
 <p class="vt">丨妖怪澡堂丨正式开张，惊喜女宾一位！</p><p class="meta">UP：叫兽易小星 · 3,344,357 播放</p>
-<p class="desc">快来洗澡吧！</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="我穿越到武侠世界的一天" data-k="我穿越到武侠世界的一天我穿越到武侠世界的一天1-4集合集一只小希希呀"><a href="https://www.bilibili.com/video/BV1cnYy6VEM7" target="_blank" rel="noopener">
+<p class="desc">快来洗澡吧！</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="我穿越到武侠世界的一天" data-k="我穿越到武侠世界的一天我穿越到武侠世界的一天1-4集合集一只小希希呀"><a href="https://www.bilibili.com/video/BV1cnYy6VEM7" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/578736a0d71a2a05e902ad7f0c45d18d8576b0ca.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>我穿越到武侠世界的一天</h3><span class="note">1-4 合集</span>
 <p class="vt">我穿越到武侠世界的一天1-4集合集</p><p class="meta">UP：一只小希希呀 · 147,414 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="茅山道士" data-k="茅山道士《茅山道士》第一集鱼玄机Mus"><a href="https://www.bilibili.com/video/BV1WPu26bEhu" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="茅山道士" data-k="茅山道士《茅山道士》第一集鱼玄机Mus"><a href="https://www.bilibili.com/video/BV1WPu26bEhu" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/ec87673940c829d6004368c3ae79becad58afede.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>茅山道士</h3>
 <p class="vt">《茅山道士》第一集</p><p class="meta">UP：鱼玄机Mus · 486,410 播放</p>
-<p class="desc">道士下山</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="山海 剑歌" data-k="山海 剑歌18万积分手搓AI武侠《山海·剑歌》|  打爽就完事儿了像素狮PixelLion"><a href="https://www.bilibili.com/video/BV1AY7Z6mEoX" target="_blank" rel="noopener">
+<p class="desc">道士下山</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="山海 剑歌" data-k="山海 剑歌18万积分手搓AI武侠《山海·剑歌》|  打爽就完事儿了像素狮PixelLion"><a href="https://www.bilibili.com/video/BV1AY7Z6mEoX" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/19750cdfa2f603bc27bfffbae94c8f686e0f930e.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>山海 剑歌</h3>
 <p class="vt">18万积分手搓AI武侠《山海·剑歌》|  打爽就完事儿了</p><p class="meta">UP：像素狮PixelLion · 305,568 播放</p>
@@ -890,50 +890,50 @@ BGM：《英雄之证》琵琶版本 by@琵琶刘亦琳  （原作：甲田雅�
 今年3月份和朋友们想试试废土武侠的AI短片。
 断断续续地搞了一两个月，有一搭没一搭地弄，全部只用seedance2.0搓。
 片子的设定为古代地废土西北地区地一次打劫事件，世界观和人物设定还没完全想好，视听语言上还有不少的瑕疵，人物一致性也有问题.................. （主要是钱顶不住了）
-但是吧，鲁迅说过：“时不我待，爽就完事儿了。”  先做出来再说吧，想这么多干嘛？ 哈哈哈哈哈哈哈哈哈哈</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="是，魏王" data-k="是，魏王【情景喜剧】《是 魏王》EP01-1：曹丕听到父王去世【AI全民制作人】星无"><a href="https://www.bilibili.com/video/BV1VxeA6QE77" target="_blank" rel="noopener">
+但是吧，鲁迅说过：“时不我待，爽就完事儿了。”  先做出来再说吧，想这么多干嘛？ 哈哈哈哈哈哈哈哈哈哈</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="是，魏王" data-k="是，魏王【情景喜剧】《是 魏王》EP01-1：曹丕听到父王去世【AI全民制作人】星无"><a href="https://www.bilibili.com/video/BV1VxeA6QE77" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/cd5d9e13d3eb708659c6ae38ea14c4152aebcca9.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>是，魏王</h3>
 <p class="vt">【情景喜剧】《是 魏王》EP01-1：曹丕听到父王去世【AI全民制作人】</p><p class="meta">UP：星无 · 663,212 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card miss" data-id="侠之大者" data-k="侠之大者"><a href="https://search.bilibili.com/all?keyword=%E4%BE%A0%E4%B9%8B%E5%A4%A7%E8%80%85" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>侠之大者</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="百匠纸契灵" data-k="百匠纸契灵百匠 《百匠：纸契灵》贝吉影视"><a href="https://www.bilibili.com/video/BV1rTTR6rE4T" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card miss" data-id="侠之大者" data-k="侠之大者"><a href="https://search.bilibili.com/all?keyword=%E4%BE%A0%E4%B9%8B%E5%A4%A7%E8%80%85" target="_blank" rel="noopener">
+<div class="ph">未找到</div><div class="body"><h3>侠之大者</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="百匠纸契灵" data-k="百匠纸契灵百匠 《百匠：纸契灵》贝吉影视"><a href="https://www.bilibili.com/video/BV1rTTR6rE4T" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/4d481ae1110e685ffb076c2951a309ddcfbd867e.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>百匠纸契灵</h3><span class="note">匹配不确定</span>
 <p class="vt">百匠 《百匠：纸契灵》</p><p class="meta">UP：贝吉影视 · 32,364 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="南宫家书" data-k="南宫家书撰余辔兮高驰翔-南宫家书 第一集 白霓裳-武侠AIGC天文AI"><a href="https://www.bilibili.com/video/BV1BeEA6HEKw" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="南宫家书" data-k="南宫家书撰余辔兮高驰翔-南宫家书 第一集 白霓裳-武侠AIGC天文AI"><a href="https://www.bilibili.com/video/BV1BeEA6HEKw" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/2e45999a71c5f9c63bbc93822bf051e5d27b9b19.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>南宫家书</h3>
 <p class="vt">撰余辔兮高驰翔-南宫家书 第一集 白霓裳-武侠AIGC</p><p class="meta">UP：天文AI · 18,143 播放</p>
 <p class="desc">以砺剑楼南宫皓的视角，讲述这方天地的江湖事。
 单人手搓分镜和动作，制作工具：图image2，视频sd2，音乐suno。
-文案+成片工作周期大概2天左右，所以应该会定期更新的，欢迎关注！</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="大天蓬" data-k="大天蓬《大天蓬》 1-15合集优化版绯红天尊"><a href="https://www.bilibili.com/video/BV1fPJ76wEtM" target="_blank" rel="noopener">
+文案+成片工作周期大概2天左右，所以应该会定期更新的，欢迎关注！</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="大天蓬" data-k="大天蓬《大天蓬》 1-15合集优化版绯红天尊"><a href="https://www.bilibili.com/video/BV1fPJ76wEtM" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/00989482ce0e62b82de438597970750db61bdb90.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>大天蓬</h3><span class="note">1-15 合集</span>
 <p class="vt">《大天蓬》 1-15合集优化版</p><p class="meta">UP：绯红天尊 · 2,089,126 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section><section id="c7"><h2>古代·西幻 <small>6</small></h2><div class="grid"><div class="card" data-id="魔女养成计划" data-k="魔女养成计划【魔女养成计划1】要自由落体了，你两可别叫哦！【up动画】#SpecialForAAIFF泡椒小鸡"><a href="https://www.bilibili.com/video/BV1qmRJBWEjH" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section><section id="c7"><h2>古代·西幻 <small>6</small></h2><div class="grid"><div class="card" data-id="魔女养成计划" data-k="魔女养成计划【魔女养成计划1】要自由落体了，你两可别叫哦！【up动画】#SpecialForAAIFF泡椒小鸡"><a href="https://www.bilibili.com/video/BV1qmRJBWEjH" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/daaf6016cd34d762d28e73695875bea38e3490b5.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>魔女养成计划</h3>
 <p class="vt">【魔女养成计划1】要自由落体了，你两可别叫哦！【up动画】#SpecialForAAIFF</p><p class="meta">UP：泡椒小鸡 · 2,964,094 播放</p>
-<p class="desc">再做一个，嘿嘿，背景音乐是《Shut Up and Drive》</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="奥术之贼" data-k="奥术之贼【奥术之贼01】法师vs重甲，原创西幻cg影片HandsMini1"><a href="https://www.bilibili.com/video/BV1jve36mECs" target="_blank" rel="noopener">
+<p class="desc">再做一个，嘿嘿，背景音乐是《Shut Up and Drive》</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="奥术之贼" data-k="奥术之贼【奥术之贼01】法师vs重甲，原创西幻cg影片HandsMini1"><a href="https://www.bilibili.com/video/BV1jve36mECs" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/90f7fe180552d2cbb28691f8332f965b89fad4f8.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>奥术之贼</h3>
 <p class="vt">【奥术之贼01】法师vs重甲，原创西幻cg影片</p><p class="meta">UP：HandsMini1 · 4,542,401 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="冠以破碎之名" data-k="冠以破碎之名冠以破碎之名：第一章 冰潮寒雨之夏Xavier_白昼"><a href="https://www.bilibili.com/video/BV1XEV26XEsz" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="冠以破碎之名" data-k="冠以破碎之名冠以破碎之名：第一章 冰潮寒雨之夏Xavier_白昼"><a href="https://www.bilibili.com/video/BV1XEV26XEsz" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/edb3c2a03146bbc3390581aa30c41b8e3c3ab846.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>冠以破碎之名</h3>
 <p class="vt">冠以破碎之名：第一章 冰潮寒雨之夏</p><p class="meta">UP：Xavier_白昼 · 3,490,684 播放</p>
-<p class="desc">我叫西泽，一个活了不知道多久的穿越者，一切的故事都从夏末捡到那位奴隶少女露缇娅开始……</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="不正经小队的正确冒险法" data-k="不正经小队的正确冒险法不正经小队的正确冒险法01艾登Caster"><a href="https://www.bilibili.com/video/BV1dHT16gEtc" target="_blank" rel="noopener">
+<p class="desc">我叫西泽，一个活了不知道多久的穿越者，一切的故事都从夏末捡到那位奴隶少女露缇娅开始……</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="不正经小队的正确冒险法" data-k="不正经小队的正确冒险法不正经小队的正确冒险法01艾登Caster"><a href="https://www.bilibili.com/video/BV1dHT16gEtc" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i0.hdslb.com/bfs/archive/8ba46a2b55cb396b1c9b95723e34ab557c095d52.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>不正经小队的正确冒险法</h3>
 <p class="vt">不正经小队的正确冒险法01</p><p class="meta">UP：艾登Caster · 210,075 播放</p>
-<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="龙之使徒" data-k="龙之使徒剑与魔法的史诗【龙之使徒】第一集：无妄之灾 【up动画】无烬映画"><a href="https://www.bilibili.com/video/BV1iCu46cEjQ" target="_blank" rel="noopener">
+<p class="desc">（无简介）</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="龙之使徒" data-k="龙之使徒剑与魔法的史诗【龙之使徒】第一集：无妄之灾 【up动画】无烬映画"><a href="https://www.bilibili.com/video/BV1iCu46cEjQ" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i2.hdslb.com/bfs/archive/f33277a51ca28245bd351319a04699c6a08728c7.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>龙之使徒</h3>
 <p class="vt">剑与魔法的史诗【龙之使徒】第一集：无妄之灾 【up动画】</p><p class="meta">UP：无烬映画 · 162,444 播放</p>
-<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div><div class="card" data-id="你好！异世界" data-k="你好！异世界你好！异世界｜第一集热心市民光某"><a href="https://www.bilibili.com/video/BV1Qjhd6oEC5" target="_blank" rel="noopener">
+<p class="desc">-</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div><div class="card" data-id="你好！异世界" data-k="你好！异世界你好！异世界｜第一集热心市民光某"><a href="https://www.bilibili.com/video/BV1Qjhd6oEC5" target="_blank" rel="noopener">
 <img loading="lazy" referrerpolicy="no-referrer" src="https://i1.hdslb.com/bfs/archive/d7358719dd5b26f2b0228ed4578e3c76d2a36b7d.jpg@480w_270h_1c.webp" alt="">
 <div class="body"><h3>你好！异世界</h3>
 <p class="vt">你好！异世界｜第一集</p><p class="meta">UP：热心市民光某 · 364,031 播放</p>
-<p class="desc">十分荣幸和幸运能和寒舞老师一起创作这部作品！追梦成功了！这是一部搞笑与奇幻并存的作品，希望大家能够喜欢！导演制片：@异世界的光某 整体监制：@寒舞</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section></main><script>
+<p class="desc">十分荣幸和幸运能和寒舞老师一起创作这部作品！追梦成功了！这是一部搞笑与奇幻并存的作品，希望大家能够喜欢！导演制片：@异世界的光某 整体监制：@寒舞</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div></div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section></main><script>
 const q=document.getElementById("q");q.oninput=()=>{const s=q.value.trim().toLowerCase();
 document.querySelectorAll(".card").forEach(c=>c.classList.toggle("hide",!!s&&!c.dataset.k.toLowerCase().includes(s)));
 document.querySelectorAll("section").forEach(x=>x.classList.toggle("hide",!x.querySelector(".card:not(.hide)")))};
@@ -941,7 +941,7 @@ document.querySelectorAll("section").forEach(x=>x.classList.toggle("hide",!x.que
 const KEY="seen-v1";let seen=new Set();try{seen=new Set(JSON.parse(localStorage.getItem(KEY)||"[]"))}catch(_){}
 const total=document.querySelectorAll(".card").length,order=new Map([...document.querySelectorAll(".card")].map((c,i)=>[c,i]));
 function place(c){const sec=c.closest("section"),on=seen.has(c.dataset.id),g=on?sec.querySelector(".done .grid"):sec.querySelector(".grid");
-c.querySelector("input").checked=on;const after=[...g.children].find(x=>order.get(x)>order.get(c));g.insertBefore(c,after||null)}
+c.querySelector("input").checked=on;c.querySelector(".seen span").textContent=on?"取消看过":"看过";const after=[...g.children].find(x=>order.get(x)>order.get(c));g.insertBefore(c,after||null)}
 function count(){document.querySelectorAll("section").forEach(sec=>{const n=sec.querySelectorAll(".done .card").length;
 sec.querySelector(".done b").textContent=n;sec.querySelector(".done").classList.toggle("hide",!n)});
 document.getElementById("stat").textContent=seen.size?`已看 ${seen.size} / ${total}`:""}

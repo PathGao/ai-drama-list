@@ -23,11 +23,11 @@ for cat, ts in cats:
 <img loading="lazy" referrerpolicy="no-referrer" src="{e(f['pic'])}@480w_270h_1c.webp" alt="">
 <div class="body"><h3>{e(t)}</h3>{f'<span class="note">{e(note)}</span>' if note else ''}
 <p class="vt">{e(f['title'])}</p><p class="meta">UP：{e(f['author'])} · {f['play']:,} 播放</p>
-<p class="desc">{e(desc)}</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div>''')
+<p class="desc">{e(desc)}</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div>''')
         else:
             md.append(f"- {t}（B 站未找到，[搜索]({search(t)})）")
             cards.append(f'''<div class="card miss" data-id="{e(t)}" data-k="{e(t)}"><a href="{search(t)}" target="_blank" rel="noopener">
-<div class="ph">未找到</div><div class="body"><h3>{e(t)}</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"> 看过</label></div>''')
+<div class="ph">未找到</div><div class="body"><h3>{e(t)}</h3><p class="desc">B 站没搜到原片，点开去搜索。</p></div></a><label class="seen"><input type="checkbox"><span>看过</span></label></div>''')
     sec.append(f'<section><h2>{e(cat)} <small>{len(ts)}</small></h2><div class="grid">{"".join(cards)}</div><details class="done hide"><summary>已看过 <b>0</b> 部</summary><div class="grid"></div></details></section>')
 open("README.md", "w").write("\n".join(md) + "\n")
 nav = "".join(f'<a href="#c{i}">{e(c)}</a>' for i, (c, _) in enumerate(cats))
@@ -37,9 +37,9 @@ open("index.html", "w").write(f'''<!doctype html><html lang="zh-CN"><head><meta 
 :root{{--bg:#f6f6f4;--card:#fff;--fg:#1d1d1f;--mute:#6b6b70;--line:#e3e3e0;--acc:#fb7299}}
 @media (prefers-color-scheme:dark){{:root{{--bg:#151517;--card:#1f1f22;--fg:#ececee;--mute:#9a9aa2;--line:#2e2e33}}}}
 *{{box-sizing:border-box}}body{{margin:0;background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,"PingFang SC",sans-serif}}
-header{{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 16px}}
+header{{position:sticky;top:0;z-index:2;background:var(--bg);border-bottom:1px solid var(--line);padding:12px 16px;text-align:center}}
 h1{{margin:0 0 8px;font-size:20px}}input{{width:100%;max-width:360px;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--fg);font-size:14px}}
-nav{{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:8px;font-size:13px}}nav a{{color:var(--mute);text-decoration:none}}nav a:hover{{color:var(--acc)}}
+nav{{display:flex;flex-wrap:wrap;justify-content:center;gap:6px 14px;margin-top:8px;font-size:13px}}nav a{{color:var(--mute);text-decoration:none}}nav a:hover{{color:var(--acc)}}
 main{{max-width:1280px;margin:0 auto;padding:8px 16px 48px}}h2{{font-size:17px;margin:28px 0 12px;scroll-margin-top:130px}}h2 small{{color:var(--mute);font-weight:400}}
 .grid{{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}}
 .card{{position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden;color:inherit;text-decoration:none}}
@@ -47,10 +47,10 @@ main{{max-width:1280px;margin:0 auto;padding:8px 16px 48px}}h2{{font-size:17px;m
 .ph{{display:grid;place-items:center;color:var(--mute)}}.body{{padding:10px 12px 12px}}h3{{margin:0;font-size:16px}}
 .note{{display:inline-block;margin-top:4px;font-size:12px;color:var(--acc);border:1px solid var(--acc);border-radius:4px;padding:0 5px}}
 .vt{{margin:6px 0 2px;font-size:13px}}.meta{{margin:0;font-size:12px;color:var(--mute)}}
-.desc{{margin:6px 0 0;font-size:12.5px;color:var(--mute);white-space:pre-line;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}}
-.card:hover .desc{{-webkit-line-clamp:unset}}.hide{{display:none!important}}
+.desc{{margin:6px 0 0;font-size:12.5px;color:var(--mute);white-space:pre-line;overflow-wrap:anywhere}}
+.hide{{display:none!important}}
 .card>a{{color:inherit;text-decoration:none;flex:1}}
-.seen{{position:absolute;top:8px;right:8px;display:flex;gap:4px;align-items:center;padding:3px 8px;border-radius:6px;background:rgba(0,0,0,.6);color:#fff;font-size:12.5px;cursor:pointer}}
+.seen{{position:absolute;top:8px;right:8px;display:flex;gap:4px;align-items:center;padding:3px 8px;border-radius:6px;background:rgba(0,0,0,.6);color:#fff;font-size:12.5px;cursor:pointer;white-space:nowrap;flex-shrink:0}}
 .seen input{{margin:0;accent-color:var(--acc)}}.done .card{{opacity:.6}}
 .done{{margin-top:14px}}.done summary{{cursor:pointer;color:var(--mute);font-size:14px;padding:6px 0}}.done .grid{{margin-top:8px}}
 #stat{{margin-left:10px;font-size:13px;color:var(--mute);font-weight:400}}
@@ -63,7 +63,7 @@ document.querySelectorAll("section").forEach(x=>x.classList.toggle("hide",!x.que
 const KEY="seen-v1";let seen=new Set();try{{seen=new Set(JSON.parse(localStorage.getItem(KEY)||"[]"))}}catch(_){{}}
 const total=document.querySelectorAll(".card").length,order=new Map([...document.querySelectorAll(".card")].map((c,i)=>[c,i]));
 function place(c){{const sec=c.closest("section"),on=seen.has(c.dataset.id),g=on?sec.querySelector(".done .grid"):sec.querySelector(".grid");
-c.querySelector("input").checked=on;const after=[...g.children].find(x=>order.get(x)>order.get(c));g.insertBefore(c,after||null)}}
+c.querySelector("input").checked=on;c.querySelector(".seen span").textContent=on?"取消看过":"看过";const after=[...g.children].find(x=>order.get(x)>order.get(c));g.insertBefore(c,after||null)}}
 function count(){{document.querySelectorAll("section").forEach(sec=>{{const n=sec.querySelectorAll(".done .card").length;
 sec.querySelector(".done b").textContent=n;sec.querySelector(".done").classList.toggle("hide",!n)}});
 document.getElementById("stat").textContent=seen.size?`已看 ${{seen.size}} / ${{total}}`:""}}
