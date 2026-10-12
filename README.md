@@ -37,6 +37,7 @@
 - [临江战纪](https://www.bilibili.com/video/BV1MThe6sEX7)
 - [烂仔英雄](https://www.bilibili.com/video/BV1aZe66sE6F)
 - [花郎](https://www.bilibili.com/video/BV12LYq6YE4W)
+- [污染者](https://www.bilibili.com/video/BV1EEK86PEWL)（第一季合集）
 - [能力有限](https://www.bilibili.com/video/BV1tTbk6zEtC)
 - [遗能术士](https://www.bilibili.com/video/BV1orN16zEie)
 - [越界](https://www.bilibili.com/video/BV1GRtg6WEgg)
@@ -83,7 +84,6 @@
 - [格洛诺斯](https://www.bilibili.com/video/BV1tcas6hEnP)
 - [感染区](https://www.bilibili.com/video/BV1kHeF6oE1v)
 - [港女 丧尸 机关枪](https://www.bilibili.com/video/BV1y9eX61Eud)
-- [污染者](https://www.bilibili.com/video/BV1EEK86PEWL)（第一季合集）
 - [末日合伙人](https://www.bilibili.com/video/BV1tgY56BEqX)
 - 雾山精神病院（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E9%9B%BE%E5%B1%B1%E7%B2%BE%E7%A5%9E%E7%97%85%E9%99%A2)）
 - 恶魔岛（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E6%81%B6%E9%AD%94%E5%B2%9B)）
