@@ -1,6 +1,6 @@
 # 最近看的 AI 剧
 
-共 166 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
+共 167 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
 
 
 ## 现代玄门
@@ -8,6 +8,7 @@
 
 ### 天师·道士
 
+- [道士也怕鬼](https://www.bilibili.com/video/BV1838R6EEtj)
 - [邪修润魂子](https://www.bilibili.com/video/BV1useJ6tEpf)
 - [天师李淑芬](https://www.bilibili.com/video/BV1o9MP6cEUm)
 - [清微观来的插班生](https://www.bilibili.com/video/BV1uoaA6CEjy)
