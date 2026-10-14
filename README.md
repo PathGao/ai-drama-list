@@ -1,6 +1,6 @@
 # 最近看的 AI 剧
 
-共 165 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
+共 166 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
 
 
 ## 现代玄门
@@ -168,6 +168,7 @@
 - [大明14444](https://www.bilibili.com/video/BV1Ui9MBuE2k)
 - [是，魏王](https://www.bilibili.com/video/BV1VxeA6QE77)
 - [百匠纸契灵](https://www.bilibili.com/video/BV1rTTR6rE4T)（匹配不确定）
+- [你的两千年修行之路](https://www.bilibili.com/video/BV12YpB6CEyt)（第一季合集）
 - [小麦战记](https://www.bilibili.com/video/BV1ZRYB6RECG)
 - [合龙](https://www.bilibili.com/video/BV1VFY56LET2)（匹配不确定）
 
