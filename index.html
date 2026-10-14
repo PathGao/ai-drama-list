@@ -1031,13 +1031,13 @@ Hidekazu Sakamoto - white color</p></div></a><div class="acts"><label class="act
 const load=k=>{try{return new Set(JSON.parse(localStorage.getItem(k)||"[]"))}catch(_){return new Set}};
 const st={seen:load("seen-v1"),fav:load("fav-v1"),nope:load("nope-v1")},KEYS={seen:"seen-v1",fav:"fav-v1",nope:"nope-v1"},
  TXT={seen:["看过","取消看过"],fav:["追剧","取消追剧"],nope:["不爱看","取消不爱看"]};
-// 旧版允许多选：按 不爱看 > 看过 > 追剧 只留一个
-for(const id of st.nope){st.seen.delete(id);st.fav.delete(id)}for(const id of st.seen)st.fav.delete(id);
+// 旧版允许多选：按 不爱看 > 追剧 > 看过 只留一个
+for(const id of st.nope){st.seen.delete(id);st.fav.delete(id)}for(const id of st.fav)st.seen.delete(id);
 for(const k in st)try{localStorage.setItem(KEYS[k],JSON.stringify([...st[k]]))}catch(_){}
 const cards=[...document.querySelectorAll(".card")],total=cards.length,order=new Map(cards.map((c,i)=>[c,i])),home=new Map(cards.map(c=>[c,c.parentElement]));
 const box={fav:document.getElementById("my-fav"),seen:document.getElementById("my-seen"),nope:document.getElementById("my-nope")};
 function place(c){const id=c.dataset.id,h=home.get(c);
- const k=["nope","seen","fav"].find(k=>st[k].has(id)),g=k?box[k].querySelector(".grid"):h;
+ const k=["nope","fav","seen"].find(k=>st[k].has(id)),g=k?box[k].querySelector(".grid"):h;
  for(const k in st){const on=st[k].has(id);c.querySelector(`.act.${k} input`).checked=on;c.querySelector(`.act.${k} span`).textContent=TXT[k][+on]}
  const after=[...g.children].find(x=>order.get(x)>order.get(c));g.insertBefore(c,after||null)}
 function count(){
