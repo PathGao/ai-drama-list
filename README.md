@@ -34,7 +34,7 @@
 
 ### 超英·异能战斗
 
-- [有异人](https://www.bilibili.com/video/BV1psN86KEt5)
+- [有异人](https://www.bilibili.com/video/BV1srp76mEcj)（1-7 集合集）
 - [临江战纪](https://www.bilibili.com/video/BV1MThe6sEX7)
 - [烂仔英雄](https://www.bilibili.com/video/BV1aZe66sE6F)
 - [花郎](https://www.bilibili.com/video/BV12LYq6YE4W)
