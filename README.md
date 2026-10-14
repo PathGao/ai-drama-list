@@ -1,6 +1,6 @@
 # 最近看的 AI 剧
 
-共 163 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
+共 165 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
 
 
 ## 现代玄门
@@ -229,11 +229,13 @@
 
 - [豪物语](https://www.bilibili.com/video/BV1Nap461E9p)
 - [最帅之人](https://www.bilibili.com/video/BV1JQ8M6vEtK)
+- [女朋友被假小子牛走，所以只能拿下假小子了](https://www.bilibili.com/video/BV17Wt16aEHG)
 - [马上好](https://www.bilibili.com/video/BV1rKZYB6EQ7)
 - [这是艺术你不懂](https://www.bilibili.com/video/BV1aNwizkEuz)
 - [无妻之徒](https://www.bilibili.com/video/BV1w9gw63EXX)（第一季合集）
 - [颠佬外传](https://www.bilibili.com/video/BV1SFMy68Ea4)
 - [无耻之徒](https://www.bilibili.com/video/BV1zmhZ65EqC)（1-9 集合集）
+- [合租别闹](https://www.bilibili.com/video/BV1A4aW6RELh)
 - [TV小姐的牛马日记](https://www.bilibili.com/video/BV1RGgZ61EgA)
 - 我被太太们包围了（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E6%88%91%E8%A2%AB%E5%A4%AA%E5%A4%AA%E4%BB%AC%E5%8C%85%E5%9B%B4%E4%BA%86)）
 - 无毒有呕（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E6%97%A0%E6%AF%92%E6%9C%89%E5%91%95)）
