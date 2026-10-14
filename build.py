@@ -81,8 +81,8 @@ h3::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--ac
 .card::before{content:"";display:block;padding-bottom:calc(56.25% + var(--bodyh))}
 .inner{position:absolute;inset:0 0 auto;height:100%;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:box-shadow .2s,border-color .2s}
 .inner::after{content:"";position:absolute;inset:auto 0 0;height:22px;background:linear-gradient(transparent,var(--card));pointer-events:none}
-.card:hover .inner,.card:focus-within .inner{height:auto;min-height:100%;z-index:5;border-color:var(--acc);box-shadow:0 0 0 3px var(--acc2),0 18px 40px rgba(0,0,0,.18)}
-.card:hover .inner::after,.card:focus-within .inner::after{display:none}
+.card:hover .inner,.card:has(:focus-visible) .inner{height:auto;min-height:100%;z-index:5;border-color:var(--acc);box-shadow:0 0 0 3px var(--acc2),0 18px 40px rgba(0,0,0,.18)}
+.card:hover .inner::after,.card:has(:focus-visible) .inner::after{display:none}
 .inner>a{color:inherit;text-decoration:none;flex:1;display:flex;flex-direction:column;outline:none}
 .cover{position:relative;aspect-ratio:16/9;background:var(--line);overflow:hidden;flex-shrink:0}
 .cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
@@ -99,7 +99,7 @@ h4{margin:0;font-size:17px;font-weight:700;letter-spacing:.01em}
 .meta{display:flex;justify-content:space-between;gap:8px;margin:6px 0 0;font-size:12px;color:var(--soft)}.meta span:first-child{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.meta span:last-child{flex-shrink:0}
 .desc{margin:10px 0 0;padding-top:10px;border-top:1px dashed var(--line);font-size:12.5px;line-height:1.65;color:var(--mute);white-space:pre-line;overflow-wrap:anywhere}
 .vt,.desc{display:-webkit-box;-webkit-box-orient:vertical;overflow:hidden}.vt{-webkit-line-clamp:2}.desc{-webkit-line-clamp:3}
-.card:hover .vt,.card:hover .desc,.card:focus-within .vt,.card:focus-within .desc{-webkit-line-clamp:unset}
+.card:hover .vt,.card:hover .desc,.card:has(:focus-visible) .vt,.card:has(:focus-visible) .desc{-webkit-line-clamp:unset}
 .acts{position:absolute;top:10px;left:10px;right:10px;z-index:2;display:flex;flex-wrap:wrap;justify-content:flex-end;gap:6px}
 .act{display:flex;gap:5px;align-items:center;padding:4px 10px;border-radius:999px;background:rgba(20,20,22,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);color:#fff;font-size:12.5px;cursor:pointer;white-space:nowrap;user-select:none;transition:background .15s}
 .act:hover{background:rgba(20,20,22,.75)}.act input{margin:0;accent-color:var(--acc)}.fav input{accent-color:var(--gold)}.nope input{accent-color:#8a8a92}
@@ -129,10 +129,13 @@ footer{text-align:center;color:var(--soft);font-size:12px;padding:0 16px 40px}
 """
 
 JS = r"""
-// 追剧、看过、不爱看只存在本机浏览器。卡片去向优先级：不爱看 > 看过 > 追剧；追剧和不爱看互斥
+// 追剧、看过、不爱看只存在本机浏览器。三者互斥，勾一个就清掉另外两个
 const load=k=>{try{return new Set(JSON.parse(localStorage.getItem(k)||"[]"))}catch(_){return new Set}};
 const st={seen:load("seen-v1"),fav:load("fav-v1"),nope:load("nope-v1")},KEYS={seen:"seen-v1",fav:"fav-v1",nope:"nope-v1"},
- TXT={seen:["看过","取消看过"],fav:["追剧","取消追剧"],nope:["不爱看","取消不爱看"]},CLASH={fav:"nope",nope:"fav"};
+ TXT={seen:["看过","取消看过"],fav:["追剧","取消追剧"],nope:["不爱看","取消不爱看"]};
+// 旧版允许多选：按 不爱看 > 看过 > 追剧 只留一个
+for(const id of st.nope){st.seen.delete(id);st.fav.delete(id)}for(const id of st.seen)st.fav.delete(id);
+for(const k in st)try{localStorage.setItem(KEYS[k],JSON.stringify([...st[k]]))}catch(_){}
 const cards=[...document.querySelectorAll(".card")],total=cards.length,order=new Map(cards.map((c,i)=>[c,i])),home=new Map(cards.map(c=>[c,c.parentElement]));
 const box={fav:document.getElementById("my-fav"),seen:document.getElementById("my-seen"),nope:document.getElementById("my-nope")};
 function place(c){const id=c.dataset.id,h=home.get(c);
@@ -148,7 +151,7 @@ function count(){
  const sEl=document.getElementById("stat");sEl.textContent=all?`已看 ${all} / ${total}`:"";sEl.style.setProperty("--p",all/total*100+"%")}
 cards.forEach(c=>{place(c);for(const k in st)c.querySelector(`.act.${k} input`).onchange=e=>{
  const id=c.dataset.id,save=k=>{try{localStorage.setItem(KEYS[k],JSON.stringify([...st[k]]))}catch(_){}};
- if(e.target.checked){st[k].add(id);const o=CLASH[k];if(o&&st[o].delete(id))save(o)}else st[k].delete(id);save(k);place(c);count();cur=null;spy()}});
+ if(e.target.checked){st[k].add(id);for(const o in st)if(o!==k&&st[o].delete(id))save(o)}else st[k].delete(id);save(k);place(c);count();cur=null;spy()}});
 // 搜索
 const q=document.getElementById("q");q.oninput=()=>{const s=q.value.trim().toLowerCase();
  cards.forEach(c=>c.classList.toggle("hide",!!s&&!c.dataset.k.toLowerCase().includes(s)));
