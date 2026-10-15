@@ -1,6 +1,6 @@
 # 最近看的 AI 剧
 
-共 167 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
+共 168 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
 
 
 ## 现代玄门
@@ -194,6 +194,7 @@
 
 - [魂砌](https://www.bilibili.com/video/BV1Ku4y1d7iY)
 - [赛博英雄传](https://www.bilibili.com/video/BV1Bng369Ets)
+- [伏雾区](https://www.bilibili.com/video/BV1qWhE6tEBP)
 - [深骸](https://www.bilibili.com/video/BV1CYTD6MESR)
 - [新城记](https://www.bilibili.com/video/BV1iXhG65EZM)
 - [零·共生体](https://www.bilibili.com/video/BV1TGNt6qEPm)
