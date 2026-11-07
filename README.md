@@ -1,6 +1,6 @@
 # 最近看的 AI 剧
 
-共 168 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
+共 171 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
 
 
 ## 现代玄门
@@ -103,6 +103,7 @@
 - [异兽降临](https://www.bilibili.com/video/BV17btbzPEDL)
 - [困兽之战](https://www.bilibili.com/video/BV1yG8j6PERJ)
 - [造神计划](https://www.bilibili.com/video/BV1G23q6dEjm)
+- [赦夜人](https://www.bilibili.com/video/BV1BPxe6ZE5w)（1-5 季搬运合集）
 - [沙幕之下](https://www.bilibili.com/video/BV168ew6FEEt)
 - [灰潮](https://www.bilibili.com/video/BV15hbK67E3X)
 
@@ -115,6 +116,7 @@
 - [山海](https://www.bilibili.com/video/BV1mEth6BEYS)（第一季 1-8 合集）
 - [污染者](https://www.bilibili.com/video/BV1EEK86PEWL)（第一季合集）
 - [复苏纪](https://www.bilibili.com/video/BV17Qbn6FEJ3)
+- [万妖图录传](https://www.bilibili.com/video/BV1MZxX6vEfn)（1-13 季搬运合集）
 - [东方猎人录](https://www.bilibili.com/video/BV1vtc2zCEEa)
 - [山海驯兽师](https://www.bilibili.com/video/BV1z3tE6REZm)
 
@@ -239,6 +241,7 @@
 - [颠佬外传](https://www.bilibili.com/video/BV1SFMy68Ea4)
 - [无耻之徒](https://www.bilibili.com/video/BV1zmhZ65EqC)（1-9 集合集）
 - [合租别闹](https://www.bilibili.com/video/BV1A4aW6RELh)
+- [反派亲妈](https://www.bilibili.com/video/BV14XxZ6VEcU)（1-2 季搬运合集）
 - [TV小姐的牛马日记](https://www.bilibili.com/video/BV1RGgZ61EgA)
 - 我被太太们包围了（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E6%88%91%E8%A2%AB%E5%A4%AA%E5%A4%AA%E4%BB%AC%E5%8C%85%E5%9B%B4%E4%BA%86)）
 - 无毒有呕（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E6%97%A0%E6%AF%92%E6%9C%89%E5%91%95)）
