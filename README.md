@@ -1,6 +1,6 @@
 # 最近看的 AI 剧
 
-共 171 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
+共 172 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
 
 
 ## 现代玄门
@@ -126,6 +126,7 @@
 - [立志成为恶兽](https://www.bilibili.com/video/BV1iRtA6gEuc)
 - [妖怪澡堂](https://www.bilibili.com/video/BV11QTL6MEPA)
 - [大天蓬](https://www.bilibili.com/video/BV1fPJ76wEtM)（1-15 合集）
+- [长生不老](https://www.bilibili.com/video/BV1s8sZ6NENS)
 - 我在神界崩老头（B 站未找到，[搜索](https://search.bilibili.com/all?keyword=%E6%88%91%E5%9C%A8%E7%A5%9E%E7%95%8C%E5%B4%A9%E8%80%81%E5%A4%B4)）
 
 ## 志怪·仙侠
