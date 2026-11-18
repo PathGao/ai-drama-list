@@ -1,6 +1,6 @@
 # 最近看的 AI 剧
 
-共 172 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
+共 173 部。链接指向 B 站第一集；没找到的给搜索链接。网页版：https://pathgao.github.io/ai-drama-list/
 
 
 ## 现代玄门
@@ -241,6 +241,7 @@
 - [无妻之徒](https://www.bilibili.com/video/BV1w9gw63EXX)（第一季合集）
 - [颠佬外传](https://www.bilibili.com/video/BV1SFMy68Ea4)
 - [无耻之徒](https://www.bilibili.com/video/BV1zmhZ65EqC)（1-9 集合集）
+- [哏都风云](https://www.bilibili.com/video/BV1zfsf6PEyx)
 - [合租别闹](https://www.bilibili.com/video/BV1A4aW6RELh)
 - [反派亲妈](https://www.bilibili.com/video/BV14XxZ6VEcU)（1-2 季搬运合集）
 - [TV小姐的牛马日记](https://www.bilibili.com/video/BV1RGgZ61EgA)
